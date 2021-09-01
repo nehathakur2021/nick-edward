@@ -1,0 +1,9 @@
+@import './assets/scss/variables.scss';
+@import './assets/scss/common-style.scss';
+@import './assets/scss/media-queries.scss';
+@import './assets/scss/fonts.scss';
+
+html, body { height: 100%; }
+body { margin: 0;
+  background-color:#f0f7fa;
+}

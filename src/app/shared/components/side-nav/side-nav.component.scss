@@ -1,0 +1,71 @@
+.aside {
+  width: 250px;
+  z-index: 1005;
+  background: #fff;
+  bottom: 0;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px rgb(15 34 58 / 12%);
+  .navbarBrandBox{
+    padding: 10px 1.5rem;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    line-height: 17px;
+  }
+  .sideBarScroll{
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    .sideBarMenu{
+      ul{
+       margin:0px;
+       padding:0px;
+       li{
+        a{
+          padding: 12px 20px;
+          letter-spacing: 0.05em;
+          pointer-events: none;
+          cursor: default;
+          font-size: 14px;
+          text-transform: capitalize;
+          color: #007BB2;
+          display: block;
+          text-decoration: none;
+          cursor: pointer;
+          font-family: "montserratregular";
+          i{
+            display: inline-block;
+            min-width: 1.5rem;
+            padding-bottom: .125em;
+            font-size: 1.05rem;
+            line-height: 1.40625rem;
+            vertical-align: middle;
+            color: #007BB2;
+            transition: all .4s;
+          }
+        }
+        &.active{
+          a{
+            background-color: #f0f7fa;
+            color: #007BB2!important;
+            i{
+              color: #007BB2!important;
+            }
+          }
+        }
+        &:hover{
+          a{
+            background-color: #f0f7fa;
+            color: #007BB2!important;
+
+            i{
+              color: #007BB2!important;
+            }
+          }
+        }
+       }
+      }
+    }
+  }
+}

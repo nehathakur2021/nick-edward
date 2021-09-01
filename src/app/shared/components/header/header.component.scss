@@ -1,0 +1,70 @@
+.pageTopbar
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 250px;
+  z-index: 1002;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgb(15 34 58 / 12%);
+    .navbarHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      height:60px;
+      padding: 0 0.625rem 0;
+      .dropdown{
+        button{
+          display: flex;
+          align-items: center;
+          background: transparent;
+          height:60px;
+          box-shadow: none!important;
+          border: 0;
+          border-radius: 0;
+          min-width: auto;
+          .headerProfile{
+            height: 36px;
+            width: 36px;
+            background-color: #f6f6f6;
+            padding: 3px;
+            border-radius:50%;
+          }
+          .name{
+            font-family: var(--font-family-montserratregular);
+          }
+        }
+      }
+  }
+}
+
+::ng-deep .profileMenu
+{
+  .mat-menu-content{
+    .dropdown-item{
+      display: block;
+      width: 100%;
+      padding: 4px 30px 4px 20px;
+      clear: both;
+      font-weight: 400;
+      color: #74788d;
+      text-align: inherit;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+      text-decoration: none;
+      .icon{
+        font-size: 18px;
+        color: #74788d;
+        margin-right: 10px;
+        position: relative;
+        top: 5px;
+      }
+      &:hover{
+        color: #2c3034;
+        background-color: #f8f9fa;
+      }
+    }
+  }
+}

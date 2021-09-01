@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-content>
+    <div class="table-wrapper">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="Id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let element">{{ element.Id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="CustomerName">
+          <th mat-header-cell *matHeaderCellDef>Customer Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.CustomerName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="CustomerDevice">
+          <th mat-header-cell *matHeaderCellDef>Customer Device</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.CustomerDevice }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Address">
+          <th mat-header-cell *matHeaderCellDef>Address</th>
+          <td mat-cell *matCellDef="let element">{{ element.Address }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element">{{ element.Status }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <span class="material-icons" matTooltip="Edit"> edit</span>
+            <span class="material-icons" matTooltip="Delete">delete</span>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

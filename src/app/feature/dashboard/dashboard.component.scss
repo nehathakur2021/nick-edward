@@ -1,0 +1,42 @@
+.card{
+  padding:0;
+  box-shadow:none;
+  border:none;
+  .page-header{
+    background-color:#fff;
+    height: 50px;
+    border-radius: 5px;
+    .title-inner-wrapper{
+      p{
+        margin:0px;
+      }
+    }
+  }
+ }
+.charts-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  background-color: #fff;
+  padding: 14px 12px;
+  border-radius: 5px;
+  .chart{
+    width: 23.5%;
+    .mat-card{
+       .mat-card-content{
+         h4{
+          font-size: 36px;
+          margin: 0 0 12px 0;
+          font-family: "montserratsemibold";
+         }
+         p{
+          color: #3d3d3d!important;
+          font-size:15px;
+         }
+       }
+    }
+   }
+}
+
+
+
