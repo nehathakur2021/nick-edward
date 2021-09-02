@@ -1,38 +1,60 @@
 .mat-stepper-horizontal {
     margin-top: 8px;
     ::ng-deep .mat-horizontal-stepper-header-container {
-        margin: 0 0 50px;
+        margin: 0 0 60px;
         .mat-step-header {
             overflow: visible !important;
+            background: none !important;
             &:hover {
                 background: none;
             }
             ::ng-deep .mat-step-icon {
                 position: absolute;
-                bottom: -40px;
+                bottom: -45px;
                 left: 50%;
                 transform: translateX(-50%);
                 height: 50px;
                 width: 50px;
+                background-color: #e3e3e3;
+                color: #000;
                 &.mat-step-icon-selected {
                     background-color: #007bb2 !important;
+                    color: #fff;
                 }
             }
             .mat-step-label {
+                &.mat-step-label-selected {
+                    .mat-step-text-label {
+                        color: #007bb2 !important;
+                        img {
+                            &.blue {
+                                display: block;
+                            }
+                            &.black {
+                                display: none;
+                            }
+                        }
+                    }
+                }
                 .mat-step-text-label {
                     text-align: center;
-                    .material-icons {
+                    img {
+                        max-width: 30px;
                         display: block;
+                        margin: 0 auto 5px;
+                        &.blue {
+                            display: none;
+                        }
                     }
                 }
             }
-            ::ng-deep .mat-stepper-horizontal-line {
-                position: relative;
-                bottom: -50px;            
+            .mat-ripple {
+                display: none !important;
             }
-            .mat-step-header-ripple {
-                display: none;
-            }
+        }
+        ::ng-deep .mat-stepper-horizontal-line {
+            position: relative;
+            bottom: -58px;
         }
     }
 
@@ -51,13 +73,23 @@
             display: block;
         }
     }
+    .checkBox {
+        margin: 0 0 20px;
+    }
     mat-divider {
         margin: 10px 0;
-    }
-    .UpdateStore {
-        margin: 0 0 20px;
     }
     .mt20 {
         margin: 20px 0 0;
     }
+}
+
+.example-tab-icon {
+    margin-right: 8px;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
 }

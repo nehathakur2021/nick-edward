@@ -18,36 +18,36 @@
           <span class="material-icons">
             notifications
           </span>
-        </button>
-        <mat-menu #menunotifications="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-      </div>
-      <div class="dropdown">
-        <button mat-button [matMenuTriggerFor]="menu">
-          <img class="headerProfile" src="../../../../assets/images/avatar.jpg" alt="image" />
-          <span class="name ml-1 font-size-15 ">Marcus</span>
-        </button>
-        <mat-menu #menu="matMenu" class="profileMenu">
-          <a href="#" class="dropdown-item">
-            <span class="material-icons icon"> account_circle </span>
-            <span class="align-middle">Profile</span>
-          </a>
-          <a href="#" class="dropdown-item">
-            <span class="material-icons icon">account_balance_wallet</span>
-            <span class="align-middle">My Wallet</span>
-          </a>
-          <a href="#" class="dropdown-item">
-            <span class="material-icons icon">settings </span>
-            <span class="align-middle">Settings</span>
-          </a>
-          <a href="#" class="dropdown-item">
-            <span class="material-icons icon">logout</span>
-            <span class="align-middle">Log Out</span>
-          </a>
-        </mat-menu>
-      </div>
-    </div>
-  </div>
+      </button>
+      <mat-menu #menunotifications="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+     </div>
+     <div class="dropdown">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <img class="headerProfile" src="../../../../assets/images/profile-placeholder.png" alt="image"/>
+        <span class="name ml-1 font-size-15 ">Marcus</span>
+      </button>
+      <mat-menu #menu="matMenu" class="profileMenu">
+        <a href="#" class="dropdown-item">
+          <span class="material-icons icon"> account_circle </span>
+          <span class="align-middle">Profile</span>
+        </a>
+        <a href="#" class="dropdown-item">
+          <span class="material-icons icon">account_balance_wallet</span>
+          <span class="align-middle">My Wallet</span>
+        </a>
+        <a href="#" class="dropdown-item">
+          <span class="material-icons icon">settings </span>
+          <span class="align-middle">Settings</span>
+        </a>
+        <a href="#" class="dropdown-item">
+          <span class="material-icons icon">logout</span>
+          <span class="align-middle">Log Out</span>
+        </a>
+      </mat-menu>
+     </div>
+   </div>
+ </div>
 </header>

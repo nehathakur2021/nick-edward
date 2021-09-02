@@ -11,6 +11,8 @@ export class CustomerOnboardingComponent implements OnInit {
   isLinear = false;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
+  showRetail:boolean=false;
+  showResideantial:boolean=false;
 
   constructor(private _formBuilder: FormBuilder) {}
 
@@ -22,5 +24,16 @@ export class CustomerOnboardingComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-
+showHideTabs(element:any){
+  debugger;
+  // const radioBtnValue=element.target.value;
+  if(element==="1") {
+    this.showRetail=true;
+    this.showResideantial=false;
+  }
+  else{
+    this.showRetail=false;
+    this.showResideantial=true;
+  }
+}
 }

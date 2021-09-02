@@ -14,7 +14,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -33,7 +33,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatStepperModule,
     MatButtonModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule
 
   ],
   declarations: [],
@@ -52,7 +53,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatStepperModule,
     MatButtonModule,
     MatGridListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule
 
   ],
 })
