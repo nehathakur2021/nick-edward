@@ -11,16 +11,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-<<<<<<< Updated upstream
-import { MatGridListModule } from '@angular/material/grid-list';
-=======
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 
 
->>>>>>> Stashed changes
 
 @NgModule({
   imports: [
@@ -35,15 +31,11 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatCardModule,
     FlexLayoutModule,
-<<<<<<< Updated upstream
-    MatGridListModule
-=======
     MatStepperModule,
     MatButtonModule,
     MatGridListModule,
     MatDividerModule
 
->>>>>>> Stashed changes
   ],
   declarations: [],
   exports: [
@@ -58,15 +50,11 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatCardModule,
     FlexLayoutModule,
-<<<<<<< Updated upstream
-    MatGridListModule
-=======
     MatStepperModule,
     MatButtonModule,
     MatGridListModule,
     MatDividerModule
 
->>>>>>> Stashed changes
   ],
 })
 export class UiComponentModule { }
