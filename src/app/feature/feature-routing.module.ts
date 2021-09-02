@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from '../shared/components/layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { CustomerOnboardingComponent } from './customer-onboarding/customer-onboarding.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,8 @@ const routes: Routes = [
         component:DashboardComponent
      },
      {
-      path:'customers',
-      component:CustomersComponent
+      path:'customer-onboarding',
+      component:CustomerOnboardingComponent
      },
      {
       path:'jobs',

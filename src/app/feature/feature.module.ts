@@ -2,16 +2,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeatureComponent } from './feature.component';
+
 import { UiComponentModule } from '../ui-component/ui-component.module';
 import { CustomersComponent } from './customers/customers.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { CustomerOnboardingComponent } from './customer-onboarding/customer-onboarding.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     UiComponentModule,
-    FeatureRoutingModule
+    FeatureRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     CommonModule,
@@ -19,10 +23,11 @@ import { JobsComponent } from './jobs/jobs.component';
     FeatureRoutingModule
   ],
   declarations:
-   [FeatureComponent,
+   [
     DashboardComponent,
     CustomersComponent,
-    JobsComponent
+    JobsComponent,
+    CustomerOnboardingComponent
 
    ]
 

@@ -1,0 +1,28 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+}
+.radioBtn {
+    margin: 10px 0 20px;
+    label {
+        display: block;
+    }
+    .mat-radio-button ~ .mat-radio-button {
+        margin-left: 16px;
+    }
+}
+::ng-deep .mat-step-icon-selected {
+    background-color: #007bb2!important;
+}
+mat-label {
+    margin: 0 0 10px;
+    display: block;
+}
+mat-divider {
+    margin: 10px 0;
+}
+.UpdateStore {
+    margin: 0 0 20px;
+}
+.mt20 {
+    margin: 20px 0 0;
+}
