@@ -1,11 +1,11 @@
-.signIn {
+.logIn {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
     height: 100vh;
-    .signInner {
+    .logInner {
         max-width: 700px;
         width: 100%;
         align-self: center;
@@ -40,13 +40,17 @@
                     padding: 25px 10px 25px 70px;
                     h1 {
                         font-family: var(--font-family-montserratbold);
-                        text-align: center;
+                        // text-align: center;
                     }
                     .example-form{
                         .material-icons{
                             color: #000000c0;
                             padding-right: 5px;
                         }
+                        ::ng-deep .mat-form-field-flex  {
+                            background-color: #fff !important;
+                            padding-left: 0 !important;
+                          } 
                     }
                     .rightCenter {
                         display: flex;
@@ -68,9 +72,5 @@
             }
         }
     }
-}
 
-::ng-deep .mat-form-field-flex  {
-    background-color: #fff!important;
-    padding-left: 0 !important;
-  } 
+}
