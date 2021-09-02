@@ -3,8 +3,15 @@
 * {
   box-sizing: border-box;
 }
-body{
-  font-family: "montserratregular"!important;
+body {
+  font-family: "montserratregular" !important;
+  &.show {
+    .appSideNavContainer {
+      .aside {
+        left: 0;
+      }
+    }
+  }
 }
 h1 {
   font-size: 3rem;
@@ -57,49 +64,63 @@ h5 {
 .d-flex {
   display: flex !important;
 }
-.red-bg{
-  background-color:#fde3cd;
+.red-bg {
+  background-color: #fde3cd;
 }
-.green-bg{
-  background-color:#cdfadb;
+.green-bg {
+  background-color: #cdfadb;
 }
-.blue-bg{
-  background-color:#d7dddf;
+.blue-bg {
+  background-color: #d7dddf;
 }
-.pink-bg{
-  background-color:#ffe2e2;
+.pink-bg {
+  background-color: #ffe2e2;
 }
-.color-red{
-  color:#b55500;
+.color-red {
+  color: #b55500;
 }
-.color-green{
-  color:#006036;
+.color-green {
+  color: #006036;
 }
-.color-blue{
-  color:#3d3d3d;
+.color-blue {
+  color: #3d3d3d;
 }
-.color-pink{
-  color:#c80000;
+.color-pink {
+  color: #c80000;
 }
 
 .mat-button-base.mat-primary {
-  background-color: #007bb2 ;
+  background-color: #007bb2;
 }
 /*----*/
+.pageTopbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 250px;
+  z-index: 1002;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgb(15 34 58 / 12%);
+  transition: 0.5s;
+  @media (max-width: 991px) {
+    left: 0;
+  }
+}
 .appContent {
   padding-left: 250px;
   padding-top: 61px;
+  transition: 0.5s;
+  @media (max-width: 991px) {
+    padding-left: 0px;
+  }
   .pageContent {
-    // padding: 15px;
-    // background: #fff;
     margin: 15px;
     min-height: calc(96vh - 61px);
-    // box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
     border-radius: 5px;
   }
 }
-.mat-card{
-  box-shadow: 0 2px 4px rgb(15 34 58 / 12%)!important;
+.mat-card {
+  box-shadow: 0 2px 4px rgb(15 34 58 / 12%) !important;
 }
 
 /*--mat input --*/
@@ -139,8 +160,8 @@ tr:nth-child(odd) {
           .mat-radio-inner-circle {
             background-color: #007bb2 !important;
           }
-          .mat-radio-ripple{
-            .mat-ripple-element{
+          .mat-radio-ripple {
+            .mat-ripple-element {
               background-color: transparent;
             }
           }
@@ -152,19 +173,19 @@ tr:nth-child(odd) {
 
 //check box//
 
-.mat-checkbox{
-  &.mat-checkbox-checked{
-    .mat-checkbox-layout{
-     .mat-checkbox-inner-container{
-      .mat-checkbox-background{
-        background-color: #007bb2 !important;
-      }
-      .mat-ripple{
-        .mat-ripple-element{
-          background-color: transparent;
+.mat-checkbox {
+  &.mat-checkbox-checked {
+    .mat-checkbox-layout {
+      .mat-checkbox-inner-container {
+        .mat-checkbox-background {
+          background-color: #007bb2 !important;
+        }
+        .mat-ripple {
+          .mat-ripple-element {
+            background-color: transparent;
+          }
         }
       }
-     }
     }
   }
 }

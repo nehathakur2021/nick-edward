@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private renderer: Renderer2
+  ) { }
 
   ngOnInit() {
   }
-
+  toggleMenu() {
+    if (document.body.classList.contains('show')) {
+      this.renderer.removeClass(document.body, 'show');
+    } else {
+      this.renderer.addClass(document.body, 'show');
+    }
+  }
 }

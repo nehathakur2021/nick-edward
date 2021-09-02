@@ -5,12 +5,12 @@
   <div class="sideBarScroll">
     <div class="sideBarMenu">
       <ul>
-        <li routerLink="dashboard"><a>
+        <li routerLink="dashboard" (click)="handleClose()" ><a>
             <i class="material-icons"> dashboard</i>
             <span>Dashboard</span>
           </a>
         </li>
-        <li  routerLink="/customer-onboarding"><a>
+        <li  routerLink="/customer-onboarding" (click)="handleClose()"><a>
             <i class="material-icons"> dashboard</i>
             <span>Customer Onboarding</span>
           </a>

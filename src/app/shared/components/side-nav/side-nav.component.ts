@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
+  constructor( private renderer: Renderer2) { }
 
   ngOnInit() {
   }
-
+  handleClose() {
+    this.renderer.removeClass(document.body, 'show');
+    this.isMenuOpen = false;
+  }
+  isMenuOpen: boolean = false
 }
