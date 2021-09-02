@@ -109,7 +109,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Service Request">
+    <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
             <div fxLayout="row" fxLayout.lt.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
                 class="mt20">
@@ -133,7 +133,9 @@
         </form>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Assign Technician</ng-template>
+        <ng-template matStepLabel><span class="material-icons">
+            person_outline
+        </span>Assign Technician</ng-template>
         <p>You are now done.</p>
         <div>
             <button mat-button matStepperPrevious>Back</button>
