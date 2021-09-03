@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Set Appointment</h2>
+<div fxLayout="row wrap" fxLayoutGap="15px grid">
+    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Start Time</mat-label>
+            <input matInput type="time" placeholder="Description" />
+        </mat-form-field>
+    </div>
+    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Length of time of appointment</mat-label>
+            <input matInput type="number" placeholder="Description" />
+        </mat-form-field>
+    </div>
+    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Length of arrival window</mat-label>
+            <input matInput type="number" placeholder="Description" />
+        </mat-form-field>
+    </div>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

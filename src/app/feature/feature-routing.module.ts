@@ -6,6 +6,7 @@ import { LayoutComponent } from '../shared/components/layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { CustomerOnboardingComponent } from './customer-onboarding/customer-onboarding.component';
+import { CustomerTypeComponent } from './customer-type/customer-type.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path:'dashboard',
         component:DashboardComponent
+     },
+     {
+      path:'customer-type',
+      component:CustomerTypeComponent
      },
      {
       path:'customer-onboarding',

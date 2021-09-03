@@ -8,6 +8,8 @@ import { CustomersComponent } from './customers/customers.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { CustomerOnboardingComponent } from './customer-onboarding/customer-onboarding.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomerTypeComponent } from './customer-type/customer-type.component';
+import { CustomerModalComponent } from './customer-onboarding/customer-modal/customer-modal.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     CustomersComponent,
     JobsComponent,
-    CustomerOnboardingComponent
+    CustomerOnboardingComponent,
+    CustomerTypeComponent,
+    CustomerModalComponent
 
    ]
 

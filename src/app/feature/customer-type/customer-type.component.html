@@ -1,0 +1,43 @@
+<div class="customerType">
+    <mat-card>
+        <div class="typeOfCustomer">
+            <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn">
+                <div fxFlex="100%">
+                    <div class="heading">
+                        <mat-card-title> Type of Customer</mat-card-title>
+                    </div>
+                    <!-- <div class="radioButton">
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1">Retail</mat-radio-button>
+                            <mat-radio-button value="2">Residential</mat-radio-button>
+                        </mat-radio-group>
+                    </div> -->
+                    <!-- <mat-divider></mat-divider> -->
+                    <div class="toggleButton">
+                        <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                            <mat-button-toggle color="primary" value="bold">Retail</mat-button-toggle>
+                            <mat-button-toggle value="italic">Residential</mat-button-toggle>
+                        </mat-button-toggle-group> -->
+                        <span>Retail</span>
+                        <mat-slide-toggle></mat-slide-toggle>
+                        <span>Residential</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="searchCustomer">
+            <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                <div fxFlex="100%">
+                    <mat-form-field appearance="legacy" searchCustomer>
+                        <mat-label>Search Customer</mat-label>
+                        <input matInput placeholder="Search by Name, Email, Phone no.">
+                    </mat-form-field>
+                    <button mat-flat-button color="primary" routerLink="/customer-onboarding" fxLayouAlign="end start"
+                        class="btnNext">Next</button>
+                </div>
+            </div>
+        </div>
+
+    </mat-card>
+</div>

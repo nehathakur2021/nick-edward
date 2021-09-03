@@ -6,25 +6,7 @@
                 <img class="blue" src="assets/images/customer-blue.svg" />
                 <span>Customer</span>
             </ng-template>
-            <div fxLayout="row wrap" fxLayoutGap="15px grid">
-                <div fxFlex="100%">
-                    <mat-form-field appearance="legacy">
-                        <mat-label>Search Customer</mat-label>
-                        <input matInput placeholder="Search by Name and Email">
-                    </mat-form-field>
-                </div>
-            </div>
-            <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn">
-                <div fxFlex="100%">
-                    <h2 class="heading">Type of Customer</h2>
-                    <mat-radio-group aria-label="Select an option">
-                        <mat-radio-button (click)='showHideTabs("1")' value="1">Retail</mat-radio-button>
-                        <mat-radio-button (click)='showHideTabs("2")' value="2">Residential</mat-radio-button>
-                    </mat-radio-group>
-                    <mat-divider></mat-divider>
-                </div>
-            </div>
-            <div [ngClass]='{"show":showRetail,"hide":!showRetail}'>
+            <div>
                 <div class="retail">
                     <h2 class="heading">Retail Group</h2>
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
@@ -111,7 +93,7 @@
                 </div>
                 <mat-checkbox class="checkBox">Update Existing Store</mat-checkbox>
             </div>
-            <div class="retail" [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
+            <!-- <div class="retail" [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
                 <h2 class="heading">Residential </h2>
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
@@ -163,8 +145,9 @@
                         </mat-form-field>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div>
+                <button mat-button routerLink="/customer-type">back</button>
                 <button mat-flat-button color="primary" matStepperNext>Next</button>
             </div>
         </form>
@@ -176,7 +159,7 @@
                 <img class="blue" src="assets/images/service-request-blue.svg" />
                 <span>Service Request</span>
             </ng-template>
-            <div [ngClass]='{"show":showRetail,"hide":!showRetail}'>
+            <div>
                 <div fxLayout="row" fxLayout.lt.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
                     class="mt20">
                     <mat-form-field class="example-full-width" appearance="outline">
@@ -229,7 +212,7 @@
             </div>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-flat-button color="primary" matStepperNext>Next</button>
+                <button mat-flat-button matStepperNext color="primary">Next</button>
             </div>
         </form>
     </mat-step>
@@ -240,9 +223,34 @@
             <span>Assign Technician</span>
         </ng-template>
         <h1>Assign Technician</h1>
+        <div fxLayout="row wrap" fxLayoutGap="15px grid">
+            <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Choose Technician</mat-label>
+                    <mat-select [formControl]="technician">
+                        <mat-option [value]="technician">{{technician}}</mat-option>
+                    </mat-select>
+                </mat-form-field> -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Choose Technician</mat-label>
+                    <mat-select [formControl]="technician">
+                        <mat-option *ngFor="let technician of technicianList" [value]="technician">{{technician}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <mat-form-field appearance="outline">
+                    <mat-label>Toppings</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-flat-button color="primary" >Save</button>
+            <button mat-flat-button color="primary" (click)="openDialog()">Set Appointment</button>
         </div>
     </mat-step>
 </mat-stepper>
