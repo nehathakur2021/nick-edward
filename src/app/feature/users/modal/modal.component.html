@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>Add New User</h2>
+<mat-dialog-content class="mat-typography">
+
+    <div fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div fxFlex="30%" fxFlex.lg="30%" fxFlex.md="30%" fxFlex.sm="30%" fxFlex.xs="100%">
+            <div class="userImg">
+                <div class="userImgInner">
+                    <img class="headerProfile" src="assets/images/profile-placeholder.png" alt="image" />
+                    <input type="file"/>
+                </div>
+                <a href="javascript:void(0)">Remove</a>
+            </div>
+        </div>
+        <div fxFlex="70%" fxFlex.lg="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.xs="100%">
+            <div fxLayout="row wrap" fxLayoutGap="20px grid">
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last Name" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="example@gmail.com" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Phone</mat-label>
+                        <input matInput placeholder="Phone" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>User Type</mat-label>
+                        <mat-select>
+                            <mat-option value="Admin">Admin</mat-option>
+                            <mat-option value="Employee">Employee</mat-option>
+                            <mat-option value="Technician">Technician</mat-option>
+                            <mat-option value="Helper">Helper</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%"
+                    fxLayoutAlign="start center">
+                    <div class="activeInactive">
+                        <span>Inactive</span>
+                        <mat-slide-toggle>Active</mat-slide-toggle>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

@@ -1,4 +1,4 @@
-<mat-stepper #stepper>
+<mat-stepper #stepper >
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>
@@ -6,10 +6,42 @@
                 <img class="blue" src="assets/images/customer-blue.svg" />
                 <span>Customer</span>
             </ng-template>
+<<<<<<< Updated upstream
             <div>
+=======
+            <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                <div fxFlex="100%">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Search Customer</mat-label>
+                        <input matInput placeholder="Search by Name and Email">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn">
+                <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <h2 class="heading">Type of Customer</h2>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button (click)='showHideTabs("1")' value="1">Retail</mat-radio-button>
+                        <mat-radio-button (click)='showHideTabs("2")' value="2">Residential</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-divider></mat-divider>
+                </div>
+               
+            </div>
+
+            
+
+            <div [ngClass]='{"show":showRetail,"hide":!showRetail}'>
+>>>>>>> Stashed changes
                 <div class="retail">
-                    <h2 class="heading">Retail Group</h2>
+                    
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                            <h2 class="heading">Retail Group</h2>
+                        </div>
+                        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="end start">
+                            <button mat-flat-button color="primary" matStepperNext>Skip Basic Info</button>
+                        </div>
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                             <mat-form-field class="example-full-width" appearance="outline">
                                 <mat-label>Retail Group Name</mat-label>
@@ -93,9 +125,19 @@
                 </div>
                 <mat-checkbox class="checkBox">Update Existing Store</mat-checkbox>
             </div>
+<<<<<<< Updated upstream
             <!-- <div class="retail" [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
                 <h2 class="heading">Residential </h2>
+=======
+            <div class="retail" [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
+>>>>>>> Stashed changes
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <h2 class="heading">Residential</h2>
+                    </div>
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="end start">
+                        <button mat-flat-button color="primary" matStepperNext>Skip Basic Info</button>
+                    </div>
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>First Name</mat-label>
@@ -149,6 +191,7 @@
             <div>
                 <button mat-button routerLink="/customer-type">back</button>
                 <button mat-flat-button color="primary" matStepperNext>Next</button>
+
             </div>
         </form>
     </mat-step>
@@ -159,6 +202,7 @@
                 <img class="blue" src="assets/images/service-request-blue.svg" />
                 <span>Service Request</span>
             </ng-template>
+<<<<<<< Updated upstream
             <div>
                 <div fxLayout="row" fxLayout.lt.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
                     class="mt20">
@@ -170,11 +214,30 @@
                         <mat-label>Work Summary</mat-label>
                         <input matInput placeholder="Work Summary" />
                     </mat-form-field>
+=======
+            <div [ngClass]='{"show":showRetail,"hide":!showRetail}'>
+                <div fxLayout="row wrap" fxLayoutGap="15px grid" class="mt20">
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Work Order Number</mat-label>
+                            <input matInput placeholder="Work Order Number" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Work Summary</mat-label>
+                            <input matInput placeholder="Work Summary" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Full Work Description(From Work Order Paperword)</mat-label>
+                            <textarea matInput placeholder="Description"></textarea>
+                        </mat-form-field>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Full Work Description(From Work Order Paperword)</mat-label>
-                    <textarea matInput placeholder="Description"></textarea>
-                </mat-form-field>
+
             </div>
             <div [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
@@ -250,7 +313,12 @@
             </div>
         </div>
         <div>
+<<<<<<< Updated upstream
             <button mat-flat-button color="primary" (click)="openDialog()">Set Appointment</button>
+=======
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-flat-button color="primary">Save</button>
+>>>>>>> Stashed changes
         </div>
     </mat-step>
 </mat-stepper>

@@ -15,9 +15,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
+<<<<<<< Updated upstream
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
+=======
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+>>>>>>> Stashed changes
 
 @NgModule({
   imports: [
@@ -37,9 +43,15 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatGridListModule,
     MatDividerModule,
     MatTabsModule,
+<<<<<<< Updated upstream
     MatButtonToggleModule,
     MatSlideToggleModule,
     MatDialogModule
+=======
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatDatepickerModule
+>>>>>>> Stashed changes
 
   ],
   declarations: [],
@@ -60,9 +72,15 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatGridListModule,
     MatDividerModule,
     MatTabsModule,
+<<<<<<< Updated upstream
     MatButtonToggleModule,
     MatSlideToggleModule,
     MatDialogModule
+=======
+    MatSlideToggleModule,
+    MatDialogModule,
+    MatDatepickerModule
+>>>>>>> Stashed changes
 
   ],
 })

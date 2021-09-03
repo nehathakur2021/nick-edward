@@ -1,0 +1,52 @@
+<mat-card class="technicianCalender">
+    
+        <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
+            <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <mat-card-title>
+                <span>Technician</span>
+            </mat-card-title>
+            </div>
+            <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Technician</mat-label>
+                    <input matInput placeholder="Search Technician">
+                </mat-form-field>
+            </div>
+
+        </div>
+
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="time">
+                <th mat-header-cell *matHeaderCellDef> Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="schedule">
+                <th mat-header-cell *matHeaderCellDef> Schedule </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-flat-button color="primary" [matMenuTriggerFor]="one">
+                        <p>Steve Smith</p>
+                        <p>9:00 AM - 12:00 PM</p>
+                    </button>
+                    <mat-menu #one="matMenu">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laborum repudiandae maiores quidem voluptatibus sit ipsum, reprehenderit laudantium sapiente accusamus eos vero repellendus pariatur eveniet quos ut in eum esse?
+                    </mat-menu>
+                    <button mat-flat-button class="grayBtn" [matMenuTriggerFor]="two">
+                        <p>Jane Doe</p>
+                        <p>10:00 AM - 1:00 PM</p>
+                    </button>
+                    <mat-menu #two="matMenu">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laborum repudiandae maiores quidem voluptatibus sit ipsum, reprehenderit laudantium sapiente accusamus eos vero repellendus pariatur eveniet quos ut in eum esse?
+                    </mat-menu>
+                </td>
+            </ng-container>
+
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+    </mat-card-content>
+</mat-card>

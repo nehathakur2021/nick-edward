@@ -1,0 +1,42 @@
+::ng-deep .mat-typography h2 {
+border-bottom: 1px solid #e3e3e3;
+padding: 0 0 10px;
+}
+
+.mat-dialog-content {
+    min-height: 240px;
+    .userImg {
+        text-align: center;
+        .userImgInner {
+            position: relative;
+            img {
+                max-width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                display: block;
+                margin: 0px auto 10px;
+            }
+            input {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bb2;
+        }
+    }
+    .activeInactive {
+        display: flex;
+        align-items: center;
+        span {
+            margin: 0 10px 0 0;
+        }
+    }
+    ::ng-deep  .mat-form-field-wrapper {
+        padding: 0 !important;
+    }
+}

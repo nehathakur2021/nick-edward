@@ -13,6 +13,7 @@ export class CustomerOnboardingComponent implements OnInit {
   isLinear = false;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
+<<<<<<< Updated upstream
   showRetail: boolean = false;
   showResideantial: boolean = false;
   toppings = new FormControl();
@@ -22,6 +23,14 @@ export class CustomerOnboardingComponent implements OnInit {
   
   
   constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) { }
+=======
+  showRetail:boolean=false;
+  showResideantial:boolean=false;
+  isVertical = false;
+
+  constructor(private _formBuilder: FormBuilder) {}
+>>>>>>> Stashed changes
+
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({

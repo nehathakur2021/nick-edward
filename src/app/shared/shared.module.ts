@@ -10,7 +10,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
   declarations: [
     HeaderComponent,
     LayoutComponent,
-    SideNavComponent
+    SideNavComponent,
   ],
   imports: [
     CommonModule,
