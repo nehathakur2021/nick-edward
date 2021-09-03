@@ -4,12 +4,9 @@ import { LayoutComponent } from '../shared/components/layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { CustomerOnboardingComponent } from './customer-onboarding/customer-onboarding.component';
-<<<<<<< Updated upstream
 import { CustomerTypeComponent } from './customer-type/customer-type.component';
-=======
 import { UsersComponent } from './users/users.component';
 import { TechnicianComponent } from './technician/technician.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [
   {
