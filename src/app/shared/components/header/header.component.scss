@@ -12,6 +12,9 @@
     @media (max-width: 991px) {
       display: flex;
     }
+    a {
+      color: #007bb2;
+    }
   }
   .dropdown {
     ::ng-deep .mat-form-field-flex {
@@ -36,6 +39,9 @@
       }
       .name {
         font-family: var(--font-family-poppinsregular);
+      }
+      .notifications {
+        color: #007bb2;
       }
     }
   }
