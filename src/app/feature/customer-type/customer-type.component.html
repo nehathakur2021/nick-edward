@@ -6,18 +6,9 @@
                     <div class="heading">
                         <mat-card-title> Type of Customer</mat-card-title>
                     </div>
-                    <!-- <div class="radioButton">
-                        <mat-radio-group aria-label="Select an option">
-                            <mat-radio-button value="1">Retail</mat-radio-button>
-                            <mat-radio-button value="2">Residential</mat-radio-button>
-                        </mat-radio-group>
-                    </div> -->
-                    <!-- <mat-divider></mat-divider> -->
+
                     <div class="toggleButton">
-                        <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-                            <mat-button-toggle color="primary" value="bold">Retail</mat-button-toggle>
-                            <mat-button-toggle value="italic">Residential</mat-button-toggle>
-                        </mat-button-toggle-group> -->
+
                         <span>Retail</span>
                         <mat-slide-toggle>Residential</mat-slide-toggle>
                     </div>
@@ -32,10 +23,46 @@
                         <mat-label>Search Customer</mat-label>
                         <input matInput placeholder="Search by Name, Email, Phone no.">
                     </mat-form-field>
-                    <button mat-flat-button color="primary" routerLink="/customer-onboarding" fxLayouAlign="end start"
-                        class="btnNext">Next</button>
+                </div>
+                <div fxFlex="100%">
+                    <div class="custom-table">
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                            <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef> </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <mat-radio-group aria-label="Select an option">
+                                        <mat-radio-button value="1"></mat-radio-button>
+                                    </mat-radio-group>
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="name">
+                                <th mat-header-cell *matHeaderCellDef> Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="email">
+                                <th mat-header-cell *matHeaderCellDef> Email </th>
+                                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="city">
+                                <th mat-header-cell *matHeaderCellDef> City </th>
+                                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                </div>
+                <div  fxFlex="100%" fxLayoutAlign="end start">
+                    <button mat-flat-button color="primary" class="btnNext">Add New Customer</button>
+                    <button mat-flat-button color="primary" routerLink="/customer-onboarding"
+                     class="btnNext">Next</button>
                 </div>
             </div>
+
         </div>
 
     </mat-card>

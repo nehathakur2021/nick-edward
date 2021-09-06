@@ -217,3 +217,13 @@ tr:nth-child(odd) {
     }
   }
 }
+.mat-form-field-appearance-outline {
+  &.mat-focused {
+      ::ng-deep .mat-form-field-outline-thick {
+          color: #007bb2 !important;
+      }
+      ::ng-deep .mat-form-field-label {
+          color: #007bb2 !important;
+      }
+  }
+}
