@@ -1,0 +1,29 @@
+.technicianCalender {
+    .mat-card-title {
+        margin: 0;
+    }
+    table {
+         tbody {
+             th,td {
+                padding:10px;
+            }
+        }
+        .mat-button-base {
+            line-height: normal;
+            padding: 10px;
+            margin:  0 10px 0 0;
+            &.grayBtn {
+                background-color: #ddd;
+            }
+            p {
+                margin: 0;
+                &:first-child {
+                    margin:  0 0 5px;
+                }
+            }
+        }
+    }
+}
+.mat-menu-content:not(:empty) {
+    padding: 10px;
+}
