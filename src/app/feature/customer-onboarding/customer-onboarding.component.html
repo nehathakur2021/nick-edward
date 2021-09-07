@@ -1,4 +1,4 @@
-<mat-stepper #stepper >
+<mat-stepper #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>
@@ -8,12 +8,11 @@
             </ng-template>
             <div>
                 <div class="retail">
-                    
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
                         <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                             <h2 class="heading">Retail Group</h2>
                         </div>
-                        
+
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                             <mat-form-field class="example-full-width" appearance="outline">
                                 <mat-label>Retail Group Name</mat-label>
@@ -159,7 +158,6 @@
             <div>
                 <button mat-button routerLink="/customer-type">back</button>
                 <button mat-flat-button color="primary" matStepperNext>Next</button>
-
             </div>
         </form>
     </mat-step>
@@ -233,12 +231,6 @@
         <h1>Assign Technician</h1>
         <div fxLayout="row wrap" fxLayoutGap="15px grid">
             <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-                <!-- <mat-form-field appearance="outline">
-                    <mat-label>Choose Technician</mat-label>
-                    <mat-select [formControl]="technician">
-                        <mat-option [value]="technician">{{technician}}</mat-option>
-                    </mat-select>
-                </mat-form-field> -->
                 <mat-form-field appearance="outline">
                     <mat-label>Choose Technician</mat-label>
                     <mat-select [formControl]="technician">
@@ -258,7 +250,7 @@
             </div>
         </div>
         <div>
-            
+
             <button mat-button matStepperPrevious>Back</button>
             <button mat-flat-button color="primary" (click)="openDialog()">Set Appointment</button>
         </div>

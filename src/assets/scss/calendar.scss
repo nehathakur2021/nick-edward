@@ -3,9 +3,9 @@
         margin: 0;
     }
     table {
-         tbody {
+        tbody {
              th,td {
-                padding:10px;
+                padding: 10px !important;
             }
         }
         .mat-button-base {
@@ -22,8 +22,40 @@
                 }
             }
         }
+        
     }
 }
 .mat-menu-content:not(:empty) {
     padding: 10px;
+}
+.calendarMenu {
+    min-width: 300px!important;
+    max-width: 300px;
+    .dFlex {
+        display: flex;
+        border-top: 1px solid #e3e3e3;
+        padding: 5px 0;
+        &:first-of-type {
+            border: none;
+        }
+        &.desc {
+            flex-direction: column;
+            .value {
+                text-align: left;
+            }
+        }
+        p {
+            flex: 1;
+            margin: 0;
+            a {
+                color: #007bb2;
+            }
+        }
+        .title {
+            color: #999;
+        }
+        .value {
+            text-align: right;
+        }
+    }
 }

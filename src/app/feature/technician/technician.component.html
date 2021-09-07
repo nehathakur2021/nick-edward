@@ -1,19 +1,19 @@
 <mat-card class="technicianCalender">
-    
-        <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
-            <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-                <mat-card-title>
+
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-card-title>
                 <span>Technician</span>
             </mat-card-title>
-            </div>
-            <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-                <mat-form-field appearance="legacy">
-                    <mat-label>Technician</mat-label>
-                    <input matInput placeholder="Search Technician">
-                </mat-form-field>
-            </div>
-
         </div>
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Technician</mat-label>
+                <input matInput placeholder="Search by Name">
+            </mat-form-field>
+        </div>
+
+    </div>
 
     <mat-card-content>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -29,15 +29,69 @@
                         <p>Steve Smith</p>
                         <p>9:00 AM - 12:00 PM</p>
                     </button>
-                    <mat-menu #one="matMenu">
-                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laborum repudiandae maiores quidem voluptatibus sit ipsum, reprehenderit laudantium sapiente accusamus eos vero repellendus pariatur eveniet quos ut in eum esse?
+                    <mat-menu #one="matMenu" class="calendarMenu">
+                        <div class="dFlex">
+                            <p class="title">Order ID :</p>
+                            <p class="value"><a href="#">#55452</a></p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Type :</p>
+                            <p class="value">Retail</p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Customer Name :</p>
+                            <p class="value"><a href="#">Carol Liam</a></p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Total Time :</p>
+                            <p class="value">3 Hours</p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Helpers :</p>
+                            <p class="value">Steve, Carol, Liam</p>
+                        </div>
+                        <div class="dFlex desc">
+                            <p class="title">Address :</p>
+                            <p class="value">1108 23rd Ave Seattle, Washington, USA</p>
+                        </div>
+                        <div class="dFlex desc">
+                            <p class="title">Short Description :</p>
+                            <p class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.</p>
+                        </div>
                     </mat-menu>
                     <button mat-flat-button class="grayBtn" [matMenuTriggerFor]="two">
                         <p>Jane Doe</p>
                         <p>10:00 AM - 1:00 PM</p>
                     </button>
-                    <mat-menu #two="matMenu">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laborum repudiandae maiores quidem voluptatibus sit ipsum, reprehenderit laudantium sapiente accusamus eos vero repellendus pariatur eveniet quos ut in eum esse?
+                    <mat-menu #two="matMenu"  class="calendarMenu">
+                        <div class="dFlex">
+                            <p class="title">Order ID :</p>
+                            <p class="value"><a href="#">#55452</a></p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Type :</p>
+                            <p class="value">Resdential</p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Customer Name :</p>
+                            <p class="value"><a href="#">Jones William</a></p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Total Time :</p>
+                            <p class="value">3 Hours</p>
+                        </div>
+                        <div class="dFlex">
+                            <p class="title">Helpers :</p>
+                            <p class="value">Steve, Carol, Liam</p>
+                        </div>
+                        <div class="dFlex desc">
+                            <p class="title">Address :</p>
+                            <p class="value">1108 23rd Ave Seattle, Washington, USA</p>
+                        </div>
+                        <div class="dFlex desc">
+                            <p class="title">Short Description :</p>
+                            <p class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.</p>
+                        </div>
                     </mat-menu>
                 </td>
             </ng-container>

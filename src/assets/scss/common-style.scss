@@ -54,6 +54,15 @@ h5 {
   font-weight: bold;
   font-family: var(--font-family-poppinssemibold);
 }
+.mat-option.mat-option-multiple {
+  &.mat-selected:not(.mat-option-disabled) {
+    color: #007bb2 !important;
+  }
+  .mat-pseudo-checkbox-checked {
+    background: #007bb2 !important;
+  }
+}
+
 .mt-30 {
   margin-top: 30px;
 }

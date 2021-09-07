@@ -7,11 +7,13 @@
             <div class="rightWrapper">
                 <div class="innerWrapper">
                     <h1>Login</h1>
-                    <form class="example-form">
+                    <div class="example-form">
                         <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-icon matPrefix><span class="material-icons">
+                            <mat-icon matPrefix>
+                                <span class="material-icons">
                                     person
-                                </span></mat-icon>
+                                </span>
+                            </mat-icon>
                             <mat-label>
                                 Username
                             </mat-label>
@@ -26,12 +28,16 @@
                             </mat-label>
                             <input matInput placeholder="Enter password">
                         </mat-form-field>
-                        
+
                         <div class="rightCenter mt-20">
                             <a href="javascript:void(0)">Forgot Password</a>
-                            <button mat-button class="btn commonBtn" routerLink="customer-onboarding">Login</button>
+                            <button mat-button class="btn commonBtn" [matMenuTriggerFor]="menu">Log In</button>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item routerLink="customer-onboarding">As Admin</button>
+                                <button mat-menu-item routerLink="users">As Employee</button>
+                            </mat-menu>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -34,6 +34,4 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { time: '5:00 PM', schedule: '' },
   { time: '6:00 PM', schedule: '' },
   { time: '7:00 PM', schedule: '' },
-
-
 ];
