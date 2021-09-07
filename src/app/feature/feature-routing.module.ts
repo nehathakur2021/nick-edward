@@ -7,6 +7,8 @@ import { CustomerOnboardingComponent } from './customer-onboarding/customer-onbo
 import { CustomerTypeComponent } from './customer-type/customer-type.component';
 import { UsersComponent } from './users/users.component';
 import { TechnicianComponent } from './technician/technician.component';
+import { TechnicianListComponent } from './technician-list/technician-list.component';
+import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
      {
       path:'technician',
       component:TechnicianComponent
+     },
+     {
+      path:'technician-list',
+      component:TechnicianListComponent
+     },
+     {
+      path:'appoinment-detail',
+      component:AppointmentDetailComponent
      },
      {
       path:'jobs',

@@ -6,8 +6,8 @@
                 <img class="blue" src="assets/images/customer-blue.svg" />
                 <span>Customer</span>
             </ng-template>
-            <div>
-                <div class="retail">
+            <div class="retail" *ngIf="checkCustomer === 'Retail'">
+                <div>
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
                         <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                             <h2 class="heading">Retail Group</h2>
@@ -53,7 +53,7 @@
 
                 </div>
                 <mat-checkbox class="checkBox">Update Existing Retail Group</mat-checkbox>
-                <div class="retail">
+                <div>
                     <h2 class="heading">Store </h2>
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
@@ -96,15 +96,12 @@
                 </div>
                 <mat-checkbox class="checkBox">Update Existing Store</mat-checkbox>
             </div>
-            <!-- <div class="retail" [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
-                <h2 class="heading">Residential </h2>
+
+            <div class="retail Residential" *ngIf="checkCustomer === 'Residential'">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <!-- <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                         <h2 class="heading">Residential</h2>
-                    </div>
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="end start">
-                        <button mat-flat-button color="primary" matStepperNext>Skip Basic Info</button>
-                    </div>
+                    </div> -->
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>First Name</mat-label>
@@ -154,9 +151,10 @@
                         </mat-form-field>
                     </div>
                 </div>
-            </div> -->
+            </div>
+
             <div>
-                <button mat-button routerLink="/customer-type">back</button>
+                <button mat-button routerLink="/customer-type">Back</button>
                 <button mat-flat-button color="primary" matStepperNext>Next</button>
             </div>
         </form>
@@ -168,7 +166,7 @@
                 <img class="blue" src="assets/images/service-request-blue.svg" />
                 <span>Service Request</span>
             </ng-template>
-            <div>
+            <div *ngIf="checkCustomer === 'Retail'">
                 <div fxLayout="row" fxLayout.lt.md="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
                     class="mt20">
                     <mat-form-field class="example-full-width" appearance="outline">
@@ -182,7 +180,7 @@
                 </div>
 
             </div>
-            <div [ngClass]='{"show":showResideantial,"hide":!showResideantial}'>
+            <div *ngIf="checkCustomer === 'Residential'">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">

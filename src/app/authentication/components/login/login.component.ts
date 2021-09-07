@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
+  redirectToHome(route:string){
+    if(route==="admin"){
+      this.route.navigateByUrl("/users?entity=admin");
+    }
 
+    else {
+      this.route.navigateByUrl("/customer-type?entity=users")
+    }
+  }
 }

@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {MatDialog} from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerModalComponent } from './customer-modal/customer-modal.component';
+import { CustomerService } from '../customer.service';
 @Component({
   selector: 'app-customer-onboarding',
   templateUrl: './customer-onboarding.component.html',
@@ -19,12 +20,14 @@ export class CustomerOnboardingComponent implements OnInit {
   toppingList: string[] = ['John', 'Marcus', 'Robert', 'James', 'Charles'];
   technician = new FormControl();
   technicianList: string[] = ['John', 'Marcus', 'Robert', 'James', 'Charles'];
+  checkCustomer = '';
   
-  
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) { }
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog,private customerService: CustomerService) { }
 
 
   ngOnInit() {
+    debugger;
+    this.checkCustomer = this.customerService.getCustomerType();
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });

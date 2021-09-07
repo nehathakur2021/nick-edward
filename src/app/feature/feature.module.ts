@@ -13,6 +13,10 @@ import { CustomerModalComponent } from './customer-onboarding/customer-modal/cus
 import { UsersComponent } from './users/users.component';
 import { ModalComponent } from './users/modal/modal.component';
 import { TechnicianComponent } from './technician/technician.component';
+import { TechnicianListComponent } from './technician-list/technician-list.component';
+import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
+import { MatTableFilterModule } from 'mat-table-filter';
+import { FilterPipePipe } from './filter-pipe.pipe';
 
 
 @NgModule({
@@ -21,7 +25,8 @@ import { TechnicianComponent } from './technician/technician.component';
     UiComponentModule,
     FeatureRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatTableFilterModule
   ],
   exports:[
     CommonModule,
@@ -38,7 +43,10 @@ import { TechnicianComponent } from './technician/technician.component';
     CustomerModalComponent,
     UsersComponent,
     ModalComponent,
-    TechnicianComponent
+    TechnicianComponent,
+    TechnicianListComponent,
+    AppointmentDetailComponent,
+    FilterPipePipe
 
    ]
 
