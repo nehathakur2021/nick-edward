@@ -28,25 +28,6 @@ h5 {
   font-size: 1rem;
 }
 
-.font-size-15 {
-  font-size: 15px !important;
-}
-
-// 10px = 0.625rem
-// 12px = 0.75rem
-// 14px = 0.875rem
-// 16px = 1rem (base)
-// 18px = 1.125rem
-// 20px = 1.25rem
-// 24px = 1.5rem
-// 30px = 1.875rem
-// 32px = 2rem
-
-.commonBtn {
-  background-color: #007bb2;
-  border: 1px solid #007bb2;
-  color: #fff;
-}
 .btn {
   padding: 10px 28px;
   border-radius: 5px;
@@ -54,21 +35,7 @@ h5 {
   font-weight: bold;
   font-family: var(--font-family-poppinssemibold);
 }
-.mat-option.mat-option-multiple {
-  &.mat-selected:not(.mat-option-disabled) {
-    color: #007bb2 !important;
-  }
-  .mat-pseudo-checkbox-checked {
-    background: #007bb2 !important;
-  }
-}
 
-.mt-30 {
-  margin-top: 30px;
-}
-.ml-1 {
-  margin-left: 0.25rem !important;
-}
 .d-flex {
   display: flex !important;
 }
@@ -94,7 +61,7 @@ table {
     .material-icons {
       cursor: pointer;
       &.edit {
-        color: #007bb2;
+        color: $primary-color;
       }
       &.delete {
         color: #ff0000;
@@ -102,12 +69,11 @@ table {
     }
   }
   a {
-    color: #007bb2;
+    color: $primary-color;
   }
 }
 
 .mat-button-base.mat-primary {
-  background-color: #007bb2;
   .material-icons {
     position: relative;
     top: -3px;
@@ -117,19 +83,15 @@ table {
 .mat-slide-toggle {
   &.mat-checked {
     .mat-slide-toggle-label {
-      .mat-slide-toggle-bar {
-        background-color: rgba(0, 123, 178, 0.54);
-      }
-      .mat-slide-toggle-thumb {
-        background-color: #007bb2;
-      }
       .mat-ripple-element {
-        background-color: #007bb2;
+        background-color: $primary-color;
       }
     }
   }
+
+
 }
-/*----*/
+/*-- Header --*/
 .pageTopbar {
   position: fixed;
   top: 0;
@@ -169,7 +131,7 @@ table {
 .mat-table {
   > thead {
     tr {
-      background-color: #007bb2;
+      background-color: $primary-color;
       th {
         color: #fff;
       }
@@ -182,57 +144,4 @@ tr:nth-child(even) {
 }
 tr:nth-child(odd) {
   background: #fff;
-}
-
-//radio btn//
-
-.mat-radio-group {
-  .mat-radio-button {
-    &.mat-radio-checked {
-      .mat-radio-label {
-        .mat-radio-container {
-          .mat-radio-outer-circle {
-            border-color: #007bb2 !important;
-          }
-          .mat-radio-inner-circle {
-            background-color: #007bb2 !important;
-          }
-          .mat-radio-ripple {
-            .mat-ripple-element {
-              background-color: transparent;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-//check box//
-
-.mat-checkbox {
-  &.mat-checkbox-checked {
-    .mat-checkbox-layout {
-      .mat-checkbox-inner-container {
-        .mat-checkbox-background {
-          background-color: #007bb2 !important;
-        }
-        .mat-ripple {
-          .mat-ripple-element {
-            background-color: transparent;
-          }
-        }
-      }
-    }
-  }
-}
-.mat-form-field-appearance-outline {
-  &.mat-focused {
-      ::ng-deep .mat-form-field-outline-thick {
-          color: #007bb2 !important;
-      }
-      ::ng-deep .mat-form-field-label {
-          color: #007bb2 !important;
-      }
-  }
 }

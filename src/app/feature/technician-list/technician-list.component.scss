@@ -1,3 +1,8 @@
+.custom-table {
+    height: calc(100vh - 320px);
+    overflow: auto;
+}
+
 table {
     box-shadow: none;
     margin: 0 0 20px;

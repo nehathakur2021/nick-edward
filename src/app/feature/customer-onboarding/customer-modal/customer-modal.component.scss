@@ -1,4 +1,11 @@
-table {
-    box-shadow: none;
-    margin: 0 0 20px;
+.custom-table {
+    height: 300px;
+    overflow: auto;
+    table {
+        box-shadow: none;
+        margin: 0 0 20px;
+    }
+}
+.mat-dialog-content {
+    min-height: 55vh;
 }

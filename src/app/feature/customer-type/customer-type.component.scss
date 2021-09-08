@@ -1,3 +1,5 @@
+@import "../../../assets/scss/variables.scss";
+
 .customerType {
     .typeOfCustomer {
         padding: 20px 0;
@@ -7,18 +9,14 @@
         ::ng-deep .mat-button-toggle-label-content {
             padding: 0 30px;
         }
-        ::ng-deep .mat-button-toggle-checked {
-            background-color: #007bb2;
-            color: #fff;
-        }
         .toggleButton {
             display: flex;
             align-items: center;
             ::ng-deep .mat-slide-toggle-thumb {
-                background-color: #007bb2;
+                background-color: $primary-color;
             }
             ::ng-deep .mat-slide-toggle-bar {
-                background-color: #007bb261;
+                background-color: $primary-color-100;
             }
             span {
                 padding: 0 10px 0 0;

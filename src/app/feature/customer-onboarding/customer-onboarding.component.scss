@@ -1,3 +1,4 @@
+@import "../../../assets/scss/variables.scss";
 .mat-stepper-horizontal {
     margin-top: 8px;
     ::ng-deep .mat-horizontal-stepper-header-container {
@@ -18,14 +19,14 @@
                 background-color: #e3e3e3;
                 color: #000;
                 &.mat-step-icon-selected {
-                    background-color: #007bb2 !important;
+                    background-color: $primary-color !important;
                     color: #fff;
                 }
             }
             .mat-step-label {
                 &.mat-step-label-selected {
                     .mat-step-text-label {
-                        color: #007bb2 !important;
+                        color: $primary-color !important;
                         img {
                             &.blue {
                                 display: block;

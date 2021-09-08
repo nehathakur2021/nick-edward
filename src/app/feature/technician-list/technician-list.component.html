@@ -18,95 +18,101 @@
     <mat-card-content>
         <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
             <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                    <ng-container matColumnDef="time">
-                        <th mat-header-cell *matHeaderCellDef> Time </th>
-                        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
-                    </ng-container>
+                <div class="custom-table">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="time">
+                            <th mat-header-cell *matHeaderCellDef> Time </th>
+                            <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                        </ng-container>
 
-                    <ng-container matColumnDef="schedule">
-                        <th mat-header-cell *matHeaderCellDef> Schedule </th>
-                        <td mat-cell *matCellDef="let element">
-                            <button mat-flat-button color="primary" [matMenuTriggerFor]="one">
-                                <p>Steve Smith</p>
-                                <p>9:00 AM - 12:00 PM</p>
-                            </button>
-                            <mat-menu #one="matMenu" class="calendarMenu">
-                                <div class="dFlex">
-                                    <p class="title">Order ID :</p>
-                                    <p class="value"><a href="javascript:void(0)" routerLink="/appoinment-detail">#55452</a></p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Type :</p>
-                                    <p class="value">Retail</p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Customer Name :</p>
-                                    <p class="value"><a href="#">Carol Liam</a></p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Total Time :</p>
-                                    <p class="value">3 Hours</p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Helpers :</p>
-                                    <p class="value">Steve, Carol, Liam</p>
-                                </div>
-                                <div class="dFlex desc">
-                                    <p class="title">Address :</p>
-                                    <p class="value">1108 23rd Ave Seattle, Washington, USA</p>
-                                </div>
-                                <div class="dFlex desc">
-                                    <p class="title">Short Description :</p>
-                                    <p class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                                        asperiores
-                                        debitis obcaecati minus rerum repudiandae.</p>
-                                </div>
-                            </mat-menu>
-                            <button mat-flat-button class="grayBtn" [matMenuTriggerFor]="two">
-                                <p>Jane Doe</p>
-                                <p>10:00 AM - 1:00 PM</p>
-                            </button>
-                            <mat-menu #two="matMenu" class="calendarMenu">
-                                <div class="dFlex">
-                                    <p class="title">Order ID :</p>
-                                    <p class="value"><a href="javascript:void(0)" routerLink="/appoinment-detail">#55452</a></p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Type :</p>
-                                    <p class="value">Resdential</p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Customer Name :</p>
-                                    <p class="value"><a href="#">Jones William</a></p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Total Time :</p>
-                                    <p class="value">3 Hours</p>
-                                </div>
-                                <div class="dFlex">
-                                    <p class="title">Helpers :</p>
-                                    <p class="value">Steve, Carol, Liam</p>
-                                </div>
-                                <div class="dFlex desc">
-                                    <p class="title">Address :</p>
-                                    <p class="value">1108 23rd Ave Seattle, Washington, USA</p>
-                                </div>
-                                <div class="dFlex desc">
-                                    <p class="title">Short Description :</p>
-                                    <p class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                                        asperiores
-                                        debitis obcaecati minus rerum repudiandae.</p>
-                                </div>
-                            </mat-menu>
-                        </td>
-                    </ng-container>
+                        <ng-container matColumnDef="schedule">
+                            <th mat-header-cell *matHeaderCellDef> Schedule </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button mat-flat-button color="primary" [matMenuTriggerFor]="one">
+                                    <p>Steve Smith</p>
+                                    <p>9:00 AM - 12:00 PM</p>
+                                </button>
+                                <mat-menu #one="matMenu" class="calendarMenu">
+                                    <div class="dFlex">
+                                        <p class="title">Order ID :</p>
+                                        <p class="value"><a href="javascript:void(0)"
+                                                routerLink="/appoinment-detail">#55452</a></p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Type :</p>
+                                        <p class="value">Retail</p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Customer Name :</p>
+                                        <p class="value"><a href="#">Carol Liam</a></p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Total Time :</p>
+                                        <p class="value">3 Hours</p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Helpers :</p>
+                                        <p class="value">Steve, Carol, Liam</p>
+                                    </div>
+                                    <div class="dFlex desc">
+                                        <p class="title">Address :</p>
+                                        <p class="value">1108 23rd Ave Seattle, Washington, USA</p>
+                                    </div>
+                                    <div class="dFlex desc">
+                                        <p class="title">Short Description :</p>
+                                        <p class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Eveniet
+                                            asperiores
+                                            debitis obcaecati minus rerum repudiandae.</p>
+                                    </div>
+                                </mat-menu>
+                                <button mat-flat-button class="grayBtn" [matMenuTriggerFor]="two">
+                                    <p>Jane Doe</p>
+                                    <p>10:00 AM - 1:00 PM</p>
+                                </button>
+                                <mat-menu #two="matMenu" class="calendarMenu">
+                                    <div class="dFlex">
+                                        <p class="title">Order ID :</p>
+                                        <p class="value"><a href="javascript:void(0)"
+                                                routerLink="/appoinment-detail">#55452</a></p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Type :</p>
+                                        <p class="value">Resdential</p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Customer Name :</p>
+                                        <p class="value"><a href="#">Jones William</a></p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Total Time :</p>
+                                        <p class="value">3 Hours</p>
+                                    </div>
+                                    <div class="dFlex">
+                                        <p class="title">Helpers :</p>
+                                        <p class="value">Steve, Carol, Liam</p>
+                                    </div>
+                                    <div class="dFlex desc">
+                                        <p class="title">Address :</p>
+                                        <p class="value">1108 23rd Ave Seattle, Washington, USA</p>
+                                    </div>
+                                    <div class="dFlex desc">
+                                        <p class="title">Short Description :</p>
+                                        <p class="value">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Eveniet
+                                            asperiores
+                                            debitis obcaecati minus rerum repudiandae.</p>
+                                    </div>
+                                </mat-menu>
+                            </td>
+                        </ng-container>
 
 
 
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
             </div>
             <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                 <mat-form-field class="example-full-width" appearance="outline">
@@ -125,9 +131,14 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Choose Reason</mat-label>
                     <mat-select [formControl]="technician">
-                        <mat-option *ngFor="let technician of technicianList" [value]="technician">{{technician}}</mat-option>
+                        <mat-option *ngFor="let technician of technicianList" [value]="technician">{{technician}}
+                        </mat-option>
                     </mat-select>
                 </mat-form-field>
+            </div>
+            <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%"
+                fxLayoutAlign="end start">
+                <button mat-flat-button color="primary">Save</button>
             </div>
 
         </div>

@@ -1,3 +1,4 @@
+@import "../../../../assets/scss/variables.scss";
 .logIn {
     display: flex;
     flex-direction: row;
@@ -57,7 +58,7 @@
                         justify-content: space-between;
                         align-items: center;
                         a {
-                            color: #007bb2;
+                            color: $primary-color;
                             text-decoration: none;
                             font-family: var(--font-family-poppinsbold);
                         }

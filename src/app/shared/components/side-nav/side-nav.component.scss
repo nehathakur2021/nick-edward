@@ -1,3 +1,4 @@
+@import "../../../../assets/scss/variables.scss";
 .aside {
   width: 250px;
   z-index: 1;
@@ -40,7 +41,7 @@
             cursor: default;
             font-size: 14px;
             text-transform: capitalize;
-            color: #007bb2;
+            color: $primary-color;
             display: block;
             text-decoration: none;
             cursor: pointer;
@@ -51,26 +52,26 @@
               font-size: 1.05rem;
               line-height: 1.40625rem;
               vertical-align: middle;
-              color: #007bb2;
+              color: $primary-color;
               transition: all 0.4s;
             }
           }
           &.active {
             a {
               background-color: #f0f7fa;
-              color: #007bb2 !important;
+              color: $primary-color !important;
               i {
-                color: #007bb2 !important;
+                color: $primary-color !important;
               }
             }
           }
           &:hover {
             a {
               background-color: #f0f7fa;
-              color: #007bb2 !important;
+              color: $primary-color !important;
 
               i {
-                color: #007bb2 !important;
+                color: $primary-color !important;
               }
             }
           }

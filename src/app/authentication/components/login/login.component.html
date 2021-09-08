@@ -31,7 +31,7 @@
 
                         <div class="rightCenter mt-20">
                             <a href="javascript:void(0)">Forgot Password</a>
-                            <button mat-button class="btn commonBtn" [matMenuTriggerFor]="menu">Log In</button>
+                            <button mat-flat-button color="primary" class="btn commonBtn" [matMenuTriggerFor]="menu">Log In</button>
                             <mat-menu #menu="matMenu">
                                 <button (click)='redirectToHome("admin")' mat-menu-item routerLink="customer-onboarding">As Admin</button>
                                 <button (click)='redirectToHome("users")' mat-menu-item routerLink="users">As Employee</button>
