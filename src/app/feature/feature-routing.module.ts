@@ -9,8 +9,13 @@ import { UsersComponent } from './users/users.component';
 import { TechnicianComponent } from './technician/technician.component';
 import { TechnicianListComponent } from './technician-list/technician-list.component';
 import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
+<<<<<<< Updated upstream
 import { ProfileComponent } from './profile/profile.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+=======
+import { ManageCategoryComponent } from './manage-category/manage-category.component';
+import { NotificationComponent } from './notification/notification.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {
@@ -46,10 +51,15 @@ const routes: Routes = [
       component:AppointmentDetailComponent
      },
      {
+      path:'manage-category',
+      component:ManageCategoryComponent
+     },
+     {
       path:'jobs',
       component:JobsComponent
      },
      {
+<<<<<<< Updated upstream
       path:'profile',
       component:ProfileComponent
      },
@@ -58,6 +68,11 @@ const routes: Routes = [
       component:ScheduleComponent
      },
 
+=======
+      path:'notification',
+      component:NotificationComponent
+     }
+>>>>>>> Stashed changes
     ]
 
   }

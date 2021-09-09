@@ -92,9 +92,16 @@
                                 <input matInput placeholder="Zip Code" />
                             </mat-form-field>
                         </div>
+                        <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                            <mat-checkbox class="checkBox" color="primary">Update Existing Store</mat-checkbox>
+                        </div>
+                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                            <mat-checkbox class="checkBox" color="primary">OSC / Estimate</mat-checkbox>
+                        </div>
                     </div>
                 </div>
-                <mat-checkbox class="checkBox" color="primary">Update Existing Store</mat-checkbox>
+                
+              
             </div>
 
             <div class="retail" *ngIf="checkCustomer === 'Residential'">
@@ -146,6 +153,9 @@
                             <mat-label>Zip Code</mat-label>
                             <input matInput placeholder="Zip Code" />
                         </mat-form-field>
+                    </div>
+                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                        <mat-checkbox class="checkBox" color="primary">OSC</mat-checkbox>
                     </div>
                 </div>
             </div>

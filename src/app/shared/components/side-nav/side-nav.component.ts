@@ -79,6 +79,10 @@ export class SideNavComponent implements OnInit {
     else if (route === "technician") {
       this.showTechnicianMenu = true
       this.router.navigateByUrl("/schedule");
+    }
+    else if(route==="category"){
+      this.showAdminMenu=true
+      this.router.navigateByUrl("/manage-category");
 
     }
   }

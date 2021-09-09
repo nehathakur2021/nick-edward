@@ -22,6 +22,11 @@
       background-color: #fff !important;
       padding-left: 0 !important;
     }
+    &.notificationDropdown {
+      .notifications {
+        color: $primary-color;
+      }
+    }
     button {
       display: flex;
       align-items: center;
@@ -40,15 +45,6 @@
       }
       .name {
         font-family: var(--font-family-poppinsregular);
-      }
-      .notifications {
-        color: $primary-color;
-      }
-      .dropdownMenus {
-        a {
-          color: $primary-color;
-          text-align: right;
-        }
       }
     }
   }
@@ -78,6 +74,44 @@
       &:hover {
         color: #2c3034;
         background-color: #f8f9fa;
+      }
+    }
+  }
+}
+
+::ng-deep #mat-menu-panel-0 {
+  min-width: 300px;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #f9f9f9;
+    transform: rotate(45deg);
+  }
+  .mat-menu-content {
+    padding: 0;
+    p {
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+    button.mat-menu-item {
+      border-bottom: 1px solid #e3e3e3;
+      &:last-child {
+        border: none;
+      }
+      &.viewAll {
+        background-color: $primary-color;
+        text-align: center;
+        color: #fff;
+        height: 40px;
+        line-height: 40px;
       }
     }
   }

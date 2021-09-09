@@ -1,0 +1,37 @@
+<mat-card>
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-card-title>
+                <span>Categories List</span>
+            </mat-card-title>
+        </div>
+        <!-- <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Category/Subcategory</mat-label>
+                <input matInput placeholder="Search by Category/Subcategory">
+            </mat-form-field>
+        </div> -->
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="end start">
+            <button mat-flat-button color="primary" (click)="openDialog()"><span class="material-icons">add</span>
+                New Category</button>
+        </div>
+    </div>
+
+    <mat-card-content>
+        <mat-tree [dataSource]="dataSource1" [treeControl]="treeControl">
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                <button mat-icon-button disabled></button>
+                {{node.name}}
+            </mat-tree-node>
+            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+                <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                </button>
+                {{node.name}}
+            </mat-tree-node>
+        </mat-tree>
+    </mat-card-content>
+</mat-card>
+

@@ -8,23 +8,27 @@
           </span>
         </a>
       </div>
-      <div class="dropdown">
+      <!-- <div class="dropdown">
         <mat-form-field class="example-full-width" appearance="fill">
           <input matInput placeholder="Search here...">
         </mat-form-field>
-      </div>
+      </div> -->
     </div>
     <div class="d-flex">
-      <div class="dropdown">
+      <div class="dropdown notificationDropdown">
         <button mat-button [matMenuTriggerFor]="menunotifications">
           <span class="material-icons notifications">
             notifications
           </span>
         </button>
-        <mat-menu #menunotifications="matMenu" class="dropdownMenus">
-          <button mat-menu-item> next job in 2hrs</button>
-          <button mat-menu-item>next job in 1hrs</button>
-          <a href="#">view all</a>
+        <mat-menu #menunotifications="matMenu">
+            <p>notifications</p>
+            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum.</button>
+            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
+            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
+            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
+            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
+            <button mat-menu-item class="viewAll" routerLink="/notification">View All</button>
         </mat-menu>
       </div>
       <div class="dropdown">

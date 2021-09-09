@@ -1,0 +1,43 @@
+.mat-card-title {
+    margin-bottom: 40px;
+}
+
+.notificationItem {
+    border-bottom: 1px solid #e3e3e3;
+    padding: 20px 0;
+&:last-of-type {
+        border: none;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 10px;
+        .tag {
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 3px;
+            &.reminder {
+                background-color: #029933;
+            }
+            &.schedule {
+                background-color: #007bb2;
+            }
+            &.message {
+                background-color: #fd9901;
+            }
+        }
+        .time {
+            display: flex;
+            align-items: center;
+            color: #999;
+            .material-icons {
+                font-size: 20px;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+    .content {
+        color: #777;
+    }
+}

@@ -18,6 +18,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 
 @NgModule({
@@ -40,7 +44,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTabsModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTreeModule,
+    MatIconModule
 
   ],
   declarations: [],
@@ -63,7 +69,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTabsModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTreeModule,
+    MatIconModule
 
   ],
 })

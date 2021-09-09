@@ -1,0 +1,10 @@
+::ng-deep .mat-tree {
+    .cdk-tree-node {
+        border-bottom: 1px solid #e3e3e3;
+        .mat-icon-button {
+            .mat-icon {
+                line-height: 19px;
+            }
+        }
+    }
+}
