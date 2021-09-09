@@ -22,11 +22,7 @@
       background-color: #fff !important;
       padding-left: 0 !important;
     }
-    &.notificationDropdown {
-      .notifications {
-        color: $primary-color;
-      }
-    }
+      
     button {
       display: flex;
       align-items: center;
@@ -42,6 +38,9 @@
         background-color: #f6f6f6;
         padding: 3px;
         border-radius: 50%;
+      }
+      .notifications {
+        color: $primary-color;
       }
       .name {
         font-family: var(--font-family-poppinsregular);
@@ -79,8 +78,8 @@
   }
 }
 
-::ng-deep #mat-menu-panel-0 {
-  min-width: 300px;
+::ng-deep .mat-menu-panel.notificationDropdown{
+  min-width: 300px!important;
   &::before {
     content: "";
     position: absolute;
@@ -92,7 +91,7 @@
     transform: rotate(45deg);
   }
   .mat-menu-content {
-    padding: 0;
+    padding: 0!important;
     p {
       padding: 10px;
       text-align: center;
@@ -103,6 +102,10 @@
     }
     button.mat-menu-item {
       border-bottom: 1px solid #e3e3e3;
+      position: relative;
+      line-height: normal;
+      height: auto;
+      padding: 10px 15px 25px;
       &:last-child {
         border: none;
       }
@@ -112,6 +115,14 @@
         color: #fff;
         height: 40px;
         line-height: 40px;
+        padding: 0!important;
+      }
+      span.time {
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+        font-size: 11px;
+        color: #999;
       }
     }
   }

@@ -15,20 +15,27 @@
       </div> -->
     </div>
     <div class="d-flex">
-      <div class="dropdown notificationDropdown">
+      <div class="dropdown ">
         <button mat-button [matMenuTriggerFor]="menunotifications">
           <span class="material-icons notifications">
             notifications
           </span>
         </button>
-        <mat-menu #menunotifications="matMenu">
-            <p>notifications</p>
-            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum.</button>
-            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
-            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
-            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
-            <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum</button>
-            <button mat-menu-item class="viewAll" routerLink="/notification">View All</button>
+        <mat-menu #menunotifications="matMenu" class="notificationDropdown">
+          <p>notifications</p>
+          <button mat-menu-item>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque laborum.
+            <span class="time">September 8, 2021 at 9:30 AM</span>
+          </button>
+          <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque
+            laborum<span class="time">September 8, 2021 at 9:30 AM</span></button>
+          <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque
+            laborum<span class="time">September 8, 2021 at 9:30 AM</span></button>
+          <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque
+            laborum<span class="time">September 8, 2021 at 9:30 AM</span></button>
+          <button mat-menu-item>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, neque
+            laborum<span class="time">September 8, 2021 at 9:30 AM</span></button>
+          <button mat-menu-item class="viewAll" routerLink="/notification">View All</button>
         </mat-menu>
       </div>
       <div class="dropdown">
