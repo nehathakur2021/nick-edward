@@ -37,6 +37,7 @@ export class CustomerTypeComponent implements OnInit {
   customerType = new FormControl();
   setCustomerType = 'Retail';
   constructor(private customerService: CustomerService) { }
+  checkCustomer = '';
 
   ngOnInit(): void {
    debugger;
@@ -55,7 +56,6 @@ export class CustomerTypeComponent implements OnInit {
       this.customerService.setCustomerType(this.setCustomerType);
     }
   }
-
 }
 
 

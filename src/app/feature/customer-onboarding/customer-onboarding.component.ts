@@ -26,8 +26,7 @@ export class CustomerOnboardingComponent implements OnInit {
 
 
   ngOnInit() {
-    debugger;
-    this.checkCustomer = this.customerService.getCustomerType();
+      this.checkCustomer = this.customerService.getCustomerType();
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });

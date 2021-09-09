@@ -16,13 +16,19 @@
                 </div>
             </div>
         </div>
+
         <div class="searchCustomer">
             <div fxLayout="row wrap" fxLayoutGap="15px grid">
                 <div fxFlex="100%">
+                    
                     <mat-form-field appearance="legacy" searchCustomer>
-                        <mat-label>Search Customer</mat-label>
-                        <input matInput placeholder="Search by Name, Email, Phone no." [(ngModel)]="searchText ">
+                        <mat-label>Search Customer, Retail and Store</mat-label>
+                        <!-- <div *ngIf="checkCustomer === 'Retail'"> -->
+                            <input  matInput placeholder="Retail Group Name, Store Name and Phone Number"
+                                [(ngModel)]="searchText ">
+                        
                     </mat-form-field>
+                
                 </div>
                 <div fxFlex="100%">
                     <div class="custom-table">
@@ -30,7 +36,7 @@
                             <ng-container matColumnDef="position">
                                 <th mat-header-cell *matHeaderCellDef> </th>
                                 <td mat-cell *matCellDef="let element">
-                                        <mat-radio-button color="primary" value="element"></mat-radio-button>
+                                    <mat-radio-button color="primary" value="element"></mat-radio-button>
                                 </td>
                             </ng-container>
 

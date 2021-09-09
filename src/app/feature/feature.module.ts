@@ -17,14 +17,11 @@ import { TechnicianListComponent } from './technician-list/technician-list.compo
 import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
 import { MatTableFilterModule } from 'mat-table-filter';
 import { FilterPipePipe } from './filter-pipe.pipe';
-<<<<<<< Updated upstream
 import { ProfileComponent } from './profile/profile.component';
 import { ScheduleComponent } from './schedule/schedule.component';
-=======
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
 import { CategoryModalComponent } from './manage-category/category-modal/category-modal.component';
 import { NotificationComponent } from './notification/notification.component';
->>>>>>> Stashed changes
 
 
 @NgModule({
@@ -55,14 +52,11 @@ import { NotificationComponent } from './notification/notification.component';
     TechnicianListComponent,
     AppointmentDetailComponent,
     FilterPipePipe,
-<<<<<<< Updated upstream
     ProfileComponent,
-    ScheduleComponent
-=======
+    ScheduleComponent,
     ManageCategoryComponent,
     CategoryModalComponent,
     NotificationComponent
->>>>>>> Stashed changes
 
    ]
 
