@@ -1,14 +1,31 @@
+@import "../../../assets/scss/variables.scss";
 .profile {
-    height: calc(100vh - 124px);
+    // height: calc(100vh - 124px);
+    .profileImg {
+        height: 150px;
+        width: 150px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid #e3e3e3;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+    }
     .userInformation {
-        padding: 0 !important;
-        margin: 10px 20px 10px 10px;
+        padding-bottom: 35px !important;
         .personalInfo {
-            padding: 20px 30px !important;
+            h1 {
+                margin: 0;
+                color: $primary-color;
+            }
             p {
+                font-size: 18px;
+                margin: 0;
                 .profileInfo {
                     color: #9b9999;
-                    padding-right: 10px;
                 }
             }
         }
