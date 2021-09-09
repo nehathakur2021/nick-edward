@@ -44,6 +44,12 @@
       .notifications {
         color: $primary-color;
       }
+      .dropdownMenus {
+        a {
+          color: $primary-color;
+          text-align: right;
+        }
+      }
     }
   }
 }

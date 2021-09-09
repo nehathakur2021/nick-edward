@@ -21,9 +21,10 @@
             notifications
           </span>
         </button>
-        <mat-menu #menunotifications="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
+        <mat-menu #menunotifications="matMenu" class="dropdownMenus">
+          <button mat-menu-item> next job in 2hrs</button>
+          <button mat-menu-item>next job in 1hrs</button>
+          <a href="#">view all</a>
         </mat-menu>
       </div>
       <div class="dropdown">
@@ -32,7 +33,7 @@
           <span class="name ml-1 font-size-15 ">Marcus</span>
         </button>
         <mat-menu #menu="matMenu" class="profileMenu">
-          <a href="#" class="dropdown-item">
+          <a class="dropdown-item" routerLink="profile">
             <span class="material-icons icon"> account_circle </span>
             <span class="align-middle">Profile</span>
           </a>

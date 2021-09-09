@@ -16,8 +16,12 @@ export class LoginComponent implements OnInit {
       this.route.navigateByUrl("/users?entity=admin");
     }
 
+    else if(route==="users") {
+      this.route.navigateByUrl("/customer-type?entity=users");
+    }
+
     else {
-      this.route.navigateByUrl("/customer-type?entity=users")
+      this.route.navigateByUrl("/schedule?entity=schedule");
     }
   }
 }

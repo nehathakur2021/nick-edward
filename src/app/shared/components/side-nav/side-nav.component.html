@@ -12,12 +12,12 @@
             <span>Dashboard</span>
           </a>
         </li>
-        <li *ngIf='showUsersMenu'   (click)="handleClose('onboard')"><a>
+        <li *ngIf='showUsersMenu' (click)="handleClose('onboard')"><a>
             <i class="material-icons"> support_agent</i>
             <span>Customer Onboarding</span>
           </a>
         </li>
-        <li  (click)="handleClose('users')" *ngIf='showAdminMenu'><a>
+        <li (click)="handleClose('users')" *ngIf='showAdminMenu'><a>
             <i class="material-icons"> group_add</i>
             <span>Users</span>
           </a>
@@ -30,6 +30,11 @@
         <li (click)="handleClose('list')" *ngIf='showAdminMenu'><a>
             <i class="material-icons">engineering</i>
             <span>Technician List</span>
+          </a>
+        </li>
+        <li (click)="handleClose('technician')" *ngIf='showTechnicianMenu'><a>
+            <i class="material-icons">engineering</i>
+            <span>Schedule</span>
           </a>
         </li>
       </ul>

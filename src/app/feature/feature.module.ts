@@ -17,6 +17,8 @@ import { TechnicianListComponent } from './technician-list/technician-list.compo
 import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
 import { MatTableFilterModule } from 'mat-table-filter';
 import { FilterPipePipe } from './filter-pipe.pipe';
+import { ProfileComponent } from './profile/profile.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { FilterPipePipe } from './filter-pipe.pipe';
     TechnicianComponent,
     TechnicianListComponent,
     AppointmentDetailComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    ProfileComponent,
+    ScheduleComponent
 
    ]
 

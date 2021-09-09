@@ -1,7 +1,7 @@
-import { Component, OnInit , Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
-import {filter} from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,9 +10,11 @@ import {filter} from 'rxjs/operators';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor( private renderer: Renderer2,private route: ActivatedRoute,private router:Router) { }
-  showAdminMenu:boolean=false;
-  showUsersMenu:boolean=false;
+  constructor(private renderer: Renderer2, private route: ActivatedRoute, private router: Router) { }
+  showAdminMenu: boolean = false;
+  showUsersMenu: boolean = false;
+  showTechnicianMenu: boolean = false;
+
   ngOnInit() {
     // this.router.events.subscribe(
     //   (event: any) => {
@@ -35,40 +37,48 @@ export class SideNavComponent implements OnInit {
     // );
 
     this.route.queryParams
-    .subscribe(params => {
-      const entity=params.entity;
-      if(entity==="admin"){
-        this.showAdminMenu=true;
+      .subscribe(params => {
+        const entity = params.entity;
+        if (entity === "admin") {
+          this.showAdminMenu = true;
+        }
+        else if (entity === "users") {
+          this.showUsersMenu = true;
+        }
+        else if (entity === "schedule") {
+          this.showTechnicianMenu = true;
+        }
       }
-      else if(entity==="users"){
-        this.showUsersMenu=true;
-      }
-    }
-  );
+      );
 
-  
+
   }
-  handleClose(route:string) {
+  handleClose(route: string) {
     this.renderer.removeClass(document.body, 'show');
     this.isMenuOpen = false;
 
-    if(route==="onboard"){
-      this.showUsersMenu=true;
+    if (route === "onboard") {
+      this.showUsersMenu = true;
       this.router.navigateByUrl("/customer-type");
     }
-    else if(route==="users"){
-      this.showAdminMenu=true;
+    else if (route === "users") {
+      this.showAdminMenu = true;
       this.router.navigateByUrl("/users");
 
     }
-    else if(route==="tech"){
-      this.showUsersMenu=true;
+    else if (route === "tech") {
+      this.showUsersMenu = true;
       this.router.navigateByUrl("/technician");
 
     }
-    else if(route==="list"){
-      this.showAdminMenu=true
+    else if (route === "list") {
+      this.showAdminMenu = true
       this.router.navigateByUrl("/technician-list");
+
+    }
+    else if (route === "technician") {
+      this.showTechnicianMenu = true
+      this.router.navigateByUrl("/schedule");
 
     }
   }

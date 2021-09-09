@@ -9,6 +9,8 @@ import { UsersComponent } from './users/users.component';
 import { TechnicianComponent } from './technician/technician.component';
 import { TechnicianListComponent } from './technician-list/technician-list.component';
 import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   {
@@ -46,7 +48,16 @@ const routes: Routes = [
      {
       path:'jobs',
       component:JobsComponent
-     }
+     },
+     {
+      path:'profile',
+      component:ProfileComponent
+     },
+     {
+      path:'schedule',
+      component:ScheduleComponent
+     },
+
     ]
 
   }

@@ -1,0 +1,16 @@
+.profile {
+    height: calc(100vh - 124px);
+    .userInformation {
+        padding: 0 !important;
+        margin: 10px 20px 10px 10px;
+        .personalInfo {
+            padding: 20px 30px !important;
+            p {
+                .profileInfo {
+                    color: #9b9999;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
