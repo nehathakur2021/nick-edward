@@ -40,8 +40,8 @@ h5 {
   display: flex !important;
 }
 
-.mat-typography {
-  h2 {
+.ng-star-inserted {
+  >h2 {
     border-bottom: 1px solid #e3e3e3;
     padding: 0 0 10px;
   }
@@ -73,7 +73,7 @@ table {
   }
 }
 
- .mat-flat-button.mat-button-base.mat-primary {
+.mat-flat-button.mat-button-base.mat-primary {
   .material-icons {
     position: relative;
     top: -3px;

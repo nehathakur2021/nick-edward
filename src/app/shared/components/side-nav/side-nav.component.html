@@ -32,6 +32,11 @@
             <span>Technician List</span>
           </a>
         </li>
+        <li (click)="handleClose('visit-module')" *ngIf='showAdminMenu'><a>
+            <i class="material-icons">view_module</i>
+            <span>Job Visit Module</span>
+          </a>
+        </li>
         <li (click)="handleClose('technician')" *ngIf='showTechnicianMenu'><a>
             <i class="material-icons">schedule</i>
             <span>Schedule</span>

@@ -23,6 +23,8 @@ import { ManageCategoryComponent } from './manage-category/manage-category.compo
 import { CategoryModalComponent } from './manage-category/category-modal/category-modal.component';
 import { NotificationComponent } from './notification/notification.component';
 import { JobVisitComponent } from './job-visit/job-visit.component';
+import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.component';
+import { JobModalComponent } from './job-visit-module/job-modal/job-modal.component';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { JobVisitComponent } from './job-visit/job-visit.component';
     ManageCategoryComponent,
     CategoryModalComponent,
     NotificationComponent,
-    JobVisitComponent
+    JobVisitComponent,
+    JobVisitModuleComponent,
+    JobModalComponent
 
    ]
 

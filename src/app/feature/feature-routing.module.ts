@@ -14,6 +14,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
 import { NotificationComponent } from './notification/notification.component';
 import { JobVisitComponent } from './job-visit/job-visit.component';
+import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path: 'job-visit',
         component: JobVisitComponent
+      },
+      {
+        path: 'job-visit-module',
+        component: JobVisitModuleComponent
       }
     ]
 
