@@ -35,16 +35,24 @@
                     <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
                 </ng-container>
                 <ng-container matColumnDef="roletype">
-                    <th mat-header-cell *matHeaderCellDef> Role Type 
+                    <th mat-header-cell *matHeaderCellDef> Role Type
                         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                        <mat-icon>filter_alt</mat-icon>
-                      </button>
-                      <mat-menu #menu="matMenu">
-                        <p mat-item><mat-checkbox color="primary" >Employee</mat-checkbox></p>
-                        <p mat-item><mat-checkbox color="primary" >Technician</mat-checkbox></p>
-                        <p mat-item><mat-checkbox color="primary" >Admin</mat-checkbox></p>
-                        <p mat-item><mat-checkbox color="primary" >Helper</mat-checkbox></p>
-                      </mat-menu>
+                            <mat-icon>filter_alt</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <p mat-item>
+                                <mat-checkbox color="primary">Employee</mat-checkbox>
+                            </p>
+                            <p mat-item>
+                                <mat-checkbox color="primary">Technician</mat-checkbox>
+                            </p>
+                            <p mat-item>
+                                <mat-checkbox color="primary">Admin</mat-checkbox>
+                            </p>
+                            <p mat-item>
+                                <mat-checkbox color="primary">Helper</mat-checkbox>
+                            </p>
+                        </mat-menu>
 
                     </th>
                     <td mat-cell *matCellDef="let element"> {{element.roletype}} </td>
@@ -66,5 +74,6 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
+
     </mat-card-content>
 </mat-card>

@@ -95,13 +95,13 @@
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                             <mat-checkbox class="checkBox" color="primary">Update Existing Store</mat-checkbox>
                         </div>
-                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                        <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                             <mat-checkbox class="checkBox" color="primary">OSC / Estimate</mat-checkbox>
                         </div>
                     </div>
                 </div>
-                
-              
+
+
             </div>
 
             <div class="retail" *ngIf="checkCustomer === 'Residential'">
@@ -175,16 +175,28 @@
             </ng-template>
             <div class="retail" *ngIf="checkCustomer === 'Retail'">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Work Order Number</mat-label>
                             <input matInput placeholder="Work Order Number" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Work Summary</mat-label>
                             <input matInput placeholder="Work Summary" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>NTE / DNE</mat-label>
+                            <input matInput placeholder="195" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Full Work Description (Form Work Order Paperwork)</mat-label>
+                            <textarea matInput placeholder="Mount TV to Wall in break room"></textarea>
                         </mat-form-field>
                     </div>
                 </div>
