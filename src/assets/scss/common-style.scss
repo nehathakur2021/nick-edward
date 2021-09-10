@@ -73,7 +73,7 @@ table {
   }
 }
 
-.mat-button-base.mat-primary {
+ .mat-flat-button.mat-button-base.mat-primary {
   .material-icons {
     position: relative;
     top: -3px;
@@ -88,8 +88,6 @@ table {
       }
     }
   }
-
-
 }
 /*-- Header --*/
 .pageTopbar {
@@ -144,4 +142,10 @@ tr:nth-child(even) {
 }
 tr:nth-child(odd) {
   background: #fff;
+}
+mat-radio-button {
+  padding-right: 10px;
+}
+mat-checkbox {
+  padding-right: 10px;
 }

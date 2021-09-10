@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
 import { NotificationComponent } from './notification/notification.component';
+import { JobVisitComponent } from './job-visit/job-visit.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
       {
         path: 'notification',
         component: NotificationComponent
+      },
+      {
+        path: 'job-visit',
+        component: JobVisitComponent
       }
     ]
 

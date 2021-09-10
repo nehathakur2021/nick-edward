@@ -22,6 +22,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
 import { CategoryModalComponent } from './manage-category/category-modal/category-modal.component';
 import { NotificationComponent } from './notification/notification.component';
+import { JobVisitComponent } from './job-visit/job-visit.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { NotificationComponent } from './notification/notification.component';
     ScheduleComponent,
     ManageCategoryComponent,
     CategoryModalComponent,
-    NotificationComponent
+    NotificationComponent,
+    JobVisitComponent
 
    ]
 
