@@ -3,6 +3,25 @@
     .mat-card-title {
         margin: 0;
     }
+    .curentDate{
+        display: flex;
+        align-items: center;
+        .mat-icon {
+            font-size: 32px;
+            height: 32px;
+            width: 32px;
+            cursor: pointer;
+            &:hover{
+                color: $primary-color;
+            }
+        }
+        .date{
+            border: 1px solid #ccc;
+            padding: 2px 15px;
+            margin: 0 10px;
+            border-radius: 3px;
+        }
+    }
     table {
         th,
         td {

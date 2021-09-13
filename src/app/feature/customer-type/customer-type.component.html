@@ -22,11 +22,13 @@
                 <div fxFlex="100%">
                     <mat-form-field appearance="legacy" searchCustomer *ngIf="setCustomerType === 'Retail'">
                         <mat-label>Search Retail and Store</mat-label>
-                            <input  matInput placeholder="Search by Retail Group and Store Name">
+                        <input matInput (keyup)="applyFilter($event)"
+                            placeholder="Search by Retail Group and Store Name">
                     </mat-form-field>
                     <mat-form-field appearance="legacy" searchCustomer *ngIf="setCustomerType === 'Residential'">
                         <mat-label>Search Customer</mat-label>
-                            <input  matInput placeholder="Search by Name, Email and Phone Number">
+                        <input matInput (keyup)="applyFilter($event)"
+                            placeholder="Search by Name, Email and Phone Number">
                     </mat-form-field>
                 
                 </div>
@@ -62,12 +64,8 @@
                 <div fxFlex="100%" fxLayoutAlign="end start">
                     <button mat-flat-button color="primary" routerLink="/customer-onboarding" class="btnNext">Add New
                         Customer</button>
-                    <!-- <button mat-flat-button color="primary" routerLink="/customer-onboarding"
-                        class="btnNext">Next</button> -->
                 </div>
             </div>
-
         </div>
-
     </mat-card>
 </div>

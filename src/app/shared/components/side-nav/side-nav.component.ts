@@ -9,11 +9,11 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent implements OnInit {
-
-  constructor(private renderer: Renderer2, private route: ActivatedRoute, private router: Router) { }
   showAdminMenu: boolean = false;
   showUsersMenu: boolean = false;
   showTechnicianMenu: boolean = false;
+  constructor(private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit() {
     // this.router.events.subscribe(
@@ -48,6 +48,9 @@ export class SideNavComponent implements OnInit {
         else if (entity === "schedule") {
           this.showTechnicianMenu = true;
         }
+        else {
+          return
+        }
       }
       );
 
@@ -55,21 +58,19 @@ export class SideNavComponent implements OnInit {
   }
   handleClose(route: string) {
     this.renderer.removeClass(document.body, 'show');
-    this.isMenuOpen = false;
+    this.isMenuOpen = true;
 
     if (route === "onboard") {
-      this.showUsersMenu = true;
+        this.showUsersMenu = true;
       this.router.navigateByUrl("/customer-type");
     }
     else if (route === "users") {
-      this.showAdminMenu = true;
+        this.showAdminMenu = true;
       this.router.navigateByUrl("/users");
-
     }
     else if (route === "tech") {
-      this.showUsersMenu = true;
+        this.showUsersMenu = true;
       this.router.navigateByUrl("/technician");
-
     }
     else if (route === "list") {
       this.showAdminMenu = true
@@ -87,10 +88,12 @@ export class SideNavComponent implements OnInit {
       this.showTechnicianMenu = true
       this.router.navigateByUrl("/job-visit");
     }
-    else if(route==="category"){
-      this.showAdminMenu=true
+    else if (route === "category") {
+      this.showAdminMenu = true
       this.router.navigateByUrl("/manage-category");
 
+    } else {
+      return
     }
   }
   isMenuOpen: boolean = false

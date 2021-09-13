@@ -23,15 +23,6 @@
             </mat-radio-group>
         </div>
         <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-            <!-- <mat-form-field class="example-full-width" appearance="outline"> -->
-            <p><strong> Trip Type</strong></p>
-            <mat-radio-group mat-form-field aria-label="Select an option">
-                <mat-radio-button value="1" color="primary">Same trip</mat-radio-button>
-                <mat-radio-button value="2" color="primary">new trip</mat-radio-button>
-            </mat-radio-group>
-            <!-- </mat-form-field> -->
-        </div>
-        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
             <section class="example-section" [formGroup]="toppings">
                 <p><strong>Materials</strong></p>
                 <mat-checkbox formControlName="pepperoni" color="primary"> From store</mat-checkbox>
@@ -40,6 +31,13 @@
                 <mat-checkbox formControlName="mushroom" color="primary">require disposal photos</mat-checkbox>
             </section>
         </div>
+      <!-- <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <p><strong>Trip Type</strong></p>
+            <mat-radio-group mat-form-field aria-label="Select an option">
+                <mat-radio-button value="1" color="primary">Same trip</mat-radio-button>
+                <mat-radio-button value="2" color="primary">new trip</mat-radio-button>
+            </mat-radio-group>
+        </div> -->
         <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="end end">
             <button mat-flat-button color="primary">Save</button>
         </div>
