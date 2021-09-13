@@ -20,6 +20,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 @NgModule({
   imports: [
@@ -43,7 +45,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatSlideToggleModule,
     MatDialogModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatBadgeModule
 
   ],
   declarations: [],
@@ -68,7 +71,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatSlideToggleModule,
     MatDialogModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatBadgeModule
 
   ],
 })

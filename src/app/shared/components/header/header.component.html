@@ -17,9 +17,7 @@
     <div class="d-flex">
       <div class="dropdown ">
         <button mat-button [matMenuTriggerFor]="menunotifications">
-          <span class="material-icons notifications">
-            notifications
-          </span>
+          <mat-icon class="notifications" matBadge="4" matBadgeColor="primary">notifications</mat-icon>
         </button>
         <mat-menu #menunotifications="matMenu" class="notificationDropdown">
           <p>notifications</p>
