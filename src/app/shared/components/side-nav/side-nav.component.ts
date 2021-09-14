@@ -62,7 +62,7 @@ export class SideNavComponent implements OnInit {
 
     if (route === "onboard") {
         this.showUsersMenu = true;
-      this.router.navigateByUrl("/customer-type");
+      this.router.navigateByUrl("/customer-onboarding");
     }
     else if (route === "users") {
         this.showAdminMenu = true;

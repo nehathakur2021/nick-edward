@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     }
 
     else if(route==="users") {
-      this.route.navigateByUrl("/customer-type?entity=users");
+      this.route.navigateByUrl("/customer-onboarding?entity=users");
     }
 
     else {

@@ -33,7 +33,7 @@
                 
                 </div>
                 <div fxFlex="100%">
-                    <div class="custom-table">
+                    <div class="custom-table"  *ngIf="setCustomerType === 'Retail'">
                         <table mat-table [dataSource]="dataSource " class="mat-elevation-z8" >
                             <ng-container matColumnDef="position">
                                 <th mat-header-cell *matHeaderCellDef> </th>
@@ -55,9 +55,35 @@
                                 <th mat-header-cell *matHeaderCellDef> City </th>
                                 <td mat-cell *matCellDef="let element"> {{element.city}} </td>
                             </ng-container>
-
                             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <div class="custom-table"  *ngIf="setCustomerType === 'Residential'">
+                        <table mat-table [dataSource]="dataSource2 " class="mat-elevation-z8" >
+                            <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef> </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <mat-radio-button color="primary" value="element"></mat-radio-button>
+                                </td>
+                            </ng-container> 
+                                                  
+                            <ng-container matColumnDef="retailNname">
+                                <th mat-header-cell *matHeaderCellDef>Retail Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.retailNname}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="storeNname">
+                                <th mat-header-cell *matHeaderCellDef>Store Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.storeNname}} </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="city">
+                                <th mat-header-cell *matHeaderCellDef> City </th>
+                                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns2; sticky: true"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
                         </table>
                     </div>
                 </div>

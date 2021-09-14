@@ -20,6 +20,8 @@ export class CustomerOnboardingComponent implements OnInit {
   toppingList: string[] = ['John', 'Marcus', 'Robert', 'James', 'Charles'];
   technician = new FormControl();
   technicianList: string[] = ['John', 'Marcus', 'Robert', 'James', 'Charles'];
+  customerType = new FormControl();
+  setCustomerType = 'Retail';
   checkCustomer = '';
   
   constructor(private _formBuilder: FormBuilder, public dialog: MatDialog,private customerService: CustomerService) { }
@@ -33,6 +35,18 @@ export class CustomerOnboardingComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });    
+  }
+  selectedCustomerType(): void {
+    debugger;
+    console.log(this.customerType.value);
+    if (this.customerType.value === true) {
+      this.setCustomerType = 'Residential';
+      this.customerService.setCustomerType(this.setCustomerType);
+    }
+    else {
+      this.setCustomerType = 'Retail';
+      this.customerService.setCustomerType(this.setCustomerType);
+    }
   }
   openDialog() {
     const dialogRef = this.dialog.open(CustomerModalComponent,{maxWidth:'800px',width:"100%"});
