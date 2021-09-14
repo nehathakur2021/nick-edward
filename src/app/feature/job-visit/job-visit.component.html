@@ -1,7 +1,25 @@
 <mat-card>
     <div fxLayout="row wrap" fxLayoutGap="15px grid">
         <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
-            <h1>Job Visit Module</h1>
+            <mat-card-title>Job Visit Module</mat-card-title>
+        </div>
+        <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <h4><b>Signatures from customer</b></h4>
+        </div>
+        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <p><strong> Multi-trip job ?</strong></p>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1" color="primary">Yes</mat-radio-button>
+                <mat-radio-button value="2" color="primary">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <section class="example-section" [formGroup]="toppings">
+                <p><strong>Materials</strong></p>
+                <mat-checkbox formControlName="pepperoni" color="primary"> From Store</mat-checkbox>
+                <mat-checkbox formControlName="extracheese" color="primary">From Truck</mat-checkbox>
+                <mat-checkbox formControlName="mushroom" color="primary">Disposal</mat-checkbox>
+            </section>
         </div>
         <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
             <mat-form-field class="example-full-width" appearance="outline">
@@ -15,22 +33,7 @@
                 <input matInput placeholder="Sign">
             </mat-form-field>
         </div>
-        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-            <p><strong> Multi-trip job ?</strong></p>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1" color="primary">Yes</mat-radio-button>
-                <mat-radio-button value="2" color="primary">No</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-            <section class="example-section" [formGroup]="toppings">
-                <p><strong>Materials</strong></p>
-                <mat-checkbox formControlName="pepperoni" color="primary"> From store</mat-checkbox>
-                <mat-checkbox formControlName="extracheese" color="primary">from truck</mat-checkbox>
-                <mat-checkbox formControlName="mushroom" color="primary">disposal</mat-checkbox>
-                <mat-checkbox formControlName="mushroom" color="primary">require disposal photos</mat-checkbox>
-            </section>
-        </div>
+       
       <!-- <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
             <p><strong>Trip Type</strong></p>
             <mat-radio-group mat-form-field aria-label="Select an option">
