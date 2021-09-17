@@ -96,7 +96,11 @@
 </div>
 <mat-dialog-actions align="end">
     <div class="action">
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="customerType ==='Residential'">Cancel</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="customerType ==='Residential'">Preview Order</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="customerType ==='Residential'">Save/Book</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="customerType ==='Residential'">Save, Send and Book</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="customerType ==='Retail'">Save</button>
+        <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial *ngIf="customerType ==='Retail'">Book</button>
     </div>
 </mat-dialog-actions>

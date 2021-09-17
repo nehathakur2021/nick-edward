@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../../customer.service';
 
 @Component({
   selector: 'app-customer-modal',
@@ -8,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerModalComponent implements OnInit {
   displayedColumns = ['time', 'schedule',];
   dataSource = ELEMENT_DATA;
+  customerType ='Retail';
   
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    
+    debugger;
+    this.customerType = this.customerService.getCustomerType();
   }
 
 }

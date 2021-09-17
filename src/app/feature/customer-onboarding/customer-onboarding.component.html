@@ -22,36 +22,30 @@
             </div>
             <div class="searchCustomer">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
-                    <div fxFlex="20%">
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>Zip Code</mat-label>
-                            <input matInput placeholder="Enter Zip Code" />
-                        </mat-form-field>
-                    </div>
-                    <div fxFlex="80%">
+                    <div fxFlex="40%">
                         <mat-form-field appearance="outline" *ngIf="setCustomerType === 'Retail'">
                             <mat-label>Search Retail and Store</mat-label>
                             <mat-select>
-                                <mat-optgroup label="Retail">
+                                <mat-optgroup label="Insight, 650 Village Trace, (888) 494-6744" class="retailName">
                                     <mat-option value="pokemon">
-                                        Store 1
+                                        H&M, 829 State St Santa Barbara, (888) 979-4469
                                     </mat-option>
                                     <mat-option value="pokemon">
-                                        Store 2
+                                        H&M, 650 Village Trace, (888) 979-4469
                                     </mat-option>
                                     <mat-option value="pokemon">
-                                        Store 3
+                                        H&M, 829 State St Santa Barbara, (888) 979-4469
                                     </mat-option>
                                 </mat-optgroup>
-                                <mat-optgroup label="Retail 2">
+                                <mat-optgroup label="RSM, 461 From Rd Second Floor Paramus, (973) 786-6549">
                                     <mat-option value="pokemon">
-                                        Store 1
+                                        Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567
                                     </mat-option>
                                     <mat-option value="pokemon">
-                                        Store 2
+                                        Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567
                                     </mat-option>
                                     <mat-option value="pokemon">
-                                        Store 3
+                                        Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567
                                     </mat-option>
                                 </mat-optgroup>
                             </mat-select>
@@ -61,38 +55,33 @@
                             <mat-label>Search Customer</mat-label>
                             <mat-select>
                                 <mat-option value="one">
-                                    <span>John (john@gmail.com)</span>
+                                    <span>Smith, Steve -1467854378 </span>
                                 </mat-option>
                                 <mat-option value="two">
-                                    <span>Marcus (marcus@gmail.com)</span>
+                                    <span>William, Marcus -6132457665</span>
                                 </mat-option>
                                 <mat-option value="two">
-                                    <span>James (james@gmail.com)</span>
+                                    <span>Doe, Jane -9107658990</span>
                                 </mat-option>
                             </mat-select>
-
                         </mat-form-field>
+
                     </div>
-                    <!-- <div fxFlex="20%" fxLayoutAlign="end start">
-                        <button mat-flat-button color="primary" class="addCustomer">
-                            <mat-icon>add</mat-icon> New Customer
-                        </button>
-                    </div> -->
-                    <!-- <div fxFlex="60%">
-                        <mat-form-field appearance="legacy" searchCustomer *ngIf="setCustomerType === 'Retail'">
-                            <mat-label>Search Retail and Store</mat-label>
-                            <input matInput placeholder="Search by Retail Group and Store Name">
-                        </mat-form-field>
-                        <mat-form-field appearance="legacy" searchCustomer *ngIf="setCustomerType === 'Residential'">
-                            <mat-label>Search Customer</mat-label>
-                            <input matInput placeholder="Search by Name, Email and Phone Number">
-                        </mat-form-field>
+                    <div fxFlex="30%">
+                        <div class="zipCode">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Zip Code</mat-label>
+                                <input matInput placeholder="Enter Zip Code" />
+                            </mat-form-field>
+                            <p class="errorMessage"> Zipcode outside of service area.</p>
+                        </div>
 
-                    </div> -->
-                    <!-- <div fxFlex="100%" fxLayoutAlign="end start">
-                        <button mat-flat-button color="primary" routerLink="/customer-onboarding" class="btnNext">Add New
-                            Customer</button>
-                    </div> -->
+
+                    </div>
+                    <div fxFlex="30%">
+                        <mat-checkbox class="zipCheckBox" color="primary">Do you still want to add customer?
+                        </mat-checkbox>
+                    </div>
                 </div>
             </div>
             <div class="retail" *ngIf="setCustomerType === 'Retail'">
@@ -231,26 +220,28 @@
                             <input matInput placeholder="State" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>City</mat-label>
                             <input matInput placeholder="City" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Zip Code</mat-label>
                             <input matInput placeholder="Zip Code" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                        <mat-checkbox class="checkBox" color="primary">Update Existing Customer</mat-checkbox>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-checkbox class="checkBox" color="primary">OSC</mat-checkbox>
                     </div>
                 </div>
             </div>
 
             <div>
-                <button mat-button routerLink="/customer-type">Back</button>
                 <button mat-flat-button color="primary" matStepperNext>Next</button>
             </div>
         </form>
@@ -262,7 +253,7 @@
                 <img class="blue" src="assets/images/service-request-blue.svg" />
                 <span>Service Request</span>
             </ng-template>
-            <div class="retail" *ngIf="checkCustomer === 'Retail'">
+            <div class="retail" *ngIf="setCustomerType === 'Retail'">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
@@ -288,10 +279,32 @@
                             <textarea matInput placeholder="Full Work Description"></textarea>
                         </mat-form-field>
                     </div>
+                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                        <h2 class="heading">IVR</h2>
+                    </div>
+
+                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="Phone Number" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>PIN</mat-label>
+                            <input matInput placeholder="Pin" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>WO</mat-label>
+                            <input matInput placeholder="WO" />
+                        </mat-form-field>
+                    </div>
                 </div>
 
             </div>
-            <div class="retail" *ngIf="checkCustomer === 'Residential'">
+            <div class="retail" *ngIf="setCustomerType === 'Residential'">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
@@ -311,18 +324,6 @@
                             <textarea matInput placeholder="Detail / Notes"></textarea>
                         </mat-form-field>
                     </div>
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>First Hour</mat-label>
-                            <input matInput placeholder="First Hour" />
-                        </mat-form-field>
-                    </div>
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>Each Additional Hour</mat-label>
-                            <input matInput placeholder="Each Additional Hour" />
-                        </mat-form-field>
-                    </div>
                 </div>
             </div>
             <div>
@@ -338,7 +339,88 @@
             <span>Assign Technician</span>
         </ng-template>
 
-        <div class="retail">
+        <div class="retail" *ngIf="setCustomerType === 'Residential'">
+            <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Choose Category</mat-label>
+                        <mat-select>
+                            <mat-optgroup label="Remodels">
+                                <mat-option value="pokemon">
+                                    Commercial Remodels
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Home Remodels
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Bathroom Remodels
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Kitchen Remodels
+                                </mat-option>
+                            </mat-optgroup>
+                            <mat-optgroup label="Repairs">
+                                <mat-option value="pokemon">
+                                    Retail & Facility Maintenance
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Apartment Handyman Repair
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Rental Property Repair
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Handyman Repair
+                                </mat-option>
+                            </mat-optgroup>
+                            <mat-optgroup label="Carpentry">
+                                <mat-option value="pokemon">
+                                    Moulding & Trim Installs
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Laminate Floor Repair
+                                </mat-option>
+                                <mat-option value="pokemon">
+                                    Fence Repairs & Gates
+                                </mat-option>
+                            </mat-optgroup>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>First Hour</mat-label>
+                        <input matInput placeholder="First Hour" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Each Additional Hour</mat-label>
+                        <input matInput placeholder="Each Additional Hour" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Choose Technician</mat-label>
+                        <mat-select [formControl]="technician">
+                            <mat-option *ngFor="let technician of technicianList" [value]="technician">{{technician}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Helpers</mat-label>
+                        <mat-select [formControl]="toppings" multiple>
+                            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
+        </div>
+        <div class="retail" *ngIf="setCustomerType === 'Retail'">
             <div fxLayout="row wrap" fxLayoutGap="15px grid">
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <mat-form-field appearance="outline">
@@ -358,10 +440,10 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
+
             </div>
         </div>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
             <button mat-flat-button color="primary" (click)="openDialog()">Set Appointment</button>
         </div>
     </mat-step>

@@ -121,7 +121,28 @@
 .addCustomer {
     margin: 10px 0 0;
 }
-.searchOptions{
+.searchOptions {
     display: flex;
     justify-content: space-between;
+}
+.zipCode {
+    position: relative;
+    .errorMessage {
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        color: #f00;
+    }
+}
+.zipCheckBox{
+    margin: 20px 10px;
+}
+
+.mat-optgroup-label {
+    color: #007bb2;
+}
+
+::ng-deep .mat-optgroup-label{
+    color: $primary-color !important;
+    margin-top: 10px;
 }
