@@ -149,3 +149,24 @@ mat-radio-button {
 mat-checkbox {
   padding-right: 10px;
 }
+
+.ant-select {
+  width: 100%!important;
+  padding: 3px 0 0;
+  .ant-select-selector {
+      border: 1px solid #e3e3e3!important;
+      border-radius: 7px!important;
+      height: 53px!important;
+      &:focus {
+        box-shadow: none!important;
+      }
+      .ant-select-selection-search {
+          input {
+              height: 53px!important;
+          }
+      }
+      .ant-select-selection-item {
+          line-height: 53px!important;
+      }
+  }
+}

@@ -342,6 +342,11 @@
         <div class="retail" *ngIf="setCustomerType === 'Residential'">
             <div fxLayout="row wrap" fxLayoutGap="15px grid">
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys" [nzNodes]="nodes" nzShowSearch
+                        nzPlaceHolder="Please select" [(ngModel)]="value" (ngModelChange)="onChange($event)">
+                    </nz-tree-select>
+                </div>
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <mat-form-field appearance="outline">
                         <mat-label>Choose Category</mat-label>
                         <mat-select>

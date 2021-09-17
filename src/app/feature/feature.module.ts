@@ -25,7 +25,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { JobVisitComponent } from './job-visit/job-visit.component';
 import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.component';
 import { JobModalComponent } from './job-visit-module/job-modal/job-modal.component';
-
+import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
 
 @NgModule({
   imports: [
@@ -34,12 +34,14 @@ import { JobModalComponent } from './job-visit-module/job-modal/job-modal.compon
     FeatureRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MatTableFilterModule
+    MatTableFilterModule,
+    NzTreeSelectModule
   ],
   exports:[
     CommonModule,
     UiComponentModule,
-    FeatureRoutingModule
+    FeatureRoutingModule,
+    NzTreeSelectModule
   ],
   declarations:
    [
