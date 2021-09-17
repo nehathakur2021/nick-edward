@@ -21,33 +21,43 @@ export class CustomerOnboardingComponent implements OnInit {
   
   nodes = [
     {
-      title: 'parent 1',
+      title: 'Remodels',
       key: '100',
       children: [
         {
-          title: 'parent 1-0',
-          key: '1001',
+          title: 'Commercial Remodels',
+          key: '101',
           isLeaf: true
         },
         {
-          title: 'parent 1-1',
-          key: '1002',
+          title: 'Home Remodels',
+          key: '102',
+          isLeaf: true
+        },
+        {
+          title: 'Bathroom Remodels',
+          key: '103',
+          isLeaf: true
+        },
+        {
+          title: 'Kitchen Remodels',
+          key: '104',
           isLeaf: true
         }
       ]
     },
     {
-      title: 'parent 1',
+      title: 'Repairs',
       key: '100',
       children: [
         {
-          title: 'parent 1-0',
-          key: '56567',
+          title: 'Retail & Facility Maintenance',
+          key: '105',
           isLeaf: true
         },
         {
-          title: 'parent 1-1',
-          key: '4556',
+          title: 'Apartment Handyman Repair',
+          key: '106',
           isLeaf: true
         }
       ]

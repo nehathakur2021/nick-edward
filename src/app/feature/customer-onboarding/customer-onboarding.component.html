@@ -343,55 +343,10 @@
             <div fxLayout="row wrap" fxLayoutGap="15px grid">
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys" [nzNodes]="nodes" nzShowSearch
-                        nzPlaceHolder="Please select" [(ngModel)]="value" (ngModelChange)="onChange($event)">
+                        nzPlaceHolder="Choose Category" [(ngModel)]="value" (ngModelChange)="onChange($event)">
                     </nz-tree-select>
                 </div>
-                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Choose Category</mat-label>
-                        <mat-select>
-                            <mat-optgroup label="Remodels">
-                                <mat-option value="pokemon">
-                                    Commercial Remodels
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Home Remodels
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Bathroom Remodels
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Kitchen Remodels
-                                </mat-option>
-                            </mat-optgroup>
-                            <mat-optgroup label="Repairs">
-                                <mat-option value="pokemon">
-                                    Retail & Facility Maintenance
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Apartment Handyman Repair
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Rental Property Repair
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Handyman Repair
-                                </mat-option>
-                            </mat-optgroup>
-                            <mat-optgroup label="Carpentry">
-                                <mat-option value="pokemon">
-                                    Moulding & Trim Installs
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Laminate Floor Repair
-                                </mat-option>
-                                <mat-option value="pokemon">
-                                    Fence Repairs & Gates
-                                </mat-option>
-                            </mat-optgroup>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
+                
                 <div fxFlex="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>First Hour</mat-label>
