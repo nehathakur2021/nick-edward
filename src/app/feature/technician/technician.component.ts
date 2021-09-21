@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
+import { sampleData, displayDate } from './events-utc';
 
 @Component({
   selector: 'app-technician',
@@ -9,6 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class TechnicianComponent implements OnInit {
   displayedColumns = ['time', 'schedule',];
   dataSource = ELEMENT_DATA;
+
+  public selectedDate: Date = displayDate;
+  public events: SchedulerEvent[] = sampleData;
 
   constructor() { }
 

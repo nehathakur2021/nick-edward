@@ -26,6 +26,7 @@ import { JobVisitComponent } from './job-visit/job-visit.component';
 import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.component';
 import { JobModalComponent } from './job-visit-module/job-modal/job-modal.component';
 import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
+import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 
 @NgModule({
   imports: [
@@ -35,13 +36,15 @@ import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
     ReactiveFormsModule,
     FormsModule,
     MatTableFilterModule,
-    NzTreeSelectModule
+    NzTreeSelectModule,
+    SchedulerModule 
   ],
   exports:[
     CommonModule,
     UiComponentModule,
     FeatureRoutingModule,
-    NzTreeSelectModule
+    NzTreeSelectModule,
+    SchedulerModule
   ],
   declarations:
    [
