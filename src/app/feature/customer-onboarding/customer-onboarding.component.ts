@@ -8,6 +8,8 @@ import { CustomerService } from '../customer.service';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'; */
 import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select'; 
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators'
 
 @Component({
   selector: 'app-customer-onboarding',
@@ -18,6 +20,7 @@ export class CustomerOnboardingComponent implements OnInit {
 
   expandKeys = ['100'];
   value?: string;
+  value1?: string;
   
   nodes = [
     {
@@ -63,8 +66,50 @@ export class CustomerOnboardingComponent implements OnInit {
       ]
     }
   ];
+  nodes1 = [
+    {
+      title: 'Insight, 650 Village Trace, (888) 494-6744',
+      key: '100',
+      children: [
+        {
+          title: 'H&M, 829 State St Santa Barbara, (888) 979-4467',
+          key: '101',
+          isLeaf: true
+        },
+        {
+          title: 'H&M, 829 State St Santa Barbara, (888) 979-4468',
+          key: '102',
+          isLeaf: true
+        },
+        {
+          title: 'H&M, 829 State St Santa Barbara, (888) 979-4469',
+          key: '103',
+          isLeaf: true
+        }
+      ]
+    },
+    {
+      title: 'RSM, 461 From Rd Second Floor Paramus, (973) 786-6549',
+      key: '100',
+      children: [
+        {
+          title: 'Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567',
+          key: '105',
+          isLeaf: true
+        },
+        {
+          title: 'Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567',
+          key: '106',
+          isLeaf: true
+        }
+      ]
+    }
+  ];
 
   onChange($event: string): void {
+    console.log($event);
+  }
+  onChange1($event: string): void {
     console.log($event);
   }
 
@@ -88,8 +133,53 @@ export class CustomerOnboardingComponent implements OnInit {
 
   }
 
+  myControl = new FormControl();
+  options: string[] = ['Smith, Steve -1467854378 ', 'William, Marcus -6132457665', 'Doe, Jane -9107658990'];
+  filteredOptions: Observable<string[]> | undefined;
+
+otpGroupName : Array<any> = [{
+  "optGroup" : "1"
+},
+{
+  "optGroup" : "2"
+},
+{
+  "optGroup" : "3"
+}]
+
+
+  optgroupOptions : Array<any> =[
+    {
+      "optName" : "1",
+      "optValue1" : " H&M, 829 State St Santa Barbara, (888) 979-4461",
+      "optValue2" : " H&M, 829 State St Santa Barbara, (888) 979-4462",
+      "optValue3" : " H&M, 829 State St Santa Barbara, (888) 979-4463",
+
+    },
+    {
+      "optName" : "2",
+      "optValue1" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue2" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue3" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+
+    },
+    {
+      "optName" : "3",
+      "optValue1" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue2" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue3" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+
+    },
+  ]
 
   ngOnInit() {
+
+    this.filteredOptions = this.myControl.valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+
     this.checkCustomer = this.customerService.getCustomerType();
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -102,6 +192,15 @@ export class CustomerOnboardingComponent implements OnInit {
       this.value = '1001';
     }, 1000);
   }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+
+
   selectedCustomerType(): void {
     debugger;
     console.log(this.customerType.value);
@@ -133,5 +232,8 @@ export class CustomerOnboardingComponent implements OnInit {
       this.showResideantial = true;
     }
   }
+
+  
+
 
 }

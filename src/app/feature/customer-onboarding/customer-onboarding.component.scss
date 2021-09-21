@@ -146,3 +146,6 @@
     color: $primary-color !important;
     margin-top: 10px;
 }
+::ng-deep nz-tree-node-title.ant-select-tree-node-content-wrapper.ant-select-tree-node-content-wrapper-open span.ant-tree-title {
+    color: #007bb2;
+}

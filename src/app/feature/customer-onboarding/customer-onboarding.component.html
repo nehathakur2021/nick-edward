@@ -23,34 +23,27 @@
             <div class="searchCustomer">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="40%">
-                        <mat-form-field appearance="outline" *ngIf="setCustomerType === 'Retail'">
-                            <mat-label>Search Retail and Store</mat-label>
-                            <mat-select>
-                                <mat-optgroup label="Insight, 650 Village Trace, (888) 494-6744" class="retailName">
-                                    <mat-option value="pokemon">
-                                        H&M, 829 State St Santa Barbara, (888) 979-4469
-                                    </mat-option>
-                                    <mat-option value="pokemon">
-                                        H&M, 650 Village Trace, (888) 979-4469
-                                    </mat-option>
-                                    <mat-option value="pokemon">
-                                        H&M, 829 State St Santa Barbara, (888) 979-4469
-                                    </mat-option>
-                                </mat-optgroup>
-                                <mat-optgroup label="RSM, 461 From Rd Second Floor Paramus, (973) 786-6549">
-                                    <mat-option value="pokemon">
-                                        Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567
-                                    </mat-option>
-                                    <mat-option value="pokemon">
-                                        Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567
-                                    </mat-option>
-                                    <mat-option value="pokemon">
-                                        Aveda, 651 Paseo Nuevo Santa Barabra, (888) 970-3567
-                                    </mat-option>
-                                </mat-optgroup>
-                            </mat-select>
-                        </mat-form-field>
+                        <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys" [nzNodes]="nodes1"
+                            nzShowSearch nzPlaceHolder="Choose Category" [(ngModel)]="value1"
+                            (ngModelChange)="onChange1($event)" *ngIf="setCustomerType === 'Retail'">
+                        </nz-tree-select>
+
                         <mat-form-field class="example-full-width" appearance="outline"
+                            *ngIf="setCustomerType === 'Residential'">
+                            <mat-label>Search Customer</mat-label>
+                            <input type="text" placeholder="Search customer by Retail Group, Store name, Mobile Number"
+                                aria-label="Search Customer" matInput [formControl]="myControl"
+                                [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+
+
+
+                        <!-- <mat-form-field class="example-full-width" appearance="outline"
                             *ngIf="setCustomerType === 'Residential'">
                             <mat-label>Search Customer</mat-label>
                             <mat-select>
@@ -64,7 +57,7 @@
                                     <span>Doe, Jane -9107658990</span>
                                 </mat-option>
                             </mat-select>
-                        </mat-form-field>
+                        </mat-form-field> -->
 
                     </div>
                     <div fxFlex="30%">
@@ -346,7 +339,7 @@
                         nzPlaceHolder="Choose Category" [(ngModel)]="value" (ngModelChange)="onChange($event)">
                     </nz-tree-select>
                 </div>
-                
+
                 <div fxFlex="25%" fxFlex.md="25%" fxFlex.sm="25%" fxFlex.xs="100%">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>First Hour</mat-label>
