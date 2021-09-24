@@ -1,0 +1,56 @@
+<mat-card>
+
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
+        <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <mat-card-title>
+                <span>Job Folder</span>
+            </mat-card-title>
+        </div>
+        <div fxFlex="40%" fxFlex.lg="40%" fxFlex.md="40%" fxFlex.sm="40%" fxFlex.xs="100%">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Agreements</mat-label>
+                <mat-select [formControl]="agreement" multiple>
+                    <mat-option *ngFor="let agreement of agreementList" [value]="agreement">{{agreement}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="40%" fxFlex.lg="40%" fxFlex.md="40%" fxFlex.sm="40%" fxFlex.xs="100%">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Job Packet</mat-label>
+                <mat-select [formControl]="packet" multiple>
+                    <mat-option *ngFor="let packet of packetList" [value]="packet">{{packet}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="20%" fxFlex.lg="20%" fxFlex.md="20%" fxFlex.sm="20%" fxFlex.xs="100%" fxLayoutAlign="end start">
+            <button mat-flat-button color="primary">Save</button>
+        </div>
+
+    </div>
+
+    <mat-card-content>
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="packet">
+                    <th mat-header-cell *matHeaderCellDef>Job Packet <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element"> <a href="javascript:void(0)"> {{element.packet}} </a></td>
+                </ng-container>
+                <ng-container matColumnDef="agreement">
+                    <th mat-header-cell *matHeaderCellDef> Agreements </th>
+                    <td mat-cell *matCellDef="let element">{{element.agreement}}</td>
+
+                </ng-container>
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef class="action"> Action </th>
+                    <td mat-cell *matCellDef="let element" class="action">
+                        <span class="material-icons edit" matTooltip="Edit" matTooltipPosition="below">edit</span>
+                        <span class="material-icons delete" matTooltip="Delete">delete</span>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
+    </mat-card-content>
+</mat-card>

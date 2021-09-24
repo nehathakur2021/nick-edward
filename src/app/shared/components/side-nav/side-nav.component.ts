@@ -68,9 +68,21 @@ export class SideNavComponent implements OnInit {
         this.showAdminMenu = true;
       this.router.navigateByUrl("/users");
     }
+    else if (route === "agreement") {
+        this.showAdminMenu = true;
+      this.router.navigateByUrl("/job-agreement");
+    }
     else if (route === "tech") {
         this.showUsersMenu = true;
       this.router.navigateByUrl("/technician");
+    }
+    else if (route === "packet") {
+        this.showUsersMenu = true;
+      this.router.navigateByUrl("/job-packet");
+    }
+    else if (route === "folder") {
+        this.showUsersMenu = true;
+      this.router.navigateByUrl("/job-folder");
     }
     else if (route === "list") {
       this.showAdminMenu = true

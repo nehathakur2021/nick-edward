@@ -27,6 +27,13 @@ import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.com
 import { JobModalComponent } from './job-visit-module/job-modal/job-modal.component';
 import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+import { NgxFullCalendarModule } from 'ngx-fullcalendar';
+import { DropdownSelectComponent } from './dropdown-select/dropdown-select.component';
+import { JobAgreementComponent } from './job-agreement/job-agreement.component';
+import { JobPacketComponent } from './job-packet/job-packet.component';
+import { JobFolderComponent } from './job-folder/job-folder.component';
+
+
 
 @NgModule({
   imports: [
@@ -37,14 +44,16 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
     FormsModule,
     MatTableFilterModule,
     NzTreeSelectModule,
-    SchedulerModule 
+    SchedulerModule,
+    NgxFullCalendarModule
   ],
   exports:[
     CommonModule,
     UiComponentModule,
     FeatureRoutingModule,
     NzTreeSelectModule,
-    SchedulerModule
+    SchedulerModule,
+    NgxFullCalendarModule
   ],
   declarations:
    [
@@ -67,7 +76,11 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
     NotificationComponent,
     JobVisitComponent,
     JobVisitModuleComponent,
-    JobModalComponent
+    JobModalComponent,
+    DropdownSelectComponent,
+    JobAgreementComponent,
+    JobPacketComponent,
+    JobFolderComponent
 
    ]
 

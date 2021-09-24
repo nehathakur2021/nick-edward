@@ -2,26 +2,29 @@ import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
 
 /* tslint:disable */
 
+let btn = document.createElement("SELECT");
+document.body.appendChild(btn);
+
 const baseData: any[] = [
     {
-        "TaskID": 4,
-        "OwnerID": 2,
-        "Title": "Bowling tournament",
-        "Description": "",
-        "StartTimezone": null,
-        "Start": "2013-06-09T21:00:00.000Z",
-        "End": "2013-06-10T00:00:00.000Z",
-        "EndTimezone": null,
-        "RecurrenceRule": null,
-        "RecurrenceID": null,
-        "RecurrenceException": null,
-        "IsAllDay": false
+        // "TaskID": 4,
+        // "OwnerID": 2,,
+        // "Title": "Steve Smith"
+        "Description": "The Run Machine",
+        // "StartTimezone": null,
+        // "Start": "2013-06-09T21:00:00.000Z",
+        // "End": "2013-06-10T00:00:00.000Z",
+        // "EndTimezone": null,
+        // "RecurrenceRule": null,
+        // "RecurrenceID": null,
+        // "RecurrenceException": null,
+        // "IsAllDay": false
     },
     {
         "TaskID": 5,
         "OwnerID": 2,
         "Title": "Take the dog to the vet",
-        "Description": "",
+        "Description": "the dog",
         "StartTimezone": null,
         "Start": "2013-06-10T07:00:00.000Z",
         "End": "2013-06-10T08:00:00.000Z",
@@ -79,7 +82,7 @@ const baseData: any[] = [
         "Title": "Car Service",
         "Description": "Might come to work later!",
         "StartTimezone": null,
-        "Start": "2013-06-24T08:30:00.000Z",
+        "Start": "2013-06-24T08:30:00.0 00Z",
         "End": "2013-06-24T09:30:00.000Z",
         "EndTimezone": null,
         "RecurrenceRule": null,
@@ -231,8 +234,8 @@ const baseData: any[] = [
     {
         "TaskID": 25,
         "OwnerID": 1,
-        "Title": "HR Lecture",
-        "Description": "",
+        "Title": "Steve Smith",
+        "Description": "Order ID: #55452",
         "StartTimezone": null,
         "Start": "2013-06-04T19:00:00.000Z",
         "End": "2013-06-04T21:00:00.000Z",
@@ -344,7 +347,7 @@ const baseData: any[] = [
         "TaskID": 40,
         "OwnerID": 3,
         "Title": "Install new laptops in conference rooms",
-        "Description": "",
+        "Description": "Laptops",
         "StartTimezone": null,
         "Start": "2013-06-24T13:30:00.000Z",
         "End": "2013-06-24T18:00:00.000Z",
@@ -387,7 +390,7 @@ const baseData: any[] = [
         "TaskID": 69,
         "OwnerID": 2,
         "Title": "Team planning meeting",
-        "Description": "",
+        "Description": "Planning",
         "StartTimezone": null,
         "Start": "2013-06-24T10:00:00.000Z",
         "End": "2013-06-24T12:00:00.000Z",
@@ -667,7 +670,7 @@ const baseData: any[] = [
         "TaskID": 93,
         "OwnerID": 3,
         "Title": "Bob's Birthday Party",
-        "Description": "",
+        "Description": "asa",
         "StartTimezone": null,
         "Start": "2013-06-29T20:00:00.000Z",
         "End": "2013-06-29T23:30:00.000Z",
@@ -790,7 +793,7 @@ const randomInt = (min: any, max: any): number => {
 
 export const displayDate = new Date(currentYear, 5, 24);
 
-export const sampleData = baseData.map(dataItem => (
+export const sampleData = baseData.map(dataItem => (/* title: dataItem.Title, */
     <SchedulerEvent> {
         id: dataItem.TaskID,
         start: parseAdjust(dataItem.Start),
@@ -799,11 +802,10 @@ export const sampleData = baseData.map(dataItem => (
         endTimezone: dataItem.endTimezone,
         isAllDay: dataItem.IsAllDay,
         title: dataItem.Title,
-        description: dataItem.Description,
+        description: dataItem.description,
         recurrenceRule: dataItem.RecurrenceRule,
         recurrenceId: dataItem.RecurrenceID,
         recurrenceException: dataItem.RecurrenceException,
-
         roomId: dataItem.RoomID,
         ownerID: dataItem.OwnerID
     }
@@ -818,7 +820,7 @@ export const sampleDataWithResources = baseData.map(dataItem => (
         endTimezone: dataItem.endTimezone,
         isAllDay: dataItem.IsAllDay,
         title: dataItem.Title,
-        description: dataItem.Description,
+        description: dataItem.description,
         recurrenceRule: dataItem.RecurrenceRule,
         recurrenceId: dataItem.RecurrenceID,
         recurrenceException: dataItem.RecurrenceException,

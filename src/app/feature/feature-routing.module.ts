@@ -15,6 +15,9 @@ import { ManageCategoryComponent } from './manage-category/manage-category.compo
 import { NotificationComponent } from './notification/notification.component';
 import { JobVisitComponent } from './job-visit/job-visit.component';
 import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.component';
+import { JobAgreementComponent } from './job-agreement/job-agreement.component';
+import { JobPacketComponent } from './job-packet/job-packet.component';
+import { JobFolderComponent } from './job-folder/job-folder.component';
 
 const routes: Routes = [
   {
@@ -76,6 +79,18 @@ const routes: Routes = [
       {
         path: 'job-visit-module',
         component: JobVisitModuleComponent
+      },
+      {
+        path: 'job-agreement',
+        component: JobAgreementComponent
+      },
+      {
+        path: 'job-packet',
+        component: JobPacketComponent
+      },
+      {
+        path: 'job-folder',
+        component: JobFolderComponent
       }
     ]
 

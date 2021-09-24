@@ -7,9 +7,9 @@ import { CustomerService } from '../customer.service';
 /* import { MatSelect } from '@angular/material/select';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'; */
-import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select'; 
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators'
+import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators'
 
 @Component({
   selector: 'app-customer-onboarding',
@@ -19,9 +19,10 @@ import {map, startWith} from 'rxjs/operators'
 export class CustomerOnboardingComponent implements OnInit {
 
   expandKeys = ['100'];
+  expandKeys1 = ['100'];
   value?: string;
   value1?: string;
-  
+
   nodes = [
     {
       title: 'Remodels',
@@ -66,6 +67,7 @@ export class CustomerOnboardingComponent implements OnInit {
       ]
     }
   ];
+
   nodes1 = [
     {
       title: 'Insight, 650 Village Trace, (888) 494-6744',
@@ -137,37 +139,37 @@ export class CustomerOnboardingComponent implements OnInit {
   options: string[] = ['Smith, Steve -1467854378 ', 'William, Marcus -6132457665', 'Doe, Jane -9107658990'];
   filteredOptions: Observable<string[]> | undefined;
 
-otpGroupName : Array<any> = [{
-  "optGroup" : "1"
-},
-{
-  "optGroup" : "2"
-},
-{
-  "optGroup" : "3"
-}]
+  otpGroupName: Array<any> = [{
+    "optGroup": "1"
+  },
+  {
+    "optGroup": "2"
+  },
+  {
+    "optGroup": "3"
+  }]
 
 
-  optgroupOptions : Array<any> =[
+  optgroupOptions: Array<any> = [
     {
-      "optName" : "1",
-      "optValue1" : " H&M, 829 State St Santa Barbara, (888) 979-4461",
-      "optValue2" : " H&M, 829 State St Santa Barbara, (888) 979-4462",
-      "optValue3" : " H&M, 829 State St Santa Barbara, (888) 979-4463",
+      "optName": "1",
+      "optValue1": " H&M, 829 State St Santa Barbara, (888) 979-4461",
+      "optValue2": " H&M, 829 State St Santa Barbara, (888) 979-4462",
+      "optValue3": " H&M, 829 State St Santa Barbara, (888) 979-4463",
 
     },
     {
-      "optName" : "2",
-      "optValue1" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
-      "optValue2" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
-      "optValue3" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optName": "2",
+      "optValue1": " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue2": " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue3": " H&M, 829 State St Santa Barbara, (888) 979-4469",
 
     },
     {
-      "optName" : "3",
-      "optValue1" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
-      "optValue2" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
-      "optValue3" : " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optName": "3",
+      "optValue1": " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue2": " H&M, 829 State St Santa Barbara, (888) 979-4469",
+      "optValue3": " H&M, 829 State St Santa Barbara, (888) 979-4469",
 
     },
   ]
@@ -175,10 +177,10 @@ otpGroupName : Array<any> = [{
   ngOnInit() {
 
     this.filteredOptions = this.myControl.valueChanges
-    .pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
 
     this.checkCustomer = this.customerService.getCustomerType();
     this.firstFormGroup = this._formBuilder.group({
@@ -232,8 +234,4 @@ otpGroupName : Array<any> = [{
       this.showResideantial = true;
     }
   }
-
-  
-
-
 }

@@ -12,7 +12,7 @@
                 <input matInput placeholder="Search by Name">
             </mat-form-field>
         </div>
-        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%" fxLayoutAlign="end start">
+        <!-- <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%" fxLayoutAlign="end start">
             <div class="curentDate">
                 <mat-icon>
                     chevron_left
@@ -24,7 +24,7 @@
                     chevron_right
                 </mat-icon>
             </div>
-        </div>
+        </div> -->
     </div>
     <mat-card-content>
         <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
@@ -116,22 +116,10 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table> -->
 
-                <kendo-scheduler [kendoSchedulerBinding]="events" [selectedDate]="selectedDate" scrollTime="08:00"
-                    style="height: 600px;">
+                <kendo-scheduler id='sampleDate' [kendoSchedulerBinding]="events" [selectedDate]="selectedDate" scrollTime="08:00"
+                    style="height: 570px;" (click)="showDropdown($event)" >
                     <kendo-scheduler-day-view>
                     </kendo-scheduler-day-view>
-
-                    <kendo-scheduler-week-view>
-                    </kendo-scheduler-week-view>
-
-                    <kendo-scheduler-month-view>
-                    </kendo-scheduler-month-view>
-
-                    <!-- <kendo-scheduler-timeline-view>
-                    </kendo-scheduler-timeline-view>
-
-                    <kendo-scheduler-agenda-view>
-                    </kendo-scheduler-agenda-view> -->
                 </kendo-scheduler>
             </div>
         </div>

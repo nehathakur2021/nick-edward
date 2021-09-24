@@ -23,15 +23,14 @@
             <div class="searchCustomer">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="40%">
-                        <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys" [nzNodes]="nodes1"
-                            nzShowSearch nzPlaceHolder="Choose Category" [(ngModel)]="value1"
+                        <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys1" [nzNodes]="nodes1"
+                            nzShowSearch nzPlaceHolder="Search  Retail and Store" [(ngModel)]="value1"
                             (ngModelChange)="onChange1($event)" *ngIf="setCustomerType === 'Retail'">
                         </nz-tree-select>
-
                         <mat-form-field class="example-full-width" appearance="outline"
                             *ngIf="setCustomerType === 'Residential'">
                             <mat-label>Search Customer</mat-label>
-                            <input type="text" placeholder="Search customer by Retail Group, Store name, Mobile Number"
+                            <input type="text" placeholder="Search by Customer Name and Mobile Number"
                                 aria-label="Search Customer" matInput [formControl]="myControl"
                                 [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete">
@@ -40,25 +39,6 @@
                                 </mat-option>
                             </mat-autocomplete>
                         </mat-form-field>
-
-
-
-                        <!-- <mat-form-field class="example-full-width" appearance="outline"
-                            *ngIf="setCustomerType === 'Residential'">
-                            <mat-label>Search Customer</mat-label>
-                            <mat-select>
-                                <mat-option value="one">
-                                    <span>Smith, Steve -1467854378 </span>
-                                </mat-option>
-                                <mat-option value="two">
-                                    <span>William, Marcus -6132457665</span>
-                                </mat-option>
-                                <mat-option value="two">
-                                    <span>Doe, Jane -9107658990</span>
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field> -->
-
                     </div>
                     <div fxFlex="30%">
                         <div class="zipCode">
@@ -68,8 +48,6 @@
                             </mat-form-field>
                             <p class="errorMessage"> Zipcode outside of service area.</p>
                         </div>
-
-
                     </div>
                     <div fxFlex="30%">
                         <mat-checkbox class="zipCheckBox" color="primary">Do you still want to add customer?
@@ -121,7 +99,6 @@
                             </mat-form-field>
                         </div>
                     </div>
-
                 </div>
                 <mat-checkbox class="checkBox" color="primary">Update Existing Retail Group</mat-checkbox>
                 <div>
@@ -171,8 +148,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
             <div class="retail" *ngIf="setCustomerType === 'Residential'">
@@ -233,7 +208,6 @@
                     </div>
                 </div>
             </div>
-
             <div>
                 <button mat-flat-button color="primary" matStepperNext>Next</button>
             </div>

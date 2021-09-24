@@ -175,3 +175,21 @@ mat-checkbox {
     }
   }
 }
+.k-scheduler-views.k-button-group {
+  display: none;
+}
+.k-scheduler-fullday{
+  display: none;
+}
+.k-calendar .k-calendar-view .k-today {
+  color: $primary-color;
+}
+.k-calendar .k-calendar-td.k-state-selected .k-link {
+  background-color: $primary-color;
+}
+.k-event{
+  background-color: $primary-color;
+}
+.k-event.k-state-selected {
+  background-color: $primary-color;
+}

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
+import { EventObject, FullCalendarOptions } from 'ngx-fullcalendar';
+import { Dropdown } from './dropdown.type';
 import { sampleData, displayDate } from './events-utc';
+
 
 @Component({
   selector: 'app-technician',
@@ -9,15 +12,34 @@ import { sampleData, displayDate } from './events-utc';
 })
 
 export class TechnicianComponent implements OnInit {
+
+ 
+  Events = [];
+  
   displayedColumns = ['time', 'schedule',];
   dataSource = ELEMENT_DATA;
 
   public selectedDate: Date = displayDate;
   public events: SchedulerEvent[] = sampleData;
 
+  datePic!: any;
+
+
   constructor() { }
 
   ngOnInit(): void {
+ 
+  }
+  close(){
+    debugger
+  }
+
+  showDropdown($event:any):void {
+    debugger;
+  
+    console.log('clicked....');
+    $event.preventDefault();
+    
   }
 
 }

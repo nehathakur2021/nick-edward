@@ -17,8 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
-
-
 registerLocaleData(en);
 
 
@@ -34,11 +32,10 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
-
     // UiComponentModule
   ],
-  
+
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
