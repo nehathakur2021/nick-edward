@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SchedulerModelFields } from '@progress/kendo-angular-scheduler';
+import { displayDate, sampleDataWithCustomSchema } from './events-utc';
+
 
 @Component({
   selector: 'app-schedule',
@@ -9,6 +12,26 @@ export class ScheduleComponent implements OnInit {
   displayedColumns = ['time', 'schedule',];
   dataSource = ELEMENT_DATA;
   constructor() { }
+
+  Events = [];
+
+  public selectedDate: Date = displayDate;
+  public events: any[] = sampleDataWithCustomSchema;
+  public eventFields: SchedulerModelFields = {
+      id: 'TaskID',
+      title: 'Title',
+      description: 'Description',
+      startTimezone: 'StartTimezone',
+      start: 'Start',
+      end: 'End',
+      endTimezone: 'EndTimezone',
+      isAllDay: 'IsAllDay',
+      recurrenceRule: 'RecurrenceRule',
+      recurrenceId: 'RecurrenceID',
+  };
+
+
+  datePic!: any;
 
   ngOnInit(): void {
   }

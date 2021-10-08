@@ -1,0 +1,18 @@
+.jobPacket {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ::ng-deep .mat-checkbox {
+        .mat-checkbox-inner-container {
+            .mat-checkbox-frame {
+                border-color: #fff;
+            }
+        }
+        &.mat-checkbox-checked {
+            .mat-checkbox-background {
+                background-color: transparent;
+            }
+        }
+    }
+    
+}

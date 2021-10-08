@@ -32,6 +32,7 @@ import { DropdownSelectComponent } from './dropdown-select/dropdown-select.compo
 import { JobAgreementComponent } from './job-agreement/job-agreement.component';
 import { JobPacketComponent } from './job-packet/job-packet.component';
 import { JobFolderComponent } from './job-folder/job-folder.component';
+import { JobPacketModalComponent } from './job-packet/job-packet-modal/job-packet-modal.component';
 
 
 
@@ -80,7 +81,8 @@ import { JobFolderComponent } from './job-folder/job-folder.component';
     DropdownSelectComponent,
     JobAgreementComponent,
     JobPacketComponent,
-    JobFolderComponent
+    JobFolderComponent,
+    JobPacketModalComponent
 
    ]
 

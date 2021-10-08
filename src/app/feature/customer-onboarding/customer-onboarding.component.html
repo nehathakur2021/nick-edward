@@ -13,7 +13,7 @@
                             <mat-card-title> Type of Customer</mat-card-title>
                         </div>
                         <div class="toggleButton">
-                            <span>Retail</span>
+                            <span>Facilities</span>
                             <mat-slide-toggle [formControl]="customerType" (change)='selectedCustomerType()'>Residential
                             </mat-slide-toggle>
                         </div>
@@ -21,12 +21,28 @@
                 </div>
             </div>
             <div class="searchCustomer">
+                <div fxLayout="row wrap" fxLayoutGap="5px grid">
+                    <div fxFlex="100%">
+                        <p><b>Client Billing Info</b></p>
+                    </div>
+                    <div fxFlex="100%" *ngIf="setCustomerType === 'Residential'">
+                        <mat-checkbox class="checkBox" color="primary">Commercial
+                        </mat-checkbox>
+                    </div>
+                </div>
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="40%">
-                        <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys1" [nzNodes]="nodes1"
+                        <!-- <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys1" [nzNodes]="nodes1"
                             nzShowSearch nzPlaceHolder="Search  Retail and Store" [(ngModel)]="value1"
                             (ngModelChange)="onChange1($event)" *ngIf="setCustomerType === 'Retail'">
+                        </nz-tree-select> -->
+
+                        <nz-tree-select style="width: 250px" [nzExpandedKeys]="eKeys" [nzNodes]="n1" nzShowSearch
+                            nzPlaceHolder="Search  Facilities Clients and Job Sites" [(ngModel)]="val1"
+                            (ngModelChange)="onChanges($event)" *ngIf="setCustomerType === 'Retail'"
+                            [ngModelOptions]="{standalone: true}">
                         </nz-tree-select>
+
                         <mat-form-field class="example-full-width" appearance="outline"
                             *ngIf="setCustomerType === 'Residential'">
                             <mat-label>Search Customer</mat-label>
@@ -59,13 +75,13 @@
                 <div>
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
                         <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
-                            <h2 class="heading">Retail Group</h2>
+                            <h2 class="heading">Facilities Client</h2>
                         </div>
 
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                             <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label>Retail Group Name</mat-label>
-                                <input matInput placeholder="Retail Group Name" />
+                                <mat-label>Facilities Client Name</mat-label>
+                                <input matInput placeholder="Facilities Client Name" />
                             </mat-form-field>
                         </div>
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
@@ -100,14 +116,14 @@
                         </div>
                     </div>
                 </div>
-                <mat-checkbox class="checkBox" color="primary">Update Existing Retail Group</mat-checkbox>
+                <mat-checkbox class="checkBox" color="primary">Update Existing Facilities Client</mat-checkbox>
                 <div>
-                    <h2 class="heading">Store </h2>
+                    <h2 class="heading">Job Site </h2>
                     <div fxLayout="row wrap" fxLayoutGap="15px grid">
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                             <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label>Store Name</mat-label>
-                                <input matInput placeholder="Store Name" />
+                                <mat-label>Job Site Name</mat-label>
+                                <input matInput placeholder="Job Site Name" />
                             </mat-form-field>
                         </div>
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
@@ -140,12 +156,18 @@
                                 <input matInput placeholder="Zip Code" />
                             </mat-form-field>
                         </div>
-                        <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
-                            <mat-checkbox class="checkBox" color="primary">Update Existing Store</mat-checkbox>
+                        <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Gate Code/Security Code</mat-label>
+                                <input matInput placeholder="Gate Code/Security Code" />
+                            </mat-form-field>
                         </div>
                         <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                            <mat-checkbox class="zipCheckBox" color="primary">Update Existing Job Site</mat-checkbox>
+                        </div>
+                        <!-- <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                             <mat-checkbox class="checkBox" color="primary">OSC / Estimate</mat-checkbox>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -161,6 +183,12 @@
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Last Name" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Site/Property Name</mat-label>
                             <input matInput placeholder="Last Name" />
                         </mat-form-field>
                     </div>
@@ -188,23 +216,81 @@
                             <input matInput placeholder="State" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>City</mat-label>
                             <input matInput placeholder="City" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Zip Code</mat-label>
                             <input matInput placeholder="Zip Code" />
                         </mat-form-field>
                     </div>
+                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                        <mat-checkbox class="checkBox" color="primary">Job Site Address Same as Billind</mat-checkbox>
+                    </div>
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-checkbox class="checkBox" color="primary">Update Existing Customer</mat-checkbox>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                    <!-- <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-checkbox class="checkBox" color="primary">OSC</mat-checkbox>
+                    </div>  -->
+
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input matInput placeholder="First Name" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Last Name" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Site/Property Name</mat-label>
+                            <input matInput placeholder="Last Name" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Street Address</mat-label>
+                            <input matInput placeholder="Street Address" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>State</mat-label>
+                            <input matInput placeholder="State" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>City</mat-label>
+                            <input matInput placeholder="City" />
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Zip Code</mat-label>
+                            <input matInput placeholder="Zip Code" />
+                        </mat-form-field>
                     </div>
                 </div>
             </div>
@@ -230,8 +316,9 @@
                     </div>
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>Work Summary</mat-label>
-                            <input matInput placeholder="Work Summary" />
+                            <mat-label>Short Description</mat-label>
+                            <input matInput placeholder="Work Summary" #input maxlength="20">
+                            <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
                         </mat-form-field>
                     </div>
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
@@ -246,6 +333,38 @@
                             <textarea matInput placeholder="Full Work Description"></textarea>
                         </mat-form-field>
                     </div>
+                </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Labour Rate</mat-label>
+                        <input matInput value="$65"/>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Travel Rate</mat-label>
+                        <input matInput value="$65"/>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Addition Travel</mat-label>
+                        <input matInput placeholder="Enter Amount"/>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>Minimum On-Site</mat-label>
+                        <input matInput placeholder="Enter Amount"/>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <div class="retail" *ngIf="setCustomerType === 'Retail'">
+                <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                         <h2 class="heading">IVR</h2>
                     </div>
@@ -291,6 +410,11 @@
                             <textarea matInput placeholder="Detail / Notes"></textarea>
                         </mat-form-field>
                     </div>
+                </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                    <mat-checkbox class="checkBox" color="primary">OSC</mat-checkbox>
                 </div>
             </div>
             <div>
@@ -367,11 +491,53 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
+             
 
             </div>
         </div>
+        <div  fxLayout="row wrap" fxLayoutGap="15px grid">
+            <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                <kendo-scheduler [kendoSchedulerBinding]="events" [modelFields]="eventFields"
+                    [selectedDate]="selectedDate" style="height: 550px;">
+                    <ng-template kendoSchedulerEventTemplate let-event>
+                        <h4 class="title">{{ event.dataItem.TechnicianName }}</h4>
+                        <p>{{event.dataItem.StartTimezone}}</p>
+                        <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
+                        <p class="helper">{{event.dataItem.Helpers}}</p>
+                        <p><span>Customer Phone No. : </span>{{event.dataItem.CustomerPhone}}</p>
+                        <p><span>Address : </span>{{event.dataItem.Address}}</p>
+                        <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                    </ng-template>
+
+                    <kendo-scheduler-day-view>
+                    </kendo-scheduler-day-view>
+                </kendo-scheduler>
+
+            </div>
+            <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Start Time</mat-label>
+                    <input matInput type="time" placeholder="Description" />
+                </mat-form-field>
+            </div>
+            <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Length of time of appointment</mat-label>
+                    <input matInput type="number" placeholder="Description" />
+                </mat-form-field>
+            </div>
+            <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Length of arrival window</mat-label>
+                    <input matInput type="number" placeholder="Description" />
+                </mat-form-field>
+            </div>
+        </div>
         <div>
-            <button mat-flat-button color="primary" (click)="openDialog()">Set Appointment</button>
+            <!-- <button mat-flat-button color="primary" (click)="openDialog()">Set Appointment</button> -->
+            <button mat-flat-button color="primary">Preview Order</button>
+            <button mat-flat-button color="primary">Save/Book</button>
+            <button mat-flat-button color="primary">Save, Send and Book</button>
         </div>
     </mat-step>
 </mat-stepper>

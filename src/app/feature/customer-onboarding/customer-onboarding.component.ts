@@ -10,6 +10,8 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'
 import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators'
+import { SchedulerModelFields } from '@progress/kendo-angular-scheduler';
+import { displayDate, sampleDataWithCustomSchema } from './events-utc';
 
 @Component({
   selector: 'app-customer-onboarding',
@@ -17,11 +19,34 @@ import { map, startWith } from 'rxjs/operators'
   styleUrls: ['./customer-onboarding.component.scss']
 })
 export class CustomerOnboardingComponent implements OnInit {
+  displayedColumns = ['time', 'schedule',];
+  dataSource = ELEMENT_DATA;
+
+
+  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog, private customerService: CustomerService) {
+
+  }
+
+  public selectedDate: Date = displayDate;
+  public events: any[] = sampleDataWithCustomSchema;
+  public eventFields: SchedulerModelFields = {
+      id: 'TaskID',
+      title: 'Title',
+      description: 'Description',
+      startTimezone: 'StartTimezone',
+      start: 'Start',
+      end: 'End',
+      endTimezone: 'EndTimezone',
+      isAllDay: 'IsAllDay',
+      recurrenceRule: 'RecurrenceRule',
+      recurrenceId: 'RecurrenceID',
+  };
+
 
   expandKeys = ['100'];
-  expandKeys1 = ['100'];
+  eKeys:any = ['100'];
   value?: string;
-  value1?: string;
+  val1?: string;
 
   nodes = [
     {
@@ -68,7 +93,7 @@ export class CustomerOnboardingComponent implements OnInit {
     }
   ];
 
-  nodes1 = [
+  n1 = [
     {
       title: 'Insight, 650 Village Trace, (888) 494-6744',
       key: '100',
@@ -111,7 +136,7 @@ export class CustomerOnboardingComponent implements OnInit {
   onChange($event: string): void {
     console.log($event);
   }
-  onChange1($event: string): void {
+  onChanges($event: string): void {
     console.log($event);
   }
 
@@ -131,10 +156,7 @@ export class CustomerOnboardingComponent implements OnInit {
   setCustomerType = 'Retail';
   checkCustomer = '';
 
-  constructor(private _formBuilder: FormBuilder, public dialog: MatDialog, private customerService: CustomerService) {
-
-  }
-
+ 
   myControl = new FormControl();
   options: string[] = ['Smith, Steve -1467854378 ', 'William, Marcus -6132457665', 'Doe, Jane -9107658990'];
   filteredOptions: Observable<string[]> | undefined;
@@ -235,3 +257,15 @@ export class CustomerOnboardingComponent implements OnInit {
     }
   }
 }
+
+export interface PeriodicElement {
+  time: string;
+  schedule: string;
+}
+const ELEMENT_DATA: PeriodicElement[] = [
+  { time: '9:00 AM', schedule: '9:00 AM - 12:00 PM' },
+  { time: '1:00 PM', schedule: '1:00 PM - 2:00 PM' },
+  { time: '3:00 PM', schedule: '3:00 PM - 5:00 PM' },
+  { time: '6:00 PM', schedule: '6:00 PM - 9:00 PM' },
+];
+

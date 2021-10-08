@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../customer.service';
+import { SchedulerModelFields } from '@progress/kendo-angular-scheduler';
+import { displayDate, sampleDataWithCustomSchema } from './events-utc';
 
 @Component({
   selector: 'app-customer-modal',
@@ -12,6 +14,20 @@ export class CustomerModalComponent implements OnInit {
   customerType ='Retail';
   
   constructor(private customerService: CustomerService) { }
+  public selectedDate: Date = displayDate;
+  public events: any[] = sampleDataWithCustomSchema;
+  public eventFields: SchedulerModelFields = {
+      id: 'TaskID',
+      title: 'Title',
+      description: 'Description',
+      startTimezone: 'StartTimezone',
+      start: 'Start',
+      end: 'End',
+      endTimezone: 'EndTimezone',
+      isAllDay: 'IsAllDay',
+      recurrenceRule: 'RecurrenceRule',
+      recurrenceId: 'RecurrenceID',
+  };
 
   ngOnInit(): void {
     debugger;

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
+import { SchedulerModelFields } from '@progress/kendo-angular-scheduler';
+import { displayDate, sampleDataWithCustomSchema } from './events-utc';
+
 
 @Component({
   selector: 'app-technician-list',
@@ -13,6 +16,24 @@ export class TechnicianListComponent implements OnInit {
   technician = new FormControl();
   technicianList: string[] = ['On Leave', 'On Work', 'Other'];
   constructor() { }
+
+  public selectedDate: Date = displayDate;
+  public events: any[] = sampleDataWithCustomSchema;
+  public eventFields: SchedulerModelFields = {
+      id: 'TaskID',
+      title: 'Title',
+      description: 'Description',
+      startTimezone: 'StartTimezone',
+      start: 'Start',
+      end: 'End',
+      endTimezone: 'EndTimezone',
+      isAllDay: 'IsAllDay',
+      recurrenceRule: 'RecurrenceRule',
+      recurrenceId: 'RecurrenceID',
+  };
+
+
+  datePic!: any;
 
   ngOnInit(): void {
 
