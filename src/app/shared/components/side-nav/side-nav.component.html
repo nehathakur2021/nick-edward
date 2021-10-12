@@ -63,6 +63,11 @@
             <span>Job Visit Module</span>
           </a>
         </li>
+        <li (click)="handleClose('technician-folder')" *ngIf='showTechnicianMenu'><a>
+            <i class="material-icons">post_add</i>
+            <span>Job Folder</span>
+          </a>
+        </li>
         <li (click)="handleClose('category')" *ngIf='showAdminMenu'><a>
             <i class="material-icons">category</i>
             <span>Manage Categories</span>

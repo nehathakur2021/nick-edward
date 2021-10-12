@@ -7,7 +7,20 @@ body {
   &.show {
     .appSideNavContainer {
       .aside {
+        @media (min-width:991px) {
+          left: -250px;
+        }
         left: 0;
+      }
+    }
+    .appContent {
+      @media (min-width:991px) {
+        padding-left: 0;
+      }
+    }
+    .pageTopbar {
+      @media (min-width:991px) {
+      left: 0;
       }
     }
   }

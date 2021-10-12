@@ -35,6 +35,7 @@ import { JobFolderComponent } from './job-folder/job-folder.component';
 import { JobPacketModalComponent } from './job-packet/job-packet-modal/job-packet-modal.component';
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
 import { SupplierModalComponent } from './supplier-list/supplier-modal/supplier-modal.component';
+import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder-technician.component';
 
 
 
@@ -86,7 +87,8 @@ import { SupplierModalComponent } from './supplier-list/supplier-modal/supplier-
     JobFolderComponent,
     JobPacketModalComponent,
     SupplierListComponent,
-    SupplierModalComponent
+    SupplierModalComponent,
+    JobFolderTechnicianComponent
 
    ]
 

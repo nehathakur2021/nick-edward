@@ -20,6 +20,7 @@ import { JobPacketComponent } from './job-packet/job-packet.component';
 import { JobFolderComponent } from './job-folder/job-folder.component';
 import { support } from 'jquery';
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
+import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder-technician.component';
 
 const routes: Routes = [
   {
@@ -97,7 +98,12 @@ const routes: Routes = [
       {
         path: 'supplier-list',
         component: SupplierListComponent
+      },
+      {
+        path: 'job-folder-technician',
+        component: JobFolderTechnicianComponent
       }
+
     ]
 
   }
