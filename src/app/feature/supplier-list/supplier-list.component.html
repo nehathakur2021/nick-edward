@@ -1,0 +1,64 @@
+<mat-card>
+
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+            <mat-card-title>
+                <span>Supplier</span>
+            </mat-card-title>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Supplier</mat-label>
+                <input matInput placeholder="Search by Name, Category & Subcategory">
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%" fxLayoutAlign="end start">
+            <button mat-flat-button color="primary"><span class="material-icons">upload</span> Upload Excel</button>
+            <button mat-flat-button color="primary" (click)="openDialog()"><span class="material-icons">add</span> New Supplier</button>
+        </div>
+
+    </div>
+
+    <mat-card-content>
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element"> <a href="javascript:void(0)"> {{element.name}} </a></td>
+                </ng-container>
+                <ng-container matColumnDef="phone">
+                    <th mat-header-cell *matHeaderCellDef> Phone <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                </ng-container>
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef> Address <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element">{{element.address}}  </td>
+                </ng-container>
+                <ng-container matColumnDef="companyname">
+                    <th mat-header-cell *matHeaderCellDef> Company Name <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element">{{element.companyname}}  </td>
+                </ng-container>
+                <ng-container matColumnDef="category">
+                    <th mat-header-cell *matHeaderCellDef> Category <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element">{{element.category}}  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="subcategory">
+                    <th mat-header-cell *matHeaderCellDef> Subcategory <span class="material-icons">import_export</span></th>
+                    <td mat-cell *matCellDef="let element">{{element.subcategory}}  </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef class="action"> Action </th>
+                    <td mat-cell *matCellDef="let element" class="action">
+                        <span class="material-icons edit" matTooltip="Edit" matTooltipPosition="below">edit</span>
+                        <span class="material-icons delete" matTooltip="Delete">delete</span>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
+    </mat-card-content>
+</mat-card>

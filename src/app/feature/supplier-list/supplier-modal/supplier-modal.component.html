@@ -1,0 +1,99 @@
+<h2 mat-dialog-title>Add New Supplier</h2>
+<mat-dialog-content class="mat-typography">
+    <div fxLayout="row wrap" fxLayoutGap="20px grid">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="Phone" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Street Address </mat-label>
+                <input matInput placeholder="example@gmail.com" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>State </mat-label>
+                <input matInput placeholder="State" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>City </mat-label>
+                <input matInput placeholder="City" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Zip Code </mat-label>
+                <input matInput placeholder="Zip Code" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Company Name </mat-label>
+                <input matInput placeholder="Company Name" />
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Category </mat-label>
+                <mat-select>
+                    <mat-option value="1">Remodels</mat-option>
+                    <mat-option value="2">Repairs</mat-option>
+                    <mat-option value="3">Carpentry</mat-option>
+                    <mat-option value="4">Painting</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Subcategory </mat-label>
+                <mat-select>
+                    <mat-option value="1">Home Remodels</mat-option>
+                    <mat-option value="2">Bathroom Remodels</mat-option>
+                    <mat-option value="3">Apartment Handyman Repair</mat-option>
+                    <mat-option value="4">Rental Property Repair</mat-option>
+                    <mat-option value="5">Ceiling Fan Installations</mat-option>
+                    <mat-option value="6">Recess Light Installations</mat-option>
+                    <mat-option value="7">Light Fixture Installations</mat-option>
+                    <mat-option value="8">Bath Tub Replacements & Doors</mat-option>
+                    <mat-option value="9">Kitchen & Bath Faucet Repairs</mat-option>
+                    <mat-option value="10">Store & Office Hauling</mat-option>
+                    <mat-option value="11">Yard Waste Removal</mat-option>
+                    <mat-option value="12">Packing & Moving Help</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

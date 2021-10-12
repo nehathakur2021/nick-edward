@@ -192,14 +192,17 @@ mat-checkbox {
 }
 .k-event {
   background-color: $primary-color;
-  padding: 5px 5px 5px 55px;
-  overflow: auto!important;
-  position: relative;
+  .calenderOut {
+    padding: 5px 5px 5px 95px;
+    overflow: auto!important;
+    position: relative;
+    height: 100%;
+  }
   h4.title {
     color: #fff;
     font-weight: 600;
     margin: 0!important;
-    font-size: 18px!important;
+    font-size: 36px!important;
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     position: absolute;
@@ -208,17 +211,21 @@ mat-checkbox {
     bottom: 0;
     text-align: center;
     background-color: #ff0000;
+    letter-spacing: 2px;
+    padding: 0 10px;
   }
   .helper {
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     position: absolute;
-    left: 23px;
+    left: 44px;
     top: 0;
     bottom: 0;
     text-align: center;
-    background-color: #00bfff;
+    background-color: #ff9900;
     margin: 0!important;
+    padding: 0 5px;
+    font-size: 25px!important;
   }
   p {
     margin: 5px 0 !important;

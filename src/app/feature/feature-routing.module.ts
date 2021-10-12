@@ -18,6 +18,8 @@ import { JobVisitModuleComponent } from './job-visit-module/job-visit-module.com
 import { JobAgreementComponent } from './job-agreement/job-agreement.component';
 import { JobPacketComponent } from './job-packet/job-packet.component';
 import { JobFolderComponent } from './job-folder/job-folder.component';
+import { support } from 'jquery';
+import { SupplierListComponent } from './supplier-list/supplier-list.component';
 
 const routes: Routes = [
   {
@@ -85,12 +87,16 @@ const routes: Routes = [
         component: JobAgreementComponent
       },
       {
-        path: 'job-packet',
+        path: 'calendar',
         component: JobPacketComponent
       },
       {
         path: 'job-folder',
         component: JobFolderComponent
+      },
+      {
+        path: 'supplier-list',
+        component: SupplierListComponent
       }
     ]
 

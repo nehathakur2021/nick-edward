@@ -33,6 +33,8 @@ import { JobAgreementComponent } from './job-agreement/job-agreement.component';
 import { JobPacketComponent } from './job-packet/job-packet.component';
 import { JobFolderComponent } from './job-folder/job-folder.component';
 import { JobPacketModalComponent } from './job-packet/job-packet-modal/job-packet-modal.component';
+import { SupplierListComponent } from './supplier-list/supplier-list.component';
+import { SupplierModalComponent } from './supplier-list/supplier-modal/supplier-modal.component';
 
 
 
@@ -82,7 +84,9 @@ import { JobPacketModalComponent } from './job-packet/job-packet-modal/job-packe
     JobAgreementComponent,
     JobPacketComponent,
     JobFolderComponent,
-    JobPacketModalComponent
+    JobPacketModalComponent,
+    SupplierListComponent,
+    SupplierModalComponent
 
    ]
 

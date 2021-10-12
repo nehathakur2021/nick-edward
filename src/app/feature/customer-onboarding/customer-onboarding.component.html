@@ -22,13 +22,11 @@
             </div>
             <div class="searchCustomer">
                 <div fxLayout="row wrap" fxLayoutGap="5px grid">
-                    <div fxFlex="100%">
-                        <p><b>Client Billing Info</b></p>
-                    </div>
                     <div fxFlex="100%" *ngIf="setCustomerType === 'Residential'">
-                        <mat-checkbox class="checkBox" color="primary">Commercial
+                        <mat-checkbox class="checkBox" color="primary" (click)="checkValue()">Commercial
                         </mat-checkbox>
                     </div>
+
                 </div>
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
                     <div fxFlex="40%">
@@ -68,6 +66,10 @@
                     <div fxFlex="30%">
                         <mat-checkbox class="zipCheckBox" color="primary">Do you still want to add customer?
                         </mat-checkbox>
+                    </div>
+
+                    <div fxFlex="100%">
+                        <h1><b>Client Billing Info</b></h1>
                     </div>
                 </div>
             </div>
@@ -174,19 +176,22 @@
 
             <div class="retail" *ngIf="setCustomerType === 'Residential'">
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%"
+                        *ngIf="setCustomerType === 'Residential' && isCommercialChecked === false">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>First Name</mat-label>
                             <input matInput placeholder="First Name" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%"
+                        *ngIf="setCustomerType === 'Residential' && isCommercialChecked === false">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Last Name</mat-label>
                             <input matInput placeholder="Last Name" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%"
+                        *ngIf="setCustomerType === 'Residential' && isCommercialChecked === true">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Site/Property Name</mat-label>
                             <input matInput placeholder="Last Name" />
@@ -228,29 +233,33 @@
                             <input matInput placeholder="Zip Code" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
-                        <mat-checkbox class="checkBox" color="primary">Job Site Address Same as Billind</mat-checkbox>
-                    </div>
                     <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
-                        <mat-checkbox class="checkBox" color="primary">Update Existing Customer</mat-checkbox>
+                        <mat-checkbox class="zipCheckBox" color="primary">Update Existing Customer</mat-checkbox>
                     </div>
+                    <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                        <mat-checkbox class="checkBox" color="primary">Job Site Address Same as Billing</mat-checkbox>
+                    </div>
+
                     <!-- <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-checkbox class="checkBox" color="primary">OSC</mat-checkbox>
                     </div>  -->
 
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%"
+                        *ngIf="setCustomerType === 'Residential' && isCommercialChecked === false">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>First Name</mat-label>
                             <input matInput placeholder="First Name" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%"
+                        *ngIf="setCustomerType === 'Residential' && isCommercialChecked === false">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Last Name</mat-label>
                             <input matInput placeholder="Last Name" />
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%"
+                        *ngIf="setCustomerType === 'Residential' && isCommercialChecked === true">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Site/Property Name</mat-label>
                             <input matInput placeholder="Last Name" />
@@ -339,25 +348,25 @@
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Labour Rate</mat-label>
-                        <input matInput value="$65"/>
+                        <input matInput value="$65" />
                     </mat-form-field>
                 </div>
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Travel Rate</mat-label>
-                        <input matInput value="$65"/>
+                        <input matInput value="$65" />
                     </mat-form-field>
                 </div>
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Addition Travel</mat-label>
-                        <input matInput placeholder="Enter Amount"/>
+                        <input matInput placeholder="Enter Amount" />
                     </mat-form-field>
                 </div>
                 <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Minimum On-Site</mat-label>
-                        <input matInput placeholder="Enter Amount"/>
+                        <input matInput placeholder="Enter Amount" />
                     </mat-form-field>
                 </div>
             </div>
@@ -412,11 +421,41 @@
                     </div>
                 </div>
             </div>
+
             <div fxLayout="row wrap" fxLayoutGap="15px grid">
                 <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                     <mat-checkbox class="checkBox" color="primary">OSC</mat-checkbox>
                 </div>
             </div>
+
+            <div fxLayout="row wrap" fxLayoutGap="15px grid" *ngIf="setCustomerType === 'Retail'">
+                <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                    <h3>Add Agreement</h3>
+                </div>
+                <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Choose Agreements</mat-label>
+                        <mat-select multiple>
+                            <mat-option value="greement 1">Agreement 1</mat-option>
+                            <mat-option value="greement 2">Agreement 2</mat-option>
+                            <mat-option value="greement 3">Agreement 3</mat-option>
+                            <mat-option value="greement 4">Agreement 4</mat-option>
+                            <mat-option value="greement 4">Agreement 5</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Job Packet</mat-label>
+                        <input matInput placeholder="Job Packet" />
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-checkbox color="primary" class="example-margin">Please check if customer already existing
+                    </mat-checkbox>
+                </div>
+            </div>
+
             <div>
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-flat-button matStepperNext color="primary">Next</button>
@@ -491,22 +530,24 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-             
+
 
             </div>
         </div>
-        <div  fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div fxLayout="row wrap" fxLayoutGap="15px grid">
             <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                 <kendo-scheduler [kendoSchedulerBinding]="events" [modelFields]="eventFields"
                     [selectedDate]="selectedDate" style="height: 550px;">
                     <ng-template kendoSchedulerEventTemplate let-event>
-                        <h4 class="title">{{ event.dataItem.TechnicianName }}</h4>
-                        <p>{{event.dataItem.StartTimezone}}</p>
-                        <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
-                        <p class="helper">{{event.dataItem.Helpers}}</p>
-                        <p><span>Customer Phone No. : </span>{{event.dataItem.CustomerPhone}}</p>
-                        <p><span>Address : </span>{{event.dataItem.Address}}</p>
-                        <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                        <div class="calenderOut">
+                            <h4 class="title">{{ event.dataItem.TechnicianName }}</h4>
+                            <p>{{event.dataItem.StartTimezone}}</p>
+                            <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
+                            <p class="helper">{{event.dataItem.Helpers}}</p>
+                            <p><span>Customer Phone No. : </span>{{event.dataItem.CustomerPhone}}</p>
+                            <p><span>Address : </span>{{event.dataItem.Address}}</p>
+                            <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                        </div>
                     </ng-template>
 
                     <kendo-scheduler-day-view>

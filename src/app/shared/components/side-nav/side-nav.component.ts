@@ -78,10 +78,14 @@ export class SideNavComponent implements OnInit {
     }
     else if (route === "packet") {
         this.showUsersMenu = true;
-      this.router.navigateByUrl("/job-packet");
+      this.router.navigateByUrl("/calendar");
     }
     else if (route === "folder") {
         this.showUsersMenu = true;
+      this.router.navigateByUrl("/job-folder");
+    }
+    else if (route === "jobFoler") {
+        this.showAdminMenu = true;
       this.router.navigateByUrl("/job-folder");
     }
     else if (route === "list") {
@@ -91,6 +95,10 @@ export class SideNavComponent implements OnInit {
     else if (route === "visit-module") {
       this.showAdminMenu = true
       this.router.navigateByUrl("/job-visit-module");
+    }
+    else if (route === "supplier") {
+      this.showAdminMenu = true
+      this.router.navigateByUrl("/supplier-list");
     }
     else if (route === "technician") {
       this.showTechnicianMenu = true

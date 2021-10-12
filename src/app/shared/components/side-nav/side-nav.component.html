@@ -23,14 +23,14 @@
           </a>
         </li>
 
-        <li *ngIf='showUsersMenu' (click)="handleClose('tech')"><a>
+        <!-- <li *ngIf='showUsersMenu' (click)="handleClose('tech')"><a>
             <i class="material-icons">engineering</i>
             <span>Technician</span>
           </a>
-        </li>
+        </li> -->
         <li *ngIf='showUsersMenu' (click)="handleClose('packet')"><a>
-            <i class="material-icons">wysiwyg</i>
-            <span>Job Packet</span>
+            <i class="material-icons">event_available</i>
+            <span>Calendar</span>
           </a>
         </li>
         <li *ngIf='showUsersMenu' (click)="handleClose('folder')"><a>
@@ -41,6 +41,11 @@
         <li (click)="handleClose('list')" *ngIf='showAdminMenu'><a>
             <i class="material-icons">engineering</i>
             <span>Technician List</span>
+          </a>
+        </li>
+        <li (click)="handleClose('jobFoler')" *ngIf='showAdminMenu'><a>
+            <i class="material-icons">post_add</i>
+            <span>Job Folder</span>
           </a>
         </li>
         <li (click)="handleClose('visit-module')" *ngIf='showAdminMenu'><a>
@@ -66,6 +71,11 @@
         <li (click)="handleClose('agreement')" *ngIf='showAdminMenu'><a>
             <i class="material-icons"> note_alt</i>
             <span>Job Agreement</span>
+          </a>
+        </li>
+        <li (click)="handleClose('supplier')" *ngIf='showAdminMenu'><a>
+            <i class="material-icons"> hail</i>
+            <span>Suppliers List</span>
           </a>
         </li>
       </ul>

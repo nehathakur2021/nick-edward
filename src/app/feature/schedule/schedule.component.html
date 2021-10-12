@@ -11,23 +11,23 @@
                     <kendo-scheduler [kendoSchedulerBinding]="events" [modelFields]="eventFields"
                         [selectedDate]="selectedDate" style="height: 550px;">
                         <ng-template kendoSchedulerEventTemplate let-event>
-                            <h4 class="title">{{ event.title }}</h4>
-                            <p>{{event.dataItem.StartTimezone}}</p>
-                            <p><span>Order ID : </span>#{{event.dataItem.OrderId}}</p>
-                            <p><span>Type : </span>{{event.dataItem.Type}}</p>
-                            <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
-                            <p><span>Total Time : </span> {{event.dataItem.TotalTime}} Hours</p>
-                            <p><span>Helpers : </span> {{event.dataItem.Helpers}}</p>
-                            <p><span>Address : </span>{{event.dataItem.Address}}</p>
-                            <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                            <div class="calenderOut">
+                                <h4 class="title">{{ event.title }}</h4>
+                                <p>{{event.dataItem.StartTimezone}}</p>
+                                <p><span>Order ID : </span>#{{event.dataItem.OrderId}}</p>
+                                <p><span>Type : </span>{{event.dataItem.Type}}</p>
+                                <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
+                                <p><span>Total Time : </span> {{event.dataItem.TotalTime}} Hours</p>
+                                <p class="helper"> {{event.dataItem.Helpers}}</p>
+                                <p><span>Address : </span>{{event.dataItem.Address}}</p>
+                                <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                            </div>
                         </ng-template>
-
                         <kendo-scheduler-day-view>
                         </kendo-scheduler-day-view>
                     </kendo-scheduler>
                 </mat-card-content>
             </div>
         </div>
-
     </div>
 </mat-card>

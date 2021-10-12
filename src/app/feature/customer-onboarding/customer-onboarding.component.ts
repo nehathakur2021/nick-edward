@@ -19,6 +19,7 @@ import { displayDate, sampleDataWithCustomSchema } from './events-utc';
   styleUrls: ['./customer-onboarding.component.scss']
 })
 export class CustomerOnboardingComponent implements OnInit {
+  isCommercialChecked: boolean = false;
   displayedColumns = ['time', 'schedule',];
   dataSource = ELEMENT_DATA;
 
@@ -255,6 +256,12 @@ export class CustomerOnboardingComponent implements OnInit {
       this.showRetail = false;
       this.showResideantial = true;
     }
+  }
+
+  checkValue(){
+    this.isCommercialChecked = !this.isCommercialChecked;
+    console.log(this.isCommercialChecked);
+    
   }
 }
 

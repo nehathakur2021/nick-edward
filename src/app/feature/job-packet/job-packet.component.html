@@ -1,36 +1,44 @@
 <mat-card>
-    <mat-card-title>
-        Job Packet
-    </mat-card-title>
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn" fxLayoutAlign="start center">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+            <mat-card-title>
+                <span>Calendar</span>
+            </mat-card-title>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Technician</mat-label>
+                <input matInput placeholder="Search by Name">
+            </mat-form-field>
+        </div>
+    </div>
     <mat-card-content>
-
         <div fxLayout="row wrap" fxLayoutGap="15px grid" class="radioBtn">
             <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                 <kendo-scheduler [kendoSchedulerBinding]="events" [modelFields]="eventFields"
-                    [selectedDate]="selectedDate" style="height: 550px;" (click)="openModal()">
+                    [selectedDate]="selectedDate" style="height: 550px;">
                     <ng-template kendoSchedulerEventTemplate let-event>
-                        <div class="jobPacket">
-                            <h4 class="title">{{ event.title }} </h4>
-                            <mat-checkbox color="primary" class="example-margin"></mat-checkbox>
-                        </div>
+                        <div class="calenderOut" (click)="openModal()">
+                            <!-- <div class="jobPacket">
 
-                        <p>{{event.dataItem.StartTimezone}}</p>
-                        <p><span>Order ID : </span>#{{event.dataItem.OrderId}}</p>
-                        <p><span>Type : </span>{{event.dataItem.Type}}</p>
-                        <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
-                        <p><span>Total Time : </span> {{event.dataItem.TotalTime}} Hours</p>
-                        <p><span>Helpers : </span> {{event.dataItem.Helpers}}</p>
-                        <p><span>Address : </span>{{event.dataItem.Address}}</p>
-                        <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                                <mat-checkbox color="primary" class="example-margin"></mat-checkbox>
+                            </div> -->
+                            <h4 class="title">{{ event.title }} </h4>
+
+                            <p>{{event.dataItem.StartTimezone}}</p>
+                            <!-- <p><span>Order ID : </span>#{{event.dataItem.OrderId}}</p> -->
+                            <!-- <p><span>Type : </span>{{event.dataItem.Type}}</p> -->
+                            <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
+                            <!-- <p><span>Total Time : </span> {{event.dataItem.TotalTime}} Hours</p> -->
+                            <p class="helper"> {{event.dataItem.Helpers}}</p>
+                            <p><span>Address : </span>{{event.dataItem.Address}}</p>
+                            <p><span>Short Description : </span>{{event.dataItem.Description}}</p>
+                        </div>
                     </ng-template>
 
                     <kendo-scheduler-day-view>
                     </kendo-scheduler-day-view>
                 </kendo-scheduler>
-            </div>
-            <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%"
-                fxLayoutAlign="end start">
-                <button mat-flat-button color="primary" routerLink="/job-folder">Make Job Folder</button>
             </div>
         </div>
 
