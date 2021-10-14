@@ -7,20 +7,20 @@ body {
   &.show {
     .appSideNavContainer {
       .aside {
-        @media (min-width:991px) {
+        @media (min-width: 991px) {
           left: -250px;
         }
         left: 0;
       }
     }
     .appContent {
-      @media (min-width:991px) {
+      @media (min-width: 991px) {
         padding-left: 0;
       }
     }
     .pageTopbar {
-      @media (min-width:991px) {
-      left: 0;
+      @media (min-width: 991px) {
+        left: 0;
       }
     }
   }
@@ -60,7 +60,7 @@ h5 {
   }
 }
 
-table {
+table, .mat-table {
   width: 100%;
   .mat-header-cell {
     font-size: 14px;
@@ -69,8 +69,9 @@ table {
       cursor: pointer;
     }
   }
-  .action {
+  .action, .mat-column-action {
     text-align: right !important;
+    justify-content: flex-end;
     .material-icons {
       cursor: pointer;
       &.edit {
@@ -140,11 +141,22 @@ table {
 
 /*--mat table css --*/
 .mat-table {
-  > thead {
+  thead {
     tr {
       background-color: $primary-color;
       th {
         color: #fff;
+      }
+    }
+  }
+  .mat-header-row {
+    background-color: $primary-color;
+    .mat-header-cell {
+      color: #fff;
+      font-size: 14px;
+      .material-icons {
+        vertical-align: middle;
+        cursor: pointer;
       }
     }
   }
@@ -207,15 +219,15 @@ mat-checkbox {
   background-color: $primary-color;
   .calenderOut {
     padding: 5px 5px 5px 95px;
-    overflow: auto!important;
+    overflow: auto !important;
     position: relative;
     height: 100%;
   }
   h4.title {
     color: #fff;
     font-weight: 600;
-    margin: 0!important;
-    font-size: 36px!important;
+    margin: 0 !important;
+    font-size: 36px !important;
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     position: absolute;
@@ -236,9 +248,9 @@ mat-checkbox {
     bottom: 0;
     text-align: center;
     background-color: #ff9900;
-    margin: 0!important;
+    margin: 0 !important;
     padding: 0 5px;
-    font-size: 25px!important;
+    font-size: 25px !important;
   }
   p {
     margin: 5px 0 !important;
@@ -249,5 +261,4 @@ mat-checkbox {
 }
 .k-event.k-state-selected {
   background-color: $primary-color;
- 
 }

@@ -36,7 +36,12 @@ import { JobPacketModalComponent } from './job-packet/job-packet-modal/job-packe
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
 import { SupplierModalComponent } from './supplier-list/supplier-modal/supplier-modal.component';
 import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder-technician.component';
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { AssignTemplateComponent } from './assign-template/assign-template.component';
+import { TemplateModalComponent } from './assign-template/template-modal/template-modal.component';
+import { JobVisitModalComponent } from './job-visit/job-visit-modal/job-visit-modal.component';
 
 
 @NgModule({
@@ -49,7 +54,10 @@ import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder
     MatTableFilterModule,
     NzTreeSelectModule,
     SchedulerModule,
-    NgxFullCalendarModule
+    NgxFullCalendarModule,
+    // BrowserAnimationsModule,
+
+
   ],
   exports:[
     CommonModule,
@@ -88,7 +96,10 @@ import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder
     JobPacketModalComponent,
     SupplierListComponent,
     SupplierModalComponent,
-    JobFolderTechnicianComponent
+    JobFolderTechnicianComponent,
+    AssignTemplateComponent,
+    TemplateModalComponent,
+    JobVisitModalComponent
 
    ]
 

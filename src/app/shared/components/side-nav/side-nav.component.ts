@@ -96,6 +96,10 @@ export class SideNavComponent implements OnInit {
       this.showAdminMenu = true
       this.router.navigateByUrl("/job-visit-module");
     }
+    else if (route === "assign-template") {
+      this.showAdminMenu = true
+      this.router.navigateByUrl("/assign-template");
+    }
     else if (route === "supplier") {
       this.showAdminMenu = true
       this.router.navigateByUrl("/supplier-list");

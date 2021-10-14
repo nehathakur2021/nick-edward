@@ -21,6 +21,7 @@ import { JobFolderComponent } from './job-folder/job-folder.component';
 import { support } from 'jquery';
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
 import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder-technician.component';
+import { AssignTemplateComponent } from './assign-template/assign-template.component';
 
 const routes: Routes = [
   {
@@ -102,7 +103,12 @@ const routes: Routes = [
       {
         path: 'job-folder-technician',
         component: JobFolderTechnicianComponent
+      },
+      {
+        path: 'assign-template',
+        component: AssignTemplateComponent
       }
+
 
     ]
 

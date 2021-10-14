@@ -53,6 +53,11 @@
             <span>Job Visit Module</span>
           </a>
         </li>
+        <li (click)="handleClose('assign-template')" *ngIf='showAdminMenu'><a>
+            <i class="material-icons">assignment</i>
+            <span>Assign Template</span>
+          </a>
+        </li>
         <li (click)="handleClose('technician')" *ngIf='showTechnicianMenu'><a>
             <i class="material-icons">schedule</i>
             <span>Schedule</span>
