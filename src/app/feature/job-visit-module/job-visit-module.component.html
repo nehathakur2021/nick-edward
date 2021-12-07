@@ -1,17 +1,18 @@
 <mat-card>
     <div fxLayout="row wrap" fxLayoutGap="15px grid">
-        <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%" fxLayoutAlign="start center">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="start center">
             <mat-card-title>
                 Job Visit Module
             </mat-card-title>
         </div>
-        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
             <mat-form-field appearance="legacy">
                 <mat-label>Search Template</mat-label>
                 <input matInput placeholder="Search Template">
             </mat-form-field>
         </div>
-        <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%" fxLayoutAlign="end center">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxLayoutAlign="end center">
+            <button mat-flat-button color="primary"><span class="material-icons">upload</span> Upload Template</button>
             <button mat-flat-button color="primary" (click)="openDialog()"><span class="material-icons">add</span>
                 New Template</button>
         </div>

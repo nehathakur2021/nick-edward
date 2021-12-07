@@ -1,10 +1,10 @@
-@import '../../../assets/scss/variables.scss';
+@import "../../../assets/scss/variables.scss";
 
 ::ng-deep .mat-tree {
     margin-top: 20px !important;
     .cdk-tree-node {
         // border: 1px solid #e3e3e3;
-        box-shadow: 0 0 10px rgba(0,0,0,20%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
         background-color: #f1f1f1;
         margin: 10px 0 15px;
         .mat-icon-button {
@@ -14,16 +14,28 @@
         }
     }
 }
-.SubcategoryButton{
-    margin-left: auto; 
+.SubcategoryButton {
+    margin-left: auto;
 }
-.categoryButton{
-    margin-left:auto;  
+.categoryButton {
+    margin-left: auto;
 }
-.subcategory{
+.subcategory {
     margin: 0px 0 15px 70px;
     padding: 0 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
     border-radius: 5px;
+}
+.price {
+    position: absolute;
+    left: 50%;
+    p {
+        margin: 0;
+        span {
+            color: #999;
+            width: 200px;
+            display: inline-block;
+        }
+    }
 }

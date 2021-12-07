@@ -1,0 +1,55 @@
+<mat-card>
+    <div fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="start center">
+            <mat-card-title>
+                Invoice
+            </mat-card-title>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Invoice</mat-label>
+                <input matInput placeholder="Search Invoice">
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="50%" fxFlex.sm="50%" fxLayoutAlign="end center">
+            <button mat-flat-button color="primary"><span class="material-icons">upload</span> Upload Invoice</button> 
+            <a mat-flat-button color="primary" href="https://youtu.be/2ZII3HOlIfA" target="_blank"><span class="material-icons">add</span>
+                New Invoice</a>
+        </div>
+    </div>
+
+    <mat-card-content>
+        <div fxLayout="row wrap" fxLayoutGap="15px grid">
+            <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+                <div class="example-container mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef>Invoice Name <span
+                                    class="material-icons">import_export</span>
+                            </th>
+                            <td mat-cell *matCellDef="let element"> <a href="javascript:void(0)"> {{element.name}}
+                                </a>
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="active">
+                            <th mat-header-cell *matHeaderCellDef> Active/Inactive </th>
+                            <td mat-cell *matCellDef="let element">
+                                <mat-slide-toggle color="primary"></mat-slide-toggle>
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef class="action"> Action </th>
+                            <td mat-cell *matCellDef="let element" class="action">
+                                <span class="material-icons edit" matTooltip="Edit"
+                                    matTooltipPosition="below">edit</span>
+                                <span class="material-icons delete" matTooltip="Delete">delete</span>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

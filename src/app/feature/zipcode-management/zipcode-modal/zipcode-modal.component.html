@@ -1,0 +1,78 @@
+<h2 mat-dialog-title>Add New Zipcode</h2>
+<mat-dialog-content class="mat-typography">
+
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+
+        <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <mat-form-field class="example-chip-list" appearance="outline">
+                <mat-label>Zone</mat-label>
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable"
+                        (removed)="remove(fruit)">
+                        {{fruit}}
+                    </mat-chip>
+                    <input placeholder="Select or add new zone..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto"
+                        [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+                        {{fruit}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+     
+        </div>
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>State</mat-label>
+                <mat-select>
+                    <mat-option value="Alaska">Alaska</mat-option>
+                    <mat-option value="Arizona">Arizona</mat-option>
+                    <mat-option value="Florida">Florida</mat-option>
+                    <mat-option value="Michigan">Michigan</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>City</mat-label>
+                <mat-select>
+                    <mat-option value="New York City ">New York City </mat-option>
+                    <mat-option value="	Los Angeles">Los Angeles</mat-option>
+                    <mat-option value="Chicago">Chicago</mat-option>
+                    <mat-option value="Houston">Houston</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Zip Code</mat-label>
+                <mat-select>
+                    <mat-option value="99501 ">99501 </mat-option>
+                    <mat-option value="	85001 ">85001 </mat-option>
+                    <mat-option value="72201">72201</mat-option>
+                    <mat-option value="94203 ">94203 </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select>
+                    <mat-option value="Available ">Available </mat-option>
+                    <mat-option value="	Not Available ">Not Available </mat-option>
+                    <mat-option value="Available Soon">Available Soon</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

@@ -64,10 +64,15 @@ export class SideNavComponent implements OnInit {
         this.showUsersMenu = true;
       this.router.navigateByUrl("/customer-onboarding");
     }
-    else if (route === "users") {
+    else if (route === "dashboard") {
         this.showAdminMenu = true;
-      this.router.navigateByUrl("/users");
+      this.router.navigateByUrl("/admin-dashboard");
     }
+    else if (route === "users") {
+      this.showAdminMenu = true;
+    this.router.navigateByUrl("/users");
+  }
+ 
     else if (route === "agreement") {
         this.showAdminMenu = true;
       this.router.navigateByUrl("/job-agreement");
@@ -96,6 +101,10 @@ export class SideNavComponent implements OnInit {
       this.showAdminMenu = true
       this.router.navigateByUrl("/job-visit-module");
     }
+    else if (route === "visit-module2") {
+      this.showUsersMenu = true
+      this.router.navigateByUrl("/job-visit-module");
+    }
     else if (route === "assign-template") {
       this.showAdminMenu = true
       this.router.navigateByUrl("/assign-template");
@@ -103,6 +112,38 @@ export class SideNavComponent implements OnInit {
     else if (route === "supplier") {
       this.showAdminMenu = true
       this.router.navigateByUrl("/supplier-list");
+    }
+    else if (route === "zipcode-management") {
+      this.showAdminMenu = true
+      this.router.navigateByUrl("/zipcode-management");
+    }
+    else if (route === "pricing") {
+      this.showAdminMenu = true
+      this.router.navigateByUrl("/pricing");
+    }
+    else if (route === "estimate") {
+      this.showAdminMenu = true
+      this.router.navigateByUrl("/estimate");
+    }
+    else if (route === "invoice") {
+      this.showAdminMenu = true
+      this.router.navigateByUrl("/invoice");
+    }
+    else if (route === "estimate1") {
+      this.showUsersMenu = true
+      this.router.navigateByUrl("/estimate");
+    }
+    else if (route === "invoice1") {
+      this.showUsersMenu = true
+      this.router.navigateByUrl("/invoice");
+    }
+    else if (route === "estimate2") {
+      this.showTechnicianMenu = true
+      this.router.navigateByUrl("/estimate");
+    }
+    else if (route === "invoice2") {
+      this.showTechnicianMenu = true
+      this.router.navigateByUrl("/invoice");
     }
     else if (route === "technician") {
       this.showTechnicianMenu = true

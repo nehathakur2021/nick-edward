@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Assign Folder</h2>
+<mat-dialog-content class="mat-typography">
+    <div fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Folder</mat-label>
+                <mat-select>
+                    <mat-option value="one">Folder 1</mat-option>
+                    <mat-option value="three">Folder</mat-option>
+                    <mat-option value="four">Folder 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose Technician</mat-label>
+                <mat-select>
+                    <mat-option value="one">Joseph William</mat-option>
+                    <mat-option value="three">Robert Henry</mat-option>
+                    <mat-option value="four">Nathaniel Ethan</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

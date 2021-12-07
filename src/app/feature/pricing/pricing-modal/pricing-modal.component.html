@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Add Pricing</h2>
+<mat-dialog-content class="mat-typography">
+
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+        <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Zone</mat-label>
+                <mat-select>
+                    <mat-option value="Zone 1">Zone 1 </mat-option>
+                    <mat-option value="	Zone 2">Zone 2 </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex="30%" fxFlex.lg="30%" fxFlex.md="30%" fxFlex.sm="30%" fxFlex.xs="30%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Technician</mat-label>
+                <input matInput type="number" placeholder="Enter Numbers of Technician">
+            </mat-form-field>
+        </div>
+        <div fxFlex="30%" fxFlex.lg="30%" fxFlex.md="30%" fxFlex.sm="30%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>First Hour</mat-label>
+                <input matInput type="text" placeholder="Amount">
+            </mat-form-field>
+        </div>
+        <div fxFlex="30%" fxFlex.lg="30%" fxFlex.md="30%" fxFlex.sm="30%" fxFlex.xs="100%">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Additional Hour</mat-label>
+                <input matInput type="text" placeholder="Amount">
+            </mat-form-field>
+        </div>
+        <div fxFlex="10%" fxFlex.lg="10%" fxFlex.md="10%" fxFlex.sm="10%" fxFlex.xs="100%">
+            <button mat-mini-fab color="primary" class="addBtn" aria-label="Example icon button with a menu icon">
+                <mat-icon>add</mat-icon>
+              </button>
+        </div>
+    </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

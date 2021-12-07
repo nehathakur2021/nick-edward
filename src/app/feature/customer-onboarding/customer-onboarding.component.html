@@ -12,24 +12,29 @@
                         <div class="heading">
                             <mat-card-title> Type of Customer</mat-card-title>
                         </div>
-                        <div class="toggleButton">
+                        <!-- <div class="toggleButton">
                             <span>Facilities</span>
                             <mat-slide-toggle [formControl]="customerType" (change)='selectedCustomerType()'>Residential
                             </mat-slide-toggle>
-                        </div>
+                        </div> -->
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button color="primary" value="1" [checked]="true" (click)="selectedCustomerTypeRetail()">Facilities</mat-radio-button>
+                            <mat-radio-button color="primary" value="2" (click)="selectedCustomerTypeResidential()">Residential</mat-radio-button>
+                            <mat-radio-button color="primary" value="3" (click)="checkValue()">Commercial</mat-radio-button>
+                        </mat-radio-group>
                     </div>
                 </div>
             </div>
             <div class="searchCustomer">
-                <div fxLayout="row wrap" fxLayoutGap="5px grid">
+                <!-- <div fxLayout="row wrap" fxLayoutGap="5px grid">
                     <div fxFlex="100%" *ngIf="setCustomerType === 'Residential'">
                         <mat-checkbox class="checkBox" color="primary" (click)="checkValue()">Commercial
                         </mat-checkbox>
                     </div>
 
-                </div>
+                </div> -->
                 <div fxLayout="row wrap" fxLayoutGap="15px grid">
-                    <div fxFlex="40%">
+                    <div fxFlex="40%" fxFlex.xl="40%" fxFlex.lg="40%" fxFlex.md="100%" fxFlex.xs="100%">
                         <!-- <nz-tree-select style="width: 250px" [nzExpandedKeys]="expandKeys1" [nzNodes]="nodes1"
                             nzShowSearch nzPlaceHolder="Search  Retail and Store" [(ngModel)]="value1"
                             (ngModelChange)="onChange1($event)" *ngIf="setCustomerType === 'Retail'">
@@ -54,7 +59,7 @@
                             </mat-autocomplete>
                         </mat-form-field>
                     </div>
-                    <div fxFlex="30%">
+                    <div fxFlex="20%" fxFlex.xl="20%" fxFlex.lg="20%" fxFlex.md="50%" fxFlex.xs="100%">
                         <div class="zipCode">
                             <mat-form-field class="example-full-width" appearance="outline">
                                 <mat-label>Zip Code</mat-label>
@@ -63,7 +68,7 @@
                             <p class="errorMessage"> Zipcode outside of service area.</p>
                         </div>
                     </div>
-                    <div fxFlex="30%">
+                    <div fxFlex="40%" fxFlex.xl="40%" fxFlex.lg="40%" fxFlex.md="50%" fxFlex.xs="100%">
                         <mat-checkbox class="zipCheckBox" color="primary">Do you still want to add customer?
                         </mat-checkbox>
                     </div>
@@ -330,7 +335,7 @@
                             <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
                         </mat-form-field>
                     </div>
-                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <div fxFlex="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>NTE / DNE</mat-label>
                             <input matInput placeholder="NTE / DNE" />
@@ -428,9 +433,13 @@
                 </div>
             </div>
 
-            <div fxLayout="row wrap" fxLayoutGap="15px grid" *ngIf="setCustomerType === 'Retail'">
-                <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+            <div fxLayout="row wrap" fxLayoutGap="15px grid">
+                <div fxFlex="20%" fxFlex.lg="20%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
                     <button mat-flat-button color="primary">Create Folder</button>
+                </div>
+                <div fxFlex="30%">
+                    <mat-checkbox color="primary">Do you still want to create folder?
+                    </mat-checkbox>
                 </div>
                 <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
                     <h3>Add Agreement</h3>
@@ -546,7 +555,8 @@
                             <h4 class="title">{{ event.dataItem.TechnicianName }}</h4>
                             <p>{{event.dataItem.StartTimezone}}</p>
                             <p><span>Customer Name : </span>{{event.dataItem.CustomerName}}</p>
-                            <p class="helper">{{event.dataItem.Helpers}}</p>
+                            <p class="helper helper_{{i}}" *ngFor="let helper of event.dataItem.Helpers;let i = index">
+                                {{helper}}</p>
                             <p><span>Customer Phone No. : </span>{{event.dataItem.CustomerPhone}}</p>
                             <p><span>Address : </span>{{event.dataItem.Address}}</p>
                             <p><span>Short Description : </span>{{event.dataItem.Description}}</p>

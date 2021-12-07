@@ -97,7 +97,7 @@ export class ManageCategoryComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog() {
-    const dialogRef = this.dialog.open(CategoryModalComponent,{maxWidth: '800px',});
+    const dialogRef = this.dialog.open(CategoryModalComponent,{maxWidth: '1000px',});
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

@@ -42,6 +42,19 @@ import { MatSort } from '@angular/material/sort';
 import { AssignTemplateComponent } from './assign-template/assign-template.component';
 import { TemplateModalComponent } from './assign-template/template-modal/template-modal.component';
 import { JobVisitModalComponent } from './job-visit/job-visit-modal/job-visit-modal.component';
+import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } from '@angular-material-components/color-picker';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ZipcodeManagementComponent } from './zipcode-management/zipcode-management.component';
+import { ZipcodeModalComponent } from './zipcode-management/zipcode-modal/zipcode-modal.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { PricingModalComponent } from './pricing/pricing-modal/pricing-modal.component';
+import { EstimateComponent } from './estimate/estimate.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { ModalJobFolerComponent } from './job-folder/modal-job-foler/modal-job-foler.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AssignFolderComponent } from './job-folder/assign-folder/assign-folder.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -56,9 +69,18 @@ import { JobVisitModalComponent } from './job-visit/job-visit-modal/job-visit-mo
     SchedulerModule,
     NgxFullCalendarModule,
     // BrowserAnimationsModule,
+    NgxMatColorPickerModule,
 
+    MatCardModule,
+ 
+    MatFormFieldModule,
+  
 
   ],
+  providers: [
+    { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }
+   ],
+
   exports:[
     CommonModule,
     UiComponentModule,
@@ -99,7 +121,16 @@ import { JobVisitModalComponent } from './job-visit/job-visit-modal/job-visit-mo
     JobFolderTechnicianComponent,
     AssignTemplateComponent,
     TemplateModalComponent,
-    JobVisitModalComponent
+    JobVisitModalComponent,
+    ZipcodeManagementComponent,
+    ZipcodeModalComponent,
+    PricingComponent,
+    PricingModalComponent,
+    EstimateComponent,
+    InvoiceComponent,
+    ModalJobFolerComponent,
+    AdminDashboardComponent,
+    AssignFolderComponent
 
    ]
 

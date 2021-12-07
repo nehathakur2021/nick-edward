@@ -40,4 +40,9 @@ padding: 0 0 10px;
     ::ng-deep  .mat-form-field-wrapper {
         padding: 0 !important;
     }
+    .colorPicker {
+        ::ng-deep .mat-form-field-underline {
+            bottom: 0!important;
+        }
+    }
 }

@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SupplierModalComponent } from './supplier-modal/supplier-modal.component';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { HostBinding, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
-// import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
 @Component({
@@ -14,24 +11,17 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./supplier-list.component.scss'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0', visibility: 'hidden' })),
-      state('expanded', style({ height: '*', visibility: 'visible' })),
+      state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),
+      state('expanded', style({ height: '*', display: 'table-row' })),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
 export class SupplierListComponent implements OnInit {
-
-  /////showing outer layout
-
-  // columnsToDisplay = ['action','Name', 'Phone', 'Category', 'Subcategory',];
-  columnsToDisplay = ['button','Name', 'Phone', 'Category', 'Subcategory','action'  ];
-  // columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
-  // expandedElement!: PeriodicElement | null;
+  columnsToDisplay = ['button', 'Name', 'Phone', 'Category', 'action'];
   dataSource: MatTableDataSource<Element>;
   constructor(public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource();
-
   }
   expandedElement: any;
 
@@ -39,15 +29,12 @@ export class SupplierListComponent implements OnInit {
     this.dataSource.data = data;
   }
 
-
-
   openDialog() {
     const dialogRef = this.dialog.open(SupplierModalComponent, { maxWidth: '900px', });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
-
 
 }
 
@@ -57,7 +44,6 @@ export interface Element {
   Address: string;
   Company: string;
   Category: string;
-  Subcategory: string;
 }
 // export interface Element {
 //   Name: string;
@@ -84,15 +70,14 @@ export interface Element {
 
 
 const data: Element[] = [
-  { Name: 'Steve Smith', Phone: '(555)-556-5556', Address: '132, My Street, Kingston, New York 12401', Company: 'Patrick Industries Inc.', Category: 'Carpentry', Subcategory: 'Laminate Floor Repair',  },
-
-  { Name: 'Wade', Phone: '(355)-556-3522', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: 'Thor Industries Inc.', Category: 'Electrical', Subcategory: 'Recess Light Installations',  },
-  { Name: 'Dave', Phone: '(353)-245-5432', Address: '223 Center Street, Venus, New York 10001.', Company: "Pilgrim's Pride Corp", Category: 'Electrical', Subcategory: 'Light Fixture Installations',  },
-  { Name: 'Riley', Phone: '(353)-355-3552', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: 'Thor Industries Inc..', Category: 'Hauling', Subcategory: 'Store & Office Hauling',  },
-  { Name: 'Gilbert', Phone: '(553)-874-2568', Address: '132, My Street, Kingston, New York 12401', Company: 'Patrick Industries Inc.', Category: 'Plumbing', Subcategory: 'Sink Installations',  },
-  { Name: 'Brian', Phone: '(886)-543-5784', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: 'Patrick Industries Inc.', Category: 'Carpentry', Subcategory: 'Laminate Floor Repair',  },
-  { Name: 'Liam', Phone: '(135)-674-5783', Address: '223 Center Street, Venus, New York 10001.', Company: 'Thor Industries Inc.', Category: 'Hauling', Subcategory: 'Yard Waste Removal',  },
-  { Name: 'Nathaniel', Phone: '(678)-542-6896', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: "Pilgrim's Pride Corp", Category: 'Carpentry', Subcategory: 'Laminate Floor Repair',  },
-  { Name: 'Ethan', Phone: '(567)-667-9535', Address: '223 Center Street, Venus, New York 10001.', Company: '	Align Technology Inc.', Category: 'Plumbing', Subcategory: 'Kitchen & Bath Faucet Repairs',  },
-  { Name: 'Lewis', Phone: '(632)-457-3467', Address: '132, My Street, Kingston, New York 12401', Company: 'Patrick Industries Inc.', Category: 'Hauling', Subcategory: 'Packing & Moving Help',  },
+  { Name: 'Steve Smith', Phone: '(555)-556-5556', Address: '132, My Street, Kingston, New York 12401', Company: 'Patrick Industries Inc.', Category: 'Carpentry' },
+  { Name: 'Wade', Phone: '(355)-556-3522', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: 'Thor Industries Inc.', Category: 'Electrical' },
+  { Name: 'Dave', Phone: '(353)-245-5432', Address: '223 Center Street, Venus, New York 10001.', Company: "Pilgrim's Pride Corp", Category: 'Electrical' },
+  { Name: 'Riley', Phone: '(353)-355-3552', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: 'Thor Industries Inc..', Category: 'Hauling' },
+  { Name: 'Gilbert', Phone: '(553)-874-2568', Address: '132, My Street, Kingston, New York 12401', Company: 'Patrick Industries Inc.', Category: 'Plumbing' },
+  { Name: 'Brian', Phone: '(886)-543-5784', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: 'Patrick Industries Inc.', Category: 'Carpentry' },
+  { Name: 'Liam', Phone: '(135)-674-5783', Address: '223 Center Street, Venus, New York 10001.', Company: 'Thor Industries Inc.', Category: 'Hauling' },
+  { Name: 'Nathaniel', Phone: '(678)-542-6896', Address: '3425 Stone Street, Apt. 2A, Jacksonville, FL 39404', Company: "Pilgrim's Pride Corp", Category: 'Carpentry' },
+  { Name: 'Ethan', Phone: '(567)-667-9535', Address: '223 Center Street, Venus, New York 10001.', Company: '	Align Technology Inc.', Category: 'Plumbing' },
+  { Name: 'Lewis', Phone: '(632)-457-3467', Address: '132, My Street, Kingston, New York 12401', Company: 'Patrick Industries Inc.', Category: 'Hauling' },
 ];

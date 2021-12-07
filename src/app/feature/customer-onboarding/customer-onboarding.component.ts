@@ -224,11 +224,22 @@ export class CustomerOnboardingComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-
+selectedCustomerTypeResidential(){
+  this.setCustomerType = 'Residential';
+      this.customerService.setCustomerType(this.setCustomerType);
+      this.isCommercialChecked = false
+      
+}
+selectedCustomerTypeRetail(){
+  
+  this.setCustomerType = 'Retail';
+      this.customerService.setCustomerType(this.setCustomerType);
+}
 
   selectedCustomerType(): void {
     debugger;
     console.log(this.customerType.value);
+    debugger
     if (this.customerType.value === true) {
       this.setCustomerType = 'Residential';
       this.customerService.setCustomerType(this.setCustomerType);

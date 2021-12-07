@@ -24,9 +24,9 @@ const baseData: any[] = [
         'Type': 'Residentail',
         'CustomerName': 'John',
         'TotalTime': '4',
-        'Helpers': ' Carol, Liam',
+        'Helpers': ['Steve', 'Liam'],
         'Address': '5844 2nd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "debitis obcaecati minus rerum repudiandae.",
     },
 
     {
@@ -47,9 +47,9 @@ const baseData: any[] = [
         'Type': 'Retail',
         'CustomerName': 'Willam',
         'TotalTime': '2',
-        'Helpers': 'Steve, Carol, Liam',
+        'Helpers': ['Steve', 'Robert'],
         'Address': '1108 23rd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "Lorem obcaecati minus rerum repudiandae.",
     },
     {
         "TaskID": 70,
@@ -69,9 +69,9 @@ const baseData: any[] = [
         'Type': 'Retail',
         'CustomerName': 'Jerry',
         'TotalTime': '3',
-        'Helpers': 'Liam',
+        'Helpers': ['Willam'],
         'Address': '1108 23rd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "gitis obcaecati minus rerum repudiandae.",
     },
 
 

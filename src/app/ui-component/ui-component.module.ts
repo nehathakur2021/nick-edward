@@ -22,6 +22,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatTreeModule,
     MatIconModule,
     MatBadgeModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatChipsModule
 
   ],
   declarations: [],
@@ -75,7 +78,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatTreeModule,
     MatIconModule,
     MatBadgeModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatChipsModule
 
   ],
 })

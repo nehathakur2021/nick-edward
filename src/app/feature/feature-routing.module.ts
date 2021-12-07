@@ -22,6 +22,11 @@ import { support } from 'jquery';
 import { SupplierListComponent } from './supplier-list/supplier-list.component';
 import { JobFolderTechnicianComponent } from './job-folder-technician/job-folder-technician.component';
 import { AssignTemplateComponent } from './assign-template/assign-template.component';
+import { ZipcodeManagementComponent } from './zipcode-management/zipcode-management.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { EstimateComponent } from './estimate/estimate.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {
@@ -107,8 +112,27 @@ const routes: Routes = [
       {
         path: 'assign-template',
         component: AssignTemplateComponent
-      }
-
+      },
+      {
+        path: 'zipcode-management',
+        component: ZipcodeManagementComponent
+      },
+      {
+        path: 'pricing',
+        component: PricingComponent
+      },
+      {
+        path: 'estimate',
+        component: EstimateComponent
+      },
+      {
+        path: 'invoice',
+        component: InvoiceComponent
+      },
+      {
+        path: 'admin-dashboard',
+        component: AdminDashboardComponent
+      },
 
     ]
 

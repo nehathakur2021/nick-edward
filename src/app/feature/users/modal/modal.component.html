@@ -68,6 +68,14 @@
                         <input matInput placeholder="Password" />
                     </mat-form-field>
                 </div>
+                <div fxFlex="33%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                    <mat-form-field class="colorPicker">
+                        <input matInput [ngxMatColorPicker]="picker" [disabled]="disabled" placeholder="Choose Color">
+                        <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+                        <ngx-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-mat-color-picker>
+                    </mat-form-field>
+
+                </div>
             </div>
         </div>
     </div>
@@ -78,3 +86,7 @@
     <button mat-button mat-dialog-close>Cancel</button>
     <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
 </mat-dialog-actions>
+
+
+
+

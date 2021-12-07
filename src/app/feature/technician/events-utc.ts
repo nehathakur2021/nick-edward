@@ -29,7 +29,7 @@ const baseData: any[] = [
         'TotalTime': '4',
         'Helpers': ' Carol, Liam',
         'Address': '5844 2nd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "Lorem ipsum dolor rum repudiandae.",
     },
 
     {
@@ -53,7 +53,7 @@ const baseData: any[] = [
         'CustomerPhone': '(555) 555-1234.',
         'Helpers': 'Steve, Carol, Liam',
         'Address': '1108 23rd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "Lorem bitis obcaecati minus rerum repudiandae.",
     },
     {
         "TaskID": 70,
@@ -76,7 +76,7 @@ const baseData: any[] = [
         'CustomerPhone': '(555) 555-1234.',
         'Helpers': 'Liam',
         'Address': '1108 23rd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "Lorem ipsum obcaecati minus rerum repudiandae.",
     },
 
 

@@ -5,12 +5,6 @@
                 <span>Categories List</span>
             </mat-card-title>
         </div>
-        <!-- <div fxFlex="33%" fxFlex.lg="33%" fxFlex.md="33%" fxFlex.sm="33%" fxFlex.xs="100%">
-            <mat-form-field appearance="legacy">
-                <mat-label>Search Category/Subcategory</mat-label>
-                <input matInput placeholder="Search by Category/Subcategory">
-            </mat-form-field>
-        </div> -->
         <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="end start">
             <button mat-flat-button color="primary" (click)="openDialog()"><span class="material-icons">add</span>
                 New Category</button>
@@ -18,18 +12,23 @@
     </div>
 
     <mat-card-content>
-        <!-- <div fxFlex="100%" fxFlex.lg="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="start start"> -->
         <mat-tree [dataSource]="dataSource1" [treeControl]="treeControl">
             <mat-tree-node *matTreeNodeDef="let node" class="subcategory">
-                <!-- <button mat-icon-button disabled></button> -->
                 {{node.name}}
+                <div class="price">
+                    <p><span>First Hour Price : </span> $65.00</p>
+                    <p><span>Addition Each Hour Price : </span> $50.00</p>
+                </div>
                 <div class="categoryButton">
+                    <button mat-icon-button color="primary" class="addBtn">
+                        <mat-icon matTooltip="Edit Subcategory" matTooltipPosition="left">edit</mat-icon>
+                    </button>
                     <button mat-icon-button color="warn" class="addBtn">
                         <mat-icon matTooltip="Delete Category" matTooltipPosition="left">delete</mat-icon>
                     </button>
                 </div>
             </mat-tree-node>
-            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" >
+            <mat-tree-node *matTreeNodeDef="let node;when: hasChild">
                 <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
                     <mat-icon class="mat-icon-rtl-mirror">
                         {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
@@ -38,10 +37,10 @@
                 {{node.name}}
                 <div class="SubcategoryButton">
                     <button mat-icon-button color="primary" class="addBtn">
-                        <mat-icon  matTooltip="Add Subcategory" matTooltipPosition="left">add</mat-icon>
+                        <mat-icon matTooltip="Add Subcategory" matTooltipPosition="left">add</mat-icon>
                     </button>
                     <button mat-icon-button color="warn" class="addBtn">
-                        <mat-icon  matTooltip="Delete Category"  matTooltipPosition="left">delete</mat-icon>
+                        <mat-icon matTooltip="Delete Category" matTooltipPosition="left">delete</mat-icon>
                     </button>
                 </div>
             </mat-tree-node>

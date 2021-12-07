@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>
+    <div fxLayout="row wrap" fxLayoutGap="15px grid">
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            Folder One
+        </div>
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutAlign="end start">
+            <button mat-flat-button color="primary">Upload Images</button>
+            <button mat-flat-button color="primary">Attach Document</button>
+        </div>
+    </div>
+
+
+</h2>
+<mat-dialog-content class="mat-typography">
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+        <div fxFlex="50%" fxFlex.lg="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <div class="agreement">
+                <h3>Agreement One </h3>
+                <h3>Agreement Two </h3>
+                <h3>Agreement Three</h3>
+            </div>
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

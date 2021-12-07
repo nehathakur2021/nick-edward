@@ -1,0 +1,102 @@
+<div fxLayout="row wrap" fxLayoutGap="15px grid">
+    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <mat-card>
+            <mat-card-title>
+                Today's Schedule
+            </mat-card-title>
+            <mat-card-content>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Technician </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="address">
+                        <th mat-header-cell *matHeaderCellDef> Address </th>
+                        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <mat-card>
+            <mat-card-title>
+                Google Map
+            </mat-card-title>
+            <mat-card-content>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.346316368038!2d-119.03652918482432!3d34.214174680562266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e8363d53347759%3A0xc82f6d39e28b403!2s170%20Dawson%20Dr%2C%20Camarillo%2C%20CA%2093012%2C%20USA!5e0!3m2!1sen!2sin!4v1637324621554!5m2!1sen!2sin"
+                    width="600" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <mat-card>
+            <mat-card-title>
+                Weather
+            </mat-card-title>
+            <mat-card-content>
+                <div class="weatherBox">
+                    <div class="weatherLocation">
+                        <div class="weatherLeft">
+                            <img src="assets/images/weather-1.png" alt="">
+                            <p>
+                                <mat-icon>place</mat-icon> New York
+                            </p>
+                        </div>
+                        <div class="weatherRight">
+                            <h3>30<span>°</span></h3>
+                        </div>
+                    </div>
+                    <div class="dayView">
+                        <ul>
+                            <li>
+                                <p class="day">Mon</p>
+                                <img src="assets/images/weather-2.png" alt="">
+                                <p class="temp">30<span>°</span></p>
+                            </li>
+                            <li>
+                                <p class="day">Tue</p>
+                                <img src="assets/images/weather-3.png" alt="">
+                                <p class="temp">26<span>°</span></p>
+                            </li>
+                            <li>
+                                <p class="day">Wed</p>
+                                <img src="assets/images/weather-4.png" alt="">
+                                <p class="temp">28<span>°</span></p>
+                            </li>
+                            <li>
+                                <p class="day">Thu</p>
+                                <img src="assets/images/weather-5.png" alt="">
+                                <p class="temp">24<span>°</span></p>
+                            </li>
+                            <li>
+                                <p class="day">Fri</p>
+                                <img src="assets/images/weather-1.png" alt="">
+                                <p class="temp">22<span>°</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <mat-card>
+            <mat-card-title>
+                Cheat Sheet
+            </mat-card-title>
+            <mat-card-content>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

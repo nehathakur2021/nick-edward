@@ -1,0 +1,9 @@
+.zone {
+    margin: 15px 0 30px!important;
+    &:last-child {
+        margin: 0 !important;
+    }
+    h2 {
+        margin: 0;
+    }
+}

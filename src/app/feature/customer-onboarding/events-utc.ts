@@ -25,9 +25,9 @@ const baseData: any[] = [
         'CustomerName': 'John',
         'TotalTime': '4',
         'CustomerPhone': '(555) 555-1234.',
-        'Helpers': ' Carol, Liam',
+        'Helpers': ['Carol', 'Liam'],
         'Address': '5844 2nd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
 
     {
@@ -48,9 +48,9 @@ const baseData: any[] = [
         'CustomerName': 'Willam',
         'TotalTime': '2',
         'CustomerPhone': '(555) 555-1234.',
-        'Helpers': 'Steve, Carol, Liam',
+        'Helpers': ['Steve', 'Liam'],
         'Address': '1108 23rd Ave Seattle, Washington, USA',
-        "Description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores debitis obcaecati minus rerum repudiandae.",
+        "Description": "Lorem ipsum dolor sit amet ",
     },
     
 
